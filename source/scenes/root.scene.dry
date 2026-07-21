@@ -234,7 +234,7 @@ Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other']; // SPD:
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
-q.kpd_formed = 0;
+Q.kpd_formed = 0;
 Q.uspd_formed = 0;
 Q.nsdap_formed = 0;
 
