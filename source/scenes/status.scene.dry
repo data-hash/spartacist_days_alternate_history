@@ -43,7 +43,7 @@ Reichstag composition:
 # 1928: 15, 1930: 15, 1932: 
 {!<span class="tooltip-text" title="Center Party + Bavarian People's Party">Z + BVP</span>!}: [+ z_r +]%
 # 1928: 10, 1930: 13
-[? if kpd_formed and kpd_r > 0: {!<span class="tooltip-text" title="Communist Party of Germany">KPD:</span>!}?] [? if kpd_formed and kpd_r > 0 : [+ kpd_r +]%?]
+[? if kpd_formed and kpd_r > 0: KPD: [+ kpd_r +]% ?]
 # 1928: 5, 1930: 4 (as DstP)
 {!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_r +]%
 # 1928: 9, 1930: 5
@@ -51,7 +51,7 @@ Reichstag composition:
 # 1928: 14, 1930: 7
 {!<span class="tooltip-text" title="German National People's Party">!}[? if not dnvp_name: DNVP?][? if dnvp_name != 0 : [+ dnvp_name +]?]{!</span>!}: [+ dnvp_r +]%
 # 1928: 3, 1930: 18 [+ dnvp_r +]%
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">[? if nsdap_formed and nsdap_r > 0: NSDAP:?]</span>!}: [? if nsdap_formed and nsdap_r > 0 : [+ nsdap_r +]%?]
+[? if nsdap_formed and nsdap_r > 0: NSDAP: [+ nsdap_r +]% ?]
 # 1928: 9, 1930: 10
 Others: [+ other_r +]%
 
