@@ -239,6 +239,12 @@ Q.kpd_formed = 0;
 Q.uspd_formed = 0;
 Q.nsdap_formed = 0;
 
+// formed paramil orgs
+Q.reichsbanner_formed = 0; // formed February 1924
+Q.rfb_formed = 0; // formed July 1924
+Q.stahlhelm_formed = 0; // formed December 1918
+Q.sa_formed = 0; // formed October 1921
+
 // Party tooltips
 Q.spd_tooltip = "Social Democratic Party of Germany";
 Q.kpd_tooltip = "Communist Party of Germany";
