@@ -1,6 +1,14 @@
 :root {
   --president_party_color: #808080;
   --chancellor_party_color: #808080;
+  --spd_color: #c00000;
+  --z_color: #000000;
+  --bvp_color: #A2D8E0;
+  --kpd_color: #700000;
+  --ddp_color: #d4b402;
+  --dvp_color: #98C22C;
+  --dnvp_color: #0781E5;
+  --nsdap_color: #964B00;
 }
 body {
   --bg-color: #f3f3e3;

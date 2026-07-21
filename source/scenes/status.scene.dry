@@ -39,24 +39,24 @@ Chancellor: <span style="color: var(--chancellor_party_color);">[+ chancellor +]
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-<span class="tooltip-text" title="Social Democratic Party of Germany" style="color:#c00000"><strong>SPD</strong></span>: [+ spd_r +]%
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932:
-[? if nov_revolution = 0 : <span class="tooltip-text" title="German Centre Party" style="color:#000000"><strong>Z</strong></span>: [+ z_r +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color:#000000"><strong>Z</strong></span>+<span style="color:#A2D8E0"><strong>BVP</strong></span></span>: [+ z_r +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>: [+ z_r +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: var(--z_color);"><strong>Z</strong></span>+<span style="color: var(--bvp_color);"><strong>BVP</strong></span></span>: [+ z_r +]%?]
 # 1928: 10, 1930: 13
-[? if kpd_formed: <span class="tooltip-text" title="Communist Party of Germany" style="color:#700000"><strong>KPD</strong></span>: [+ kpd_r +]% ?]
+[? if kpd_formed: <span class="tooltip-text" title="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span>: [+ kpd_r +]% ?]
 # 1928: 5, 1930: 4 (as DstP)
-[? if nov_revolution = 0 : <span class="tooltip-text" title="Progressive People's Party" style="color:#d4b402"><strong>FVp</strong></span>: [+ ddp_r +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German Democratic Party" style="color:#FFCC00"><strong>[+ ddp_name +]</strong></span>: [+ ddp_r +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_r +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_r +]%?]
 # 1928: 9, 1930: 5
-[? if nov_revolution = 0 : <span class="tooltip-text" title="National Liberal Party" style="color:#98C22C"><strong>NLP</strong></span>: [+ dvp_r +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German People's Party" style="color:#D3B454"><strong>[+ dvp_name +]</strong></span>: [+ dvp_r +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span>: [+ dvp_r +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>: [+ dvp_r +]%?]
 # 1928: 14, 1930: 7
-[? if nov_revolution = 0 : <span class="tooltip-text" title="German Conservative Party" style="color:#0781E5"><strong>DKP</strong></span>: [+ dnvp_r +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German National People's Party" style="color:#3F7BC1"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_r +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span>: [+ dnvp_r +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_r +]%?]
 # 1928: 3, 1930: 18 [+ dnvp_r +]%
-[? if nsdap_formed: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color:#964B00"><strong>NSDAP</strong></span>: [+ nsdap_r +]% ?]
+[? if nsdap_formed: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span>: [+ nsdap_r +]% ?]
 # 1928: 9, 1930: 10
 {!<span><strong>Others</strong></span>!}: [+ other_r +]%
 
@@ -80,22 +80,22 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
-<span class="tooltip-text" title="Social Democratic Party of Germany" style="color:#c00000"><strong>SPD</strong></span>: [+ spd_relation : relationships +]
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>: [+ spd_relation : relationships +]
 
-{!<span class="tooltip-text" title="German Centre Party" style="color:#000000"><strong>Z</strong></span>!}: [+ z_relation : relationships +]
+{!<span class="tooltip-text" title="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!}: [+ z_relation : relationships +]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" title="Progressive People's Party" style="color:#FFD800"><strong>FVp</strong></span>: [+ ddp_relation : relationships +]?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German Democratic Party" style="color:#FFCC00"><strong>[+ ddp_name +]</strong></span>: [+ ddp_relation : relationships +]?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_relation : relationships +]?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_relation : relationships +]?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" title="National Liberal Party" style="color:#98C22C"><strong>NLP</strong></span>: [+ dvp_relation : relationships +]?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German People's Party" style="color:#D3B454"><strong>[+ dvp_name +]</strong></span>: [+ dvp_relation : relationships +]?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span>: [+ dvp_relation : relationships +]?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>: [+ dvp_relation : relationships +]?]
 
-[? if kpd_formed: <span class="tooltip-text" title="Communist Party of Germany" style="color:#700000"><strong>KPD</strong></span>: [+ kpd_relation : relationships +]?]
+[? if kpd_formed: <span class="tooltip-text" title="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span>: [+ kpd_relation : relationships +]?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" title="German Conservative Party" style="color:#0781E5"><strong>DKP</strong></span>: [+ dnvp_relation : relationships +]?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German National People's Party" style="color:#3F7BC1"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_relation : relationships +]?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span>: [+ dnvp_relation : relationships +]?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_relation : relationships +]?]
 
-[? if nsdap_formed: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color:#964B00"><strong>NSDAP</strong></span>: [+ nsdap_relation : relationships +]?]
+[? if nsdap_formed: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span>: [+ nsdap_relation : relationships +]?]
 
 = Internal Factions of the SPD
 
@@ -167,25 +167,25 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if elections were to be held now):
 
-{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color:#c00000"><strong>SPD</strong></span>!}: [+ spd_votes +]%
+{!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>!}: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" title="German Centre Party" style="color:#000000"><strong>Z</strong></span>: [+ z_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color:#000000"><strong>Z</strong></span>+<span style="color:#A2D8E0"><strong>BVP</strong></span></span>: [+ z_votes +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>: [+ z_votes +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: var(--z_color);"><strong>Z</strong></span>+<span style="color: var(--bvp_color);"><strong>BVP</strong></span></span>: [+ z_votes +]%?]
 
-[? if kpd_formed: <span class="tooltip-text" title="Communist Party of Germany" style="color:#700000"><strong>KPD</strong></span>: [+ kpd_votes +]%?]
+[? if kpd_formed: <span class="tooltip-text" title="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span>: [+ kpd_votes +]%?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" title="Progressive People's Party" style="color:#FFD800"><strong>FVp</strong></span>: [+ ddp_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German Democratic Party" style="color:#FFCC00"><strong>[+ ddp_name +]</strong></span>: [+ ddp_votes +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_votes +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_votes +]%?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" title="National Liberal Party" style="color:#98C22C"><strong>NLP</strong></span>: [+ dvp_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German People's Party" style="color:#D3B454"><strong>[+ dvp_name +]</strong></span>: [+ dvp_votes +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span>: [+ dvp_votes +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>: [+ dvp_votes +]%?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" title="German Conservative Party" style="color:#0781E5"><strong>DKP</strong></span>: [+ dnvp_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" title="German National People's Party" style="color:#3F7BC1"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_votes +]%?]
+[? if nov_revolution = 0 : <span class="tooltip-text" title="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span>: [+ dnvp_votes +]%?]
+[? if nov_revolution = 1 : <span class="tooltip-text" title="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_votes +]%?]
 
-[? if nsdap_formed: {!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color:#964B00"><strong>NSDAP</strong></span>!}: [+ nsdap_votes +]%?]
+[? if nsdap_formed: {!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span>!}: [+ nsdap_votes +]%?]
 
 <span><strong>Others</strong></span>: [+ other_votes +]%
 
