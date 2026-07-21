@@ -103,6 +103,7 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
+Q.spd_relation = 50;
 Q.z_relation = 50;
 Q.kpd_relation = 25;
 Q.ddp_relation = 60;
@@ -371,9 +372,11 @@ Q.dnvp_in_government = 0;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
+Q.inter_party_committee = 0;
+//
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
-Q.in_weimar_coalition = 1;
+Q.in_weimar_coalition = 0;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
 Q.in_grand_coalition = 0;
@@ -663,6 +666,6 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 = 1917
 
-It is a dark time for German democracy. With anti-war communists like Karl Liebknecht and Rosa Luxemburg imprisoned, and the Great War at a standstill, all seems lost for the anti-war German left.
+It is a dark time for German democracy. With anti-war communists like Karl Liebknecht and Rosa Luxemburg imprisoned, the elections postponed until 1920, and the Great War at a standstill, all seems lost for the anti-war German left.
 
-Now, the task of those who remain is to prepare to end the Great War. The imperial government of Wilhelm II is unpopular, and we stand to gain. Perhaps the next government be a socialist one that ends the war.
+Now, the task of those who remain is to end the Great War. The imperial government of Wilhelm II is unpopular, and we stand to gain. We must rid ourselves of the imperial government and change our own destiny.

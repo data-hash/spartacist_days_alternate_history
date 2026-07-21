@@ -45,7 +45,7 @@ Reichstag composition:
 [? if nov_revolution = 0 : {!<span class="tooltip-text" title="German Centre Party" style="color:#000000"><strong>Z</strong></span>!}: [+ z_r +]%?]
 [? if nov_revolution = 1 : {!<span class="tooltip-text" title="Center Party + Bavarian People's Party">{!<span style="color:#000000"><strong>Z</strong></span>!}+{!<span style="color:#A2D8E0">!}<strong>BVP</strong></span></span>!}: [+ z_r +]%?]
 # 1928: 10, 1930: 13
-[? if kpd_formed: {!<span class="tooltip-text" title="Communist Party of Germany" style="color:#700000"><strong>KPD</strong></span>!}: [+ kpd_r +]% ?]
+[? if kpd_formed: <span class="tooltip-text" title="Communist Party of Germany" style="color:#700000"><strong>KPD</strong></span>: [+ kpd_r +]% ?]
 # 1928: 5, 1930: 4 (as DstP)
 [? if nov_revolution = 0 : {!<span class="tooltip-text" title="Progressive People's Party" style="color:#d4b402"><strong>FVp</strong></span>!}: [+ ddp_r +]%?]
 [? if nov_revolution = 1 : {!<span class="tooltip-text" title="German Democratic Party" style="color:#FFCC00"><strong>[+ ddp_name +]</strong></span>!}: [+ ddp_r +]%?]
@@ -80,6 +80,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color:#c00000"><strong>SPD</strong></span>: [+ spd_relation : relationships +]
 
 {!<span class="tooltip-text" title="German Centre Party" style="color:#000000"><strong>Z</strong></span>!}: [+ z_relation : relationships +]
 
@@ -164,7 +165,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 = Projected election results
 
-(if the election were to be held now):
+(if elections were to be held now):
 
 {!<span class="tooltip-text" title="Social Democratic Party of Germany" style="color:#c00000"><strong>SPD</strong></span>!}: [+ spd_votes +]%
 
