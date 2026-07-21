@@ -34,7 +34,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 [? if nov_revolution = 0: Emperor: <span style="color: var(--president_party_color);">Wilhelm II</span> (<span style="color:#808080"><strong>I</strong></span>) ?]
 [? if nov_revolution = 1: President: <span style="color: var(--president_party_color);">[+ president +]</span> (<span style="color: var(--president_party_color)"><strong>[+ president_party +]</strong>) ?] 
 
-Chancellor: <span style="color: var(--chancellor_party_color);">[+ chancellor +]</span> <span style="color: var(--chancellor_party_color);"><strong>([+ chancellor_party +])</strong></span>
+Chancellor: <span style="color: var(--chancellor_party_color);">[+ chancellor +]</span> (<span style="color: var(--chancellor_party_color);"><strong>[+ chancellor_party +]</strong></span>)
 
 Reichstag composition:
 

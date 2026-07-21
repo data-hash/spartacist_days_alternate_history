@@ -50,14 +50,14 @@ Q.dissent_percent = 5;
 // factions
 Q.factions = ['left', 'center', 'reformist', 'neorevisionist'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
-Q.left_dissent = 20;
-Q.center_strength = 30;
-Q.center_dissent = 0;
+Q.left_strength = 10;
+Q.left_dissent = 50;
+Q.center_strength = 20;
+Q.center_dissent = 45;
 // Q.labor_strength = 25;
 // Q.labor_dissent = 5;
-Q.reformist_strength = 25;
-Q.reformist_dissent = 5;
+Q.reformist_strength = 45; // rightists
+Q.reformist_dissent = 3;
 Q.neorevisionist_strength = 5;
 Q.neorevisionist_dissent = 10;
 
@@ -363,17 +363,17 @@ Q.president_party_color = "color:#808080";
 Q.chancellor = "Hollweg";
 Q.chancellor_party = 'I';
 Q.chancellor_party_color = "color:#808080";
-Q.spd_in_government = 0;
+Q.spd_in_government = 1;
 Q.z_in_government = 1;
-Q.ddp_in_government = 0;
+Q.ddp_in_government = 1;
 Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
+Q.dnvp_in_government = 0;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
-Q.in_weimar_coalition = 0;
+Q.in_weimar_coalition = 1;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
 Q.in_grand_coalition = 0;
@@ -403,22 +403,22 @@ Q.minority_government = 0;
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Streseman';
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'DNVP';
-Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'DNVP';
-Q.labor_minister = 'Brauns';
-Q.labor_minister_party = 'Z';
-Q.reichswehr_minister = 'Groener';
+Q.foreign_minister = 'Hollweg';
+Q.foreign_minister_party = 'I';
+Q.interior_minister = 'Loebell';
+Q.interior_minister_party = 'I';
+Q.justice_minister = 'Beseler';
+Q.justice_minister_party = 'I';
+Q.labor_minister = 'None';
+Q.labor_minister_party = 'I';
+Q.reichswehr_minister = 'None';
 Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DVP';
-Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'Z';
-Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'DNVP';
+Q.economic_minister = 'None';
+Q.economic_minister_party = 'I';
+Q.finance_minister = 'Lentze';
+Q.finance_minister_party = 'I';
+Q.agriculture_minister = 'Lieser';
+Q.agriculture_minister_party = 'I';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
@@ -532,8 +532,8 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
-Q.next_election_month = 5;
+Q.next_election_year = 1920;
+Q.next_election_month = 6;
 Q.next_election_time = 5;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
