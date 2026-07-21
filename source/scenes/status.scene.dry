@@ -31,7 +31,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-[? if nov_revolution = 0: Emperor: {!<span style="color:#808080">Wilhelm II</span> (<span style="color:#808080"><strong>I</strong></span>)!} ?]
+[? if nov_revolution = 0: Emperor: {!<span style="color:#808080">Wilhelm II</span>!} {!(<span style="color:#808080"><strong>I</strong></span>)!} ?]
 [? if nov_revolution = 1: President: [+ president +]?] ([+ president_party +]) 
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
