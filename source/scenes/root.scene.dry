@@ -48,14 +48,14 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist'];
+Q.factions = ['left', 'center', 'reformist', 'neorevisionist'];
 // should this be normalized to 100%?
 Q.left_strength = 15;
 Q.left_dissent = 20;
 Q.center_strength = 30;
 Q.center_dissent = 0;
-Q.labor_strength = 25;
-Q.labor_dissent = 5;
+// Q.labor_strength = 25;
+// Q.labor_dissent = 5;
 Q.reformist_strength = 25;
 Q.reformist_dissent = 5;
 Q.neorevisionist_strength = 5;
@@ -357,9 +357,10 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Wilhelm II";
+Q.president_party = 'I';
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Hollweg";
-Q.chancellor_party = 'Other';
+Q.chancellor_party = 'I';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
 Q.ddp_in_government = 0;

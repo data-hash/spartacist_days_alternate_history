@@ -31,7 +31,8 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-[? if nov_revolution = 0: Emperor: [+ president +] ?][? if nov_revolution = 1: President: [+ president +] ?]
+[? if nov_revolution = 0: Emperor: {!<span style="color:#808080">[+ president +]</span> (<span style="color:#808080"><strong>[+ president_party +]</strong></span>)!} ?]
+[? if nov_revolution = 1: President: [+ president +]?] ([+ president_party +]) 
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -97,13 +98,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Internal Factions of the SPD
 
-{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+{!<span class="tooltip-text" title="The Left (Spartacus League) oppose the war and pursue revolution.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+{!<span class="tooltip-text" title="The Center oppose the war, and wish to pursue an immediate peace.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
-
-{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+{!<span class="tooltip-text" title="The Right (MSPD) support the war, however would like for it to end sooner rather than later.">Right</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
 [? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
 
@@ -142,7 +141,7 @@ if (Q.sa_strength) {
 
 [? if sa_formed : SA Militarization: [+ sa_militancy : militancy +]?]
 
-[? if any_paramils_formed : Currently no paramilitaries formed.?]
+[? if any_paramils_formed = 0: Currently no paramilitaries formed.?]
 
 = Official military/paramilitaries
 
