@@ -241,21 +241,13 @@ Q.nsdap_formed = 0;
 
 // Party tooltips
 Q.spd_tooltip = "Social Democratic Party of Germany";
-Q.spd_color = "color:#ff0000";
 Q.kpd_tooltip = "Communist Party of Germany";
-Q.kpd_color = "color:#800000"
 Q.z_tooltip = "Center Party + Bavarian People's Party";
-Q.z_color = "color:#004C90"
 Q.bvp_tooltip = "Bavarian People's Party"
-Q.bvp_color = "color:#69A2BE"
 Q.ddp_tooltip = "German Democratic Party";
-Q.ddp_color = "color:#FFCC00"
 Q.dvp_tooltip = "German People's Party";
-Q.dvp_color = "color:#D3B454"
 Q.dnvp_tooltip = "German National People's Party";
-Q.dnvp_color = "color:#3F7BC1"
 Q.nsdap_tooltip = "National-Socialist German Worker's Party (Nazis)";
-Q.nsdap_color = "color:#800000"
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
