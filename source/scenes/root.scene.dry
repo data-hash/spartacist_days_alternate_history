@@ -329,6 +329,22 @@ Q.dnvp_r = 8;
 Q.nsdap_r = 0;
 Q.other_r = 16;
 
+// party colors
+Q.spd_color = "#E3000F";
+Q.uspd_color = "#DA0903";
+Q.sapd_color = "#C40000";
+Q.kpd_color = "#700000";
+Q.z_color = "#000000";
+Q.bvp_color = "#A2D8E0";
+Q.dvp_color = "#98C22C";
+Q.ddp_color = "#d4b402";
+Q.dnvp_color = "#0781E5";
+Q.nsdap_color = "#964B00";
+Q.other_color = "#a0a0a0"
+
+Q.president_party_color = "#808080";
+Q.chancellor_party_color = "#808080";
+
 // diff from prev
 Q.old_spd_r = 34;
 Q.old_kpd_r = 0;
@@ -340,10 +356,18 @@ Q.old_nsdap_r = 0;
 Q.old_other_r = 16;
 
 // sapd isn't formed yet, but it may be formed
+// votes for non formed parties
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+Q.uspd_r = 0;
+Q.old_uspd_r = 0;
+Q.kpd_r = 0;
+Q.old_kpd_r = 0;
+Q.nsdap_r = 0;
+Q.old_nsdap_r = 0;
 
 // for changing the DDP's name to the DStP
+// party names before nov revolution
 Q.ddp_name = "FVp"; // DDP by default
 Q.dvp_name = "NLP";
 Q.dnvp_name = "DKP";
@@ -359,11 +383,9 @@ Q.economic_records = [];
 // State of the government
 Q.president = "Wilhelm II";
 Q.president_party = 'I';
-Q.president_party_color = "color:#808080";
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Hollweg";
 Q.chancellor_party = 'I';
-Q.chancellor_party_color = "color:#808080";
 Q.spd_in_government = 1;
 Q.z_in_government = 1;
 Q.ddp_in_government = 1;

@@ -336,10 +336,10 @@ on-arrival: z_minus_bvp_r = z_r - 3;
 on-display: {!
 data = [
     {
-        "id": "kpd",
-        "legend": "KPD",
-        "name": "KPD",
-        "seats": Q.kpd_r*5,
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Q.spd_r*5,
     }];
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
@@ -349,13 +349,39 @@ if (Q.sapd_formed && Q.sapd_r) {
             "seats": Math.round(Q.sapd_r*5),
             });
 }
+if (Q.nsdap_formed && Q.nsdap_r) {
+    data.push({
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Q.nsdap_r*5,
+    })
+}
+if (Q.kpd_formed && Q.kpd_r) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Q.kpd_r*5,
+    })
+}
+if (Q.uspd_formed && Q.uspd_r) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Q.uspd_r*5,
+    })
+}
+if (Q.nov_revolution) {
+    data.push({
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": 3*5,
+    })
+}
 data = data.concat([
-    {
-        "id": "spd",
-        "legend": "SPD",
-        "name": "SPD",
-        "seats": Q.spd_r*5,
-    },
     {
         "id": "ddp",
         "legend": "DDP",
@@ -367,12 +393,6 @@ data = data.concat([
         "legend": "Center",
         "name": "Center",
         "seats": (Q.z_r - 3)*5,
-    },
-    {
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
-        "seats": 3*5,
     },
     {
         "id": "dvp",
@@ -391,12 +411,6 @@ data = data.concat([
         "legend": "DNVP",
         "name": "DNVP",
         "seats": Q.dnvp_r*5,
-    },
-    {
-        "id": "nsdap",
-        "legend": "NSDAP",
-        "name": "NSDAP",
-        "seats": Q.nsdap_r*5,
     },
 ]);
 if (d3 && window) {
@@ -417,8 +431,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#8B0000', 'ddp': '#DCCA4A', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3f7bc1', 'nsdap': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': 'Z + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'spd': Q.spd_color, 'kpd': Q.kpd_color, 'ddp': Q.ddd_color, 'z': Q.z_color, 'dvp': Q.dvp_color, 'dnvp': Q.dnvp_color, 'nsdap': Q.nsdap_color, 'other': Q.other_color, 'sapd': Q.sapd_color, 'uspd': Q.uspd_color},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': 'Z + BVP', 'dvp': Q.dvp_name, 'dnvp': Q.dnvp_name, 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'uspd': 'USPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -453,30 +467,34 @@ if (d3 && window) {
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div></td><td>!} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td></tr>!}
+[? if uspd_formed = 0 : {!<tr><td><div class="box" style='background-color:var(spd_color); outline: 2px; outline-style: solid;'> </div></td><td>!} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td></tr>!} ?]
+[? if uspd_formed = 1 : {!<tr><td><div class="box" style='background-color:var(spd_color);'> </div></td><td>!} SPD: {!</td><td>!} [+ spd_r +]% {!</td></tr>!} ?]
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
+[? if uspd_formed = 1 and not kpd_formed = 1 : {!<tr><td><div class="box" style='background-color:var(uspd_color); outline: 2px; outline-style: solid;'> </div></td> <td> !} **USPD:** {!</td><td>!} **[+ uspd_r +]%** {!</td></tr>!} ?]
+[? if uspd_formed = 1 and kpd_formed = 1 : {!<tr><td><div class="box" style='background-color:var(--uspd_color)'> </div></td> <td> !}USPD: {!</td><td>!} [+ uspd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:var(--sapd_color)'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+[? if kpd_formed : {!<tr><td><div class="box" style="background-color:var(kpd_color); outline: 2px; outline-style: solid;"> </div></td> <td>!} **KPD:** {!</td><td>!} **[+ kpd_r +]%** {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style="background-color: var(--ddp_color);"> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#69A2BE'> </div></td><td>!} BVP: {!</td><td>!} 3% {!</td></tr>!}
+{!<tr><td><div class="box" style="background-color: var(--z_color);"> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
+[? if nov_revolution : {!<tr><td><div class="box" style="background-color: var(--bvp_color);"> </div></td><td>!} BVP: {!</td><td>!} 3% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
+{!<tr><td><div class="box" style="background-color: var(--dvp_color);"> </div></td><td>!} [+ dvp_name +]: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--other_color)'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style="background-color: var(--dnvp_color);"> </div></td><td>!} [+ dnvp_name +]: {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
+
+[? if nsdap_formed : {!<tr><td><div class="box" style="background-color: var(--nsdap_color);"> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!} ?]
 {!</table>!}
 
 = Election history
 
-[? if year = 1928 and month < 5 : No new elections yet. ?]
+[? if year = 1917 and month <= 11 : No new elections yet. ?]
 
 {!<svg id="election_history" style="width: 500px; height: 400px;"> </svg>!}
 
