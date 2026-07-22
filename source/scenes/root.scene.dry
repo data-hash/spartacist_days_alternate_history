@@ -104,6 +104,8 @@ Q.moderate_plan_adopted = 0;
 
 // inter-party relations
 Q.spd_relation = 50;
+Q.sapd_relation = 30;
+Q.uspd_relation = 30;
 Q.z_relation = 50;
 Q.kpd_relation = 25;
 Q.ddp_relation = 60;
