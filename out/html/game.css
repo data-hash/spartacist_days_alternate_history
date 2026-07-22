@@ -2,10 +2,10 @@
   --president_party_color: #808080;
   --chancellor_party_color: #808080;
   --spd_color: #E3000F;
-  --uspd_color: #DA0903;
+  --uspd_color: #b90903;
   --sapd_color: #C40000;
   --z_color: #000000;
-  --bvp_color: #A2D8E0;
+  --bvp_color: #69A2BE;
   --kpd_color: #700000;
   --ddp_color: #d4b402;
   --dvp_color: #98C22C;
@@ -553,7 +553,7 @@ table {
 
 /* Styles for parties */
 .seat.kpd {
-    fill: #8B0000;
+    fill: #700000;
 }
 .seat.spd {
     fill: #E3000F;
@@ -561,7 +561,7 @@ table {
     stroke-width: 1.5px;
 }
 .seat.ddp {
-    fill: #DCCA4A;
+    fill: #d4b402;
 }
 .seat.z {
     fill: #000;
@@ -570,19 +570,22 @@ table {
     fill: #69A2BE;
 }
 .seat.dvp {
-    fill: #D5AC27;
+    fill: #98C22C;
 }
 .seat.other {
     fill: #909090;
 }
 .seat.dnvp {
-    fill: #3F7BC1;
+    fill: #0781E5;
 }
 .seat.nsdap {
     fill: #954B00;
 }
 .seat.sapd {
     fill: #C40000;
+}
+.seat.uspd {
+    fill: #b90903;
 }
 
 .tooltip-text {
