@@ -18,11 +18,9 @@ if (Q.economic_growth) {
 [? if kpd_formed = 0 and nov_revolution = 1 : <span style="color: var(--kpd_color)"><h1><strong>Spartacus League</strong></span> Leadership</h1> ?]
 [? if kpd_formed = 1 and kpd_merge = 1 : <span style="color: var(--kpd_color)"><h1><strong>KPD</strong></span> Leadership</h1> ?]
 
-{! 
-if (Q.karl_dead) {
-    Q.rosa_dead = 1
-}
-!}
+[? if rosa_dead : 
+    print
+?]
 
 <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;">
 
