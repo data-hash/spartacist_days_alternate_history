@@ -18,7 +18,7 @@ if (Q.economic_growth) {
 [? if kpd_formed = 0 and nov_revolution = 1 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus League </span></strong>Leadership</h1> ?]
 [? if kpd_formed = 1 and kpd_merge = 1 : <h1><span style="color: var(--kpd_color)"><strong>KPD </span></strong>Leadership</h1> ?]
 
-
+---
 
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;"> <img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%; border: 5px solid var(--card-border-color);"> <img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%; border: 5px solid var(--card-border-color);"> </div> ?]
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex;justify-content: left;"> <div style="text-align: center; width: 50%;"><strong>Karl Liebknecht</strong></div> <div style="text-align: center; width: 50%;"><strong>Rosa Luxemburg</strong></div> </div> ?]
@@ -27,10 +27,10 @@ if (Q.economic_growth) {
 [? if kpd_formed = 0 and nov_revolution = 0 : Next congress: none scheduled?]
 [? if nov_revolution = 1 : Next congress: December 1918?]
 
-[? if uspd_formed = 0 and kpd_formed = 0 : Our position: in the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
-[? if uspd_formed = 1 and kpd_formed = 0 : Our position: in the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
-[? if kpd_formed = 1 : Our position: in the <span style="color: var(--kpd_color)"><strong>KPD</strong></span> ?]
-[? if kpd_formed = 1 and kpd_merge = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>! ?]
+[? if uspd_formed = 0 and kpd_formed = 0 : Currently in: the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
+[? if uspd_formed = 1 and kpd_formed = 0 : Currently in: the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
+[? if kpd_formed = 1 and kpd_merge = 0 : Currently in: the <span style="color: var(--kpd_color)"><strong>KPD</strong></span> ?]
+# [? if kpd_formed = 1 and kpd_merge = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>! ?]
 
 = Finances
 
