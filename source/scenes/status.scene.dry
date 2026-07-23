@@ -76,6 +76,10 @@ Economic growth: [+ economic_growth_2 +]%
 
 # = Public Opinion
 
+@party
+
+[? if kpd_formed = 0 : = <span style="color: var(--kpd_color)">Spartacus League</span> Leadership ?]
+
 @politics
 
 = Inter-party Relations
