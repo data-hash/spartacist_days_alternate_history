@@ -123,7 +123,7 @@ Q.z_party_leader = "Marx";
 Q.nsdap_leader = "Hitler";
 
 //party stats
-Q.party_leader = "Karl Liebknecht & Rosa Luxemburg"
+Q.party_leader = "Karl Liebknecht & Rosa Luxemburg";
 Q.grassroots_support = 60;
 Q.union_support = 25;
 
