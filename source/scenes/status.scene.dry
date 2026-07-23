@@ -18,37 +18,12 @@ if (Q.economic_growth) {
 [? if kpd_formed = 0 and nov_revolution = 1 : <span><span style="color: var(--kpd_color)"><h1><strong>Spartacus League</strong></span> Leadership</h1></span> ?]
 [? if kpd_formed = 1 and kpd_merge = 1 : <span><span style="color: var(--kpd_color)"><h1><strong>KPD</strong></span> Leadership</h1></span> ?]
 
-[? if karl_dead = 0 and rosa_dead = 0 : 
-<div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;">
 
-<img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%;border: 5px solid var(--card-border-color);"> 
-<img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%;border: 5px solid var(--card-border-color);"> 
-<img src="img/portraits/C_Zetkin_1.jpg" alt="Clara Zetkin" style="width: 45%;border: 5px solid var(--card-border-color);"> 
-
-</div>
-
-<div style="display: flex;justify-content: left;">
-
-<div style="text-align: center;width: 50%;"><strong>[+ party_leader1 +]</strong></div>
-<div style="text-align: center;width: 50%;"><strong>[+ party_leader2 +]</strong></div>
-<div style="text-align: center;width: 50%;"><strong>[+ party_leader3 +]</strong></div>
-
-</div> 
-
-<div style="display: flex;justify-content: left;">
-
-<div style="text-align: center;width: 50%;color: var(--unavailable-color);font-size: 0.8em;"><em>Co-founder</em></div>
-<div style="text-align: center;width: 50%;color: var(--unavailable-color);font-size: 0.8em;"><em>Co-founder</em></div>
-<div style="text-align: center;width: 50%;color: var(--unavailable-color);font-size: 0.8em;"><em>Co-founder</em></div>
-
-</div>
-
-?]
 
 [? if uspd_formed = 0 and kpd_formed = 0 : Our position: in the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
 [? if uspd_formed = 1 and kpd_formed = 0 : Our position: in the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
 [? if kpd_formed = 1 : Our position: in the <span style="color: var(--kpd_color)"><strong>KPD</strong></span> ?]
-[? if kpd_formed = 1 and kpd_merge : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>! ?]
+[? if kpd_formed = 1 and kpd_merge = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>! ?]
 
 = Finances
 
