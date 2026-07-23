@@ -597,8 +597,8 @@ table {
 
 /* Credit to zlrsk */
 /* New tooltip box (reads from data-tooltip, which we'll auto-fill from title) */
-.tooltip-text[tooltip-text]::after {
-  content: attr(tooltip-text);
+.tooltip-text::after {
+  content: attr(title);
   white-space: pre-line; /* \n becomes line breaks */
   display: none;
 
@@ -624,8 +624,8 @@ table {
   pointer-events: none;
 }
 
-.tooltip-text[tooltip-text]:hover::after,
-.tooltip-text[tooltip-text]:focus::after {
+.tooltip-text:hover::after,
+.tooltip-text:focus::after {
   display: block;
 }
 
