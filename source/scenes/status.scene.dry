@@ -14,18 +14,58 @@ if (Q.economic_growth) {
 }
 !}
 
-= Status
+[? if kpd_formed = 0 and nov_revolution = 0 : <span><span style="color: var(--kpd_color)"><h1><strong>Spartacus Group</strong></span> Leadership</h1></span> ?]
+[? if kpd_formed = 0 and nov_revolution = 1 : <span><span style="color: var(--kpd_color)"><h1><strong>Spartacus League</strong></span> Leadership</h1></span> ?]
+[? if kpd_formed = 1 and kpd_merge = 1 : <span><span style="color: var(--kpd_color)"><h1><strong>KPD</strong></span> Leadership</h1></span> ?]
 
-[+ month : month +] [+ year +]
+[? if karl_dead = 0 and rosa_dead = 0 : 
+<div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;">
+
+<img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%;border: 5px solid var(--card-border-color);"> 
+<img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%;border: 5px solid var(--card-border-color);"> 
+<img src="img/portraits/C_Zetkin_1.jpg" alt="Clara Zetkin" style="width: 45%;border: 5px solid var(--card-border-color);"> 
+
+</div>
+
+<div style="display: flex;justify-content: left;">
+
+<div style="text-align: center;width: 50%;"><strong>[+ party_leader1 +]</strong></div>
+<div style="text-align: center;width: 50%;"><strong>[+ party_leader2 +]</strong></div>
+<div style="text-align: center;width: 50%;"><strong>[+ party_leader3 +]</strong></div>
+
+</div> 
+
+<div style="display: flex;justify-content: left;">
+
+<div style="text-align: center;width: 50%;color: var(--unavailable-color);font-size: 0.8em;"><em>Co-founder</em></div>
+<div style="text-align: center;width: 50%;color: var(--unavailable-color);font-size: 0.8em;"><em>Co-founder</em></div>
+<div style="text-align: center;width: 50%;color: var(--unavailable-color);font-size: 0.8em;"><em>Co-founder</em></div>
+
+</div>
+
+?]
+
+[? if uspd_formed = 0 and kpd_formed = 0 : Our position: in the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
+[? if uspd_formed = 1 and kpd_formed = 0 : Our position: in the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
+[? if kpd_formed = 1 : Our position: in the <span style="color: var(--kpd_color)"><strong>KPD</strong></span> ?]
+[? if kpd_formed = 1 and kpd_merge : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>! ?]
+
+= Finances
 
 Resources available: [+ resources +]
 
-SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 and burgfrieden == 0 : opposition ?][? if spd_caretaker : caretaker government ?][? if burgfrieden: political truce ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+Grassroots support: WIP
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+Union support: WIP
 
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+Annual Dues: [+ dues +]
+
+# SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 and burgfrieden == 0 : opposition ?][? if spd_caretaker : caretaker government ?][? if burgfrieden: political truce ?]
+# [? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+
+# [? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
+
+# [? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
@@ -75,10 +115,6 @@ Economic growth: [+ economic_growth_2 +]%
 
 
 # = Public Opinion
-
-@party
-
-[? if kpd_formed = 0 : = <span style="color: var(--kpd_color)">Spartacus League</span> Leadership ?]
 
 @politics
 
