@@ -14,14 +14,11 @@ if (Q.economic_growth) {
 }
 !}
 
-[? if kpd_formed = 0 and nov_revolution = 0 : <span style="color: var(--kpd_color)"><h1><strong>Spartacus Group</strong></span> Leadership</h1>?]
-[? if kpd_formed = 0 and nov_revolution = 1 : <span style="color: var(--kpd_color)"><h1><strong>Spartacus League</strong></span> Leadership</h1> ?]
-[? if kpd_formed = 1 and kpd_merge = 1 : <span style="color: var(--kpd_color)"><h1><strong>KPD</strong></span> Leadership</h1> ?]
+[? if kpd_formed = 0 and nov_revolution = 0 : <h1 style="color: var(--kpd_color)"><strong>Spartacus Group </strong>Leadership</h1> ?]
+[? if kpd_formed = 0 and nov_revolution = 1 : <h1 style="color: var(--kpd_color)"><strong>Spartacus League </strong>Leadership</h1> ?]
+[? if kpd_formed = 1 and kpd_merge = 1 : <h1 style="color: var(--kpd_color)"><strong>KPD </strong>Leadership</h1> ?]
 
-[? if rosa_dead : 
-    print
-?]
-
+[? if karl_rosa_murdered = 0 : 
 <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;">
 
 <img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%; border: 5px solid var(--card-border-color);">
@@ -45,7 +42,7 @@ if (Q.economic_growth) {
 <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div>
 
 </div>
-
+?]
 
 [? if uspd_formed = 0 and kpd_formed = 0 : Our position: in the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
 [? if uspd_formed = 1 and kpd_formed = 0 : Our position: in the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]

@@ -127,6 +127,8 @@ Q.party_leader1 = "Karl Liebknecht";
 Q.party_leader2 = "Rosa Luxemburg";
 Q.party_leader3 = "Clara Zetkin";
 
+Q.karl_rosa_murdered = 0;
+
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
 // whether or not hindenburg can dismiss the government.
@@ -596,9 +598,6 @@ Q.sa_ban_timer = 0;
 Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
-
-Q.rosa_dead = 0;
-Q.karl_dead = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
