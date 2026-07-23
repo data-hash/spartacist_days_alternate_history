@@ -14,32 +14,37 @@ if (Q.economic_growth) {
 }
 !}
 
-[? if kpd_formed = 0 and nov_revolution = 0 : <span><span style="color: var(--kpd_color)"><h1><strong>Spartacus Group</strong></span> Leadership</h1></span> ?]
-[? if kpd_formed = 0 and nov_revolution = 1 : <span><span style="color: var(--kpd_color)"><h1><strong>Spartacus League</strong></span> Leadership</h1></span> ?]
-[? if kpd_formed = 1 and kpd_merge = 1 : <span><span style="color: var(--kpd_color)"><h1><strong>KPD</strong></span> Leadership</h1></span> ?]
+[? if kpd_formed = 0 and nov_revolution = 0 : <span style="color: var(--kpd_color)"><h1><strong>Spartacus Group</strong></span> Leadership</h1>?]
+[? if kpd_formed = 0 and nov_revolution = 1 : <span style="color: var(--kpd_color)"><h1><strong>Spartacus League</strong></span> Leadership</h1> ?]
+[? if kpd_formed = 1 and kpd_merge = 1 : <span style="color: var(--kpd_color)"><h1><strong>KPD</strong></span> Leadership</h1> ?]
 
+{! 
+if (Q.karl_dead) {
+    Q.rosa_dead = 1
+}
+!}
 
 <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;">
 
-[? if karl_dead = 0 and kpd_merge = 0 : <img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%; border: 5px solid var(--card-border-color);"> ?]
-[? if rosa_dead = 0 and kpd_merge = 0 : <img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%; border: 5px solid var(--card-border-color);"> ?]
-[? if kpd_merge = 0 : <img src="img/portraits/C_Zetkin_1.jpg" alt="Clara Zetkin" style="width: 45%; border: 5px solid var(--card-border-color);"> ?]
+<img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%; border: 5px solid var(--card-border-color);">
+<img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%; border: 5px solid var(--card-border-color);">
+<img src="img/portraits/C_Zetkin_1.jpg" alt="Clara Zetkin" style="width: 45%; border: 5px solid var(--card-border-color);">
 
 </div>
 
 <div style="display: flex;justify-content: left;">
 
-[? if karl_dead = 0 and kpd_merge = 0 : <div style="text-align: center; width: 50%;"><strong>Karl Liebknecht</strong></div> ?]
-[? if rosa_dead = 0 and kpd_merge = 0 : <div style="text-align: center; width: 50%;"><strong>Rosa Luxemburg</strong></div> ?]
-[? if kpd_merge = 0: <div style="text-align: center;width: 50%;"><strong>Clara Zetkin</strong></div> ?]
+<div style="text-align: center; width: 50%;"><strong>Karl Liebknecht</strong></div>
+<div style="text-align: center; width: 50%;"><strong>Rosa Luxemburg</strong></div>
+<div style="text-align: center;width: 50%;"><strong>Clara Zetkin</strong></div>
 
 </div> 
 
 <div style="display: flex;justify-content: left;">
 
-[? if karl_dead = 0 and kpd_merge = 0 : <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div> ?]
-[? if rosa_dead = 0 and kpd_merge = 0 : <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div> ?]
-[? if kpd_merge = 1 :<div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div> ?]
+<div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div>
+<div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div>
+<div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div>
 
 </div>
 
