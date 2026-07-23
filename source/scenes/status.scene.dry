@@ -112,8 +112,6 @@ Inflation: [+ inflation_2 +]%
 
 Economic growth: [+ economic_growth_2 +]%
 
-
-
 # = Public Opinion
 
 @politics
@@ -247,3 +245,7 @@ Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, KPD: [+ rural_k
 Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, DVP: [+ unemployed_dvp_display +]%; DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
 Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+
+@government
+
+@parliament
