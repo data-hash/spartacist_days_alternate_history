@@ -1,0 +1,9 @@
+
+(..5) <span style="color: #8c0900">None</span>
+(5..14.9) <span style="color: #f94700">Almost None</span>
+(14.9..29.9) <span style="color: #ff7300">Very Low</span>
+(29.9..39.9) <span style="color: #cbbb00">Low</span>
+(39.9..54.9) <span style="color: #9cbb00">Some</span>
+(54.9..64.9) <span style="color: #62a300">Lots</span>
+(64.9..74.9) <span style="color: #1ba400">Strong</span>
+(74.9..) <span style="color: #006711">Very Strong</span>

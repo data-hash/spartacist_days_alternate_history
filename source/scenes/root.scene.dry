@@ -123,9 +123,9 @@ Q.z_party_leader = "Marx";
 Q.nsdap_leader = "Hitler";
 
 //party stats
-Q.party_leader1 = "Karl Liebknecht";
-Q.party_leader2 = "Rosa Luxemburg";
-Q.party_leader3 = "Clara Zetkin";
+Q.party_leader = "Karl Liebknecht & Rosa Luxemburg & Clara Zetkin"
+Q.grassroots_support = 60;
+Q.union_support = 25;
 
 Q.karl_rosa_murdered = 0;
 
