@@ -253,11 +253,19 @@ blockquote + blockquote.attribution {
 }
 .tab_button.active {
     background-color: var(--content-bg-color);
+    border-style: inset;
+    border-width: 2px;
+    border-color: var(--unavailable-color);
 }
 .tab_button:hover {
     background-color: var(--tab-hover-color);
 }
-
+#government_tab {
+  width: 49%;
+}
+#parliament_tab {
+  width: 49%;
+}
 
 .overlay {
     background: rgba(0,0,0,0.7);
