@@ -390,10 +390,18 @@ if (d3 && window && Q.started) {
     reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
     reichstag_st.enter.fromCenter(false).smallToBig(false);
     reichstag_st.exit.toCenter(false).bigToSmall(false);
-    d3.select("#reichstag_st")
+
+    var svg = d3.select("#reichstag_st")
         .datum(data)
-        .call(reichstag_st)
-        .attr("viewBox", `0 0 ${width} ${height}`)
+        .call(reichstag_st);
+
+    var bbox = svg.node().getBBox();
+    var padding = 10; // small buffer so seat edges aren't clipped
+
+    svg
+        .attr("viewBox",
+            `${bbox.x - padding} ${bbox.y - padding} ${bbox.width + padding * 2} ${bbox.height + padding * 2}`
+        )
         .attr("preserveAspectRatio", "xMidYMid meet")
         .attr("width", null)
         .attr("height", null)
