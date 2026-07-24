@@ -244,8 +244,8 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 
 <div style="text-align: center;">Minister of Foreign Affairs: <br>[+ foreign_minister +] (<span style="color: var(--foreign_minister_party_color)"><strong>[+ foreign_minister_party +]</strong></span>)</div>
 
-[? if nov_revolution = 0 : Minister of War: <br>[+ reichswehr_minister +] (<span style="color: var(--reichswehr_minister_party_color)"><strong>[+ reichswehr_minister_party +]</strong></span>)</div> ?]
-[? if nov_revolution = 1 : Minister of Reichswehr: <br>[+ reichswehr_minister +] (<span style="color: var(--reichswehr_minister_party_color)"><strong>[+ reichswehr_minister_party +]</strong></span>)</div> ?]
+[? if nov_revolution = 0 : <div style="text-align: center;">Minister of War: <br>[+ reichswehr_minister +] (<span style="color: var(--reichswehr_minister_party_color)"><strong>[+ reichswehr_minister_party +]</strong></span>)</div> ?]
+[? if nov_revolution = 1 : <div style="text-align: center;">Minister of Reichswehr: <br>[+ reichswehr_minister +] (<span style="color: var(--reichswehr_minister_party_color)"><strong>[+ reichswehr_minister_party +]</strong></span>)</div> ?]
 
 <div style="text-align: center;">Minister of Agriculture: <br>[+ agriculture_minister +] (<span style="color: var(--agriculture_minister_party_color)"><strong>[+ agriculture_minister_party +]</strong></span>)</div>
 
