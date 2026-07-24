@@ -430,7 +430,7 @@ if (Q.other_r) {
 
 if (Q.dnvp_r) {
     data.push({
-        "id": "ddp",
+        "id": "dnvp",
         "legend": Q.dnvp_name,
         "name": Q.dnvp_name,
         "seats": Q.dnvp_r*5,
@@ -464,7 +464,7 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'spd': Q.spd_color, 'kpd': Q.kpd_color, 'ddp': Q.ddd_color, 'z': Q.z_color, 'dvp': Q.dvp_color, 'dnvp': Q.dnvp_color, 'nsdap': Q.nsdap_color, 'other': Q.other_color, 'sapd': Q.sapd_color, 'uspd': Q.uspd_color},
+            {'spd': Q.spd_color, 'kpd': Q.kpd_color, 'ddp': Q.ddp_color, 'z': Q.z_color, 'dvp': Q.dvp_color, 'dnvp': Q.dnvp_color, 'nsdap': Q.nsdap_color, 'other': Q.other_color, 'sapd': Q.sapd_color, 'uspd': Q.uspd_color},
             {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': 'Z + BVP', 'dvp': Q.dvp_name, 'dnvp': Q.dnvp_name, 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'uspd': 'USPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);

@@ -271,7 +271,7 @@ Q.nsdap_seats = Math.round(Q.nsdap_r*5);
 !}
 on-display: {!
 
-const data = []
+const data_st = []
 
 if (Q.kpd_formed && Q.kpd_r) {
     data.push({
@@ -356,7 +356,7 @@ if (Q.other_r) {
 
 if (Q.dnvp_r) {
     data.push({
-        "id": "ddp",
+        "id": "dnvp",
         "legend": Q.dnvp_name,
         "name": Q.dnvp_name,
         "seats": Q.dnvp_r*5,
@@ -372,8 +372,11 @@ if (Q.nsdap_formed && Q.nsdap_r) {
     })
 }
 
-if (d3 && window) {
+Q.parliament_diagram = data
+
+if (d3 && window && Q.started) {
     // get screen width
+    var data = Q.parliament_diagram
     var width = 500;
     var height = 500;
     var screenWidth = document.getElementById('qualities').offsetWidth;
@@ -386,7 +389,7 @@ if (d3 && window) {
     reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
     reichstag_st.enter.fromCenter(true).smallToBig(true);
     reichstag_st.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag_st").datum(data_st).call(reichstag_st);
+    d3.select("#reichstag_st").datum(data).call(reichstag_st);
 }
 !}
 
