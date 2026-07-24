@@ -42,6 +42,8 @@ Grassroots support: [+ grassroots_support : support +]
 
 Union backing: [+ union_support : support +]
 
+Union strength: [+ union_strength : strength +]
+
 Annual dues: [+ dues +]
 
 # SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 and burgfrieden == 0 : opposition ?][? if spd_caretaker : caretaker government ?][? if burgfrieden: political truce ?]
