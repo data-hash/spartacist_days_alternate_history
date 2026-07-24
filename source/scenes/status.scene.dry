@@ -268,6 +268,9 @@ Q.dvp_seats = Math.round(Q.dvp_r*5);
 Q.dnvp_seats = Math.round(Q.dnvp_r*5);
 Q.nsdap_seats = Math.round(Q.nsdap_r*5);
 
+!}
+on-display: {!
+
 const data_st = []
 
 if (Q.kpd_formed && Q.kpd_r) {
@@ -397,7 +400,15 @@ if (d3 && window && Q.started) {
 <div style="text-align: center;">**[+ president_reichstag +]** (<span style="color: var(--president_reichstag_color)"><strong>[+ president_reichstag_party +]</strong></span>)</div>
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
 [? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
+<script> console.log("TEST") </script>
+{! <script> console.log("TEST2") </script> !}
+<script>
+    console.log("MULTI LINE TEST")
+</script>
 
+{!<script>
+    console.log("MULTI LINE TEST2")
+</script>!}
 <div style="margin: auto;">{!<svg id="reichstag_st" style="width: 550px; height: 275px;"> </svg>!}</div>
 
 {!<table>!}
