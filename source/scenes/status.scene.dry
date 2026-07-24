@@ -268,10 +268,13 @@ Q.dvp_seats = Math.round(Q.dvp_r*5);
 Q.dnvp_seats = Math.round(Q.dnvp_r*5);
 Q.nsdap_seats = Math.round(Q.nsdap_r*5);
 
+!}
+on-display: {!
+
 const data_st = []
 
 if (Q.kpd_formed && Q.kpd_r) {
-    data.push({
+    data_st.push({
         "id": "kpd",
         "legend": "KPD",
         "name": "KPD",
@@ -280,7 +283,7 @@ if (Q.kpd_formed && Q.kpd_r) {
 }
 
 if (Q.uspd_formed && Q.uspd_r) {
-    data.push({
+    data_st.push({
         "id": "uspd",
         "legend": "USPD",
         "name": "USPD",
@@ -289,7 +292,7 @@ if (Q.uspd_formed && Q.uspd_r) {
 }
 
 if (Q.spd_r) {
-    data.push({
+    data_st.push({
         "id": "spd",
         "legend": "SPD",
         "name": "SPD",
@@ -298,7 +301,7 @@ if (Q.spd_r) {
 }
 
 if (Q.sapd_formed && Q.sapd_r) {
-    data.push({
+    data_st.push({
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
@@ -307,7 +310,7 @@ if (Q.sapd_formed && Q.sapd_r) {
 }
 
 if (Q.ddp_r) {
-    data.push({
+    data_st.push({
         "id": "ddp",
         "legend": Q.ddp_name,
         "name": Q.ddp_name,
@@ -316,7 +319,7 @@ if (Q.ddp_r) {
 }
 
 if (Q.z_r) {
-    data.push({
+    data_st.push({
         "id": "z",
         "legend": "Center",
         "name": "Center",
@@ -325,7 +328,7 @@ if (Q.z_r) {
 }
 
 if (Q.nov_revolution) {
-    data.push({
+    data_st.push({
         "id": "bvp",
         "legend": "BVP",
         "name": "BVP",
@@ -334,7 +337,7 @@ if (Q.nov_revolution) {
 }
 
 if (Q.dvp_r) {
-    data.push({
+    data_st.push({
         "id": "dvp",
         "legend": Q.dvp_name,
         "name": Q.dvp_name,
@@ -343,7 +346,7 @@ if (Q.dvp_r) {
 }
 
 if (Q.other_r) {
-    data.push({
+    data_st.push({
         "id": "other",
         "legend": "Other",
         "name": "Other",
@@ -352,7 +355,7 @@ if (Q.other_r) {
 }
 
 if (Q.dnvp_r) {
-    data.push({
+    data_st.push({
         "id": "dnvp",
         "legend": Q.dnvp_name,
         "name": Q.dnvp_name,
@@ -361,17 +364,13 @@ if (Q.dnvp_r) {
 }
 
 if (Q.nsdap_formed && Q.nsdap_r) {
-    data.push({
+    data_st.push({
         "id": "nsdap",
         "legend": "NSDAP",
         "name": "NSDAP",
         "seats": Q.nsdap_r*5,
     })
 }
-
-Q.parliament_diagram = data_st
-console.log(Q.parliament_diagram)
-console.log(data_st)
 
 if (d3 && window && Q.started) {
     // get screen width
