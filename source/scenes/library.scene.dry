@@ -352,7 +352,7 @@ if (Q.kpd_formed && Q.kpd_r) {
         "id": "kpd",
         "legend": "KPD",
         "name": "KPD",
-        "seats": Q.kpd_r*5,
+        "seats": Q.kpd_r*Q.reichstag_seats,
     })
 }
 
@@ -361,7 +361,7 @@ if (Q.uspd_formed && Q.uspd_r) {
         "id": "uspd",
         "legend": "USPD",
         "name": "USPD",
-        "seats": Q.uspd_r*5,
+        "seats": Q.uspd_r*Q.reichstag_seats,
     })
 }
 
@@ -370,7 +370,7 @@ if (Q.spd_r) {
         "id": "spd",
         "legend": "SPD",
         "name": "SPD",
-        "seats": Q.spd_r*5,
+        "seats": Q.spd_r*Q.reichstag_seats,
     })
 }
 
@@ -379,7 +379,7 @@ if (Q.sapd_formed && Q.sapd_r) {
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
-            "seats": Math.round(Q.sapd_r*5),
+            "seats": Math.round(Q.sapd_r*Q.reichstag_seats),
             });
 }
 
@@ -388,7 +388,7 @@ if (Q.ddp_r) {
         "id": "ddp",
         "legend": Q.ddp_name,
         "name": Q.ddp_name,
-        "seats": Q.ddp_r*5,
+        "seats": Q.ddp_r*Q.reichstag_seats,
     })
 }
 
@@ -397,7 +397,7 @@ if (Q.z_r) {
         "id": "z",
         "legend": "Center",
         "name": "Center",
-        "seats": Q.z_r*5,
+        "seats": Q.z_r*Q.reichstag_seats,
     })
 }
 
@@ -406,7 +406,7 @@ if (Q.nov_revolution) {
         "id": "bvp",
         "legend": "BVP",
         "name": "BVP",
-        "seats": Q.bvp_r*5,
+        "seats": Q.bvp_r*Q.reichstag_seats,
     })
 }
 
@@ -415,7 +415,7 @@ if (Q.dvp_r) {
         "id": "dvp",
         "legend": Q.dvp_name,
         "name": Q.dvp_name,
-        "seats": Q.dvp_r*5,
+        "seats": Q.dvp_r*Q.reichstag_seats,
     })
 }
 
@@ -424,7 +424,7 @@ if (Q.other_r) {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Q.other_r*5,
+        "seats": Q.other_r*Q.reichstag_seats,
     })
 }
 
@@ -433,7 +433,7 @@ if (Q.dnvp_r) {
         "id": "dnvp",
         "legend": Q.dnvp_name,
         "name": Q.dnvp_name,
-        "seats": Q.dnvp_r*5,
+        "seats": Q.dnvp_r*Q.reichstag_seats,
     })
 }
 
@@ -442,7 +442,7 @@ if (Q.nsdap_formed && Q.nsdap_r) {
         "id": "nsdap",
         "legend": "NSDAP",
         "name": "NSDAP",
-        "seats": Q.nsdap_r*5,
+        "seats": Q.nsdap_r*Q.reichstag_seats,
     })
 }
 

@@ -359,6 +359,8 @@ Q.dnvp_r = 8;
 Q.nsdap_r = 0;
 Q.other_r = 16;
 
+Q.reichstag_seats = 4;
+
 // party colors
 Q.spd_color = "#E3000F";
 Q.uspd_color = "#DA0903";
