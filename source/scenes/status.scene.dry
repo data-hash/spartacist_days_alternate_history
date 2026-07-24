@@ -271,6 +271,8 @@ Q.nsdap_seats = Math.round(Q.nsdap_r*5);
 !}
 on-display: {!
     data = Q.parliament_data;
+    console.log(data)
+    console.log(Q.parliament_data)
     if (d3 && window && Q.started) {
         var data = Q.parliament_data;
         var screenWidth = document.getElementById('qualities').offsetWidth;
@@ -291,7 +293,7 @@ on-display: {!
     }
 !}
 
-<h1><strong>Reichstag</strong></h1>
+<h1>Parliament</h1>
 
 <hr>
 
@@ -332,4 +334,4 @@ on-display: {!
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
-<span style="text-align: center;">Next election: [+ next_election_month : month +] [+ next_election_year +]</span>
+<div style="text-align: center;"><span>Next election: [+ next_election_month : month +] [+ next_election_year +]</span></div>
