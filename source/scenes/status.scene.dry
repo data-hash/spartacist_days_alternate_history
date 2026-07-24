@@ -377,7 +377,6 @@ Q.parliament_diagram = data_st
 if (d3 && window && Q.started) {
     // get screen width
     var data = Q.parliament_diagram
-    console.log(data)
     var width = 500;
     var height = 500;
     var screenWidth = document.getElementById('qualities').offsetWidth;
@@ -403,7 +402,7 @@ if (d3 && window && Q.started) {
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
 [? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
 
-<div style="margin: auto;">{!<svg id="reichstag_st" style="width: 550px; height: 275px;"> </svg>!}</div>
+<div style="display: flex;">{!<svg id="reichstag_st" style="flex: 1;"> </svg>!}</div>
 
 {!<table>!}
 {!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
