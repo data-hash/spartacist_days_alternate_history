@@ -350,28 +350,26 @@ data = data.concat([
 
 Q.parliament_data = data
 
-!}
-on-display: {!
-    data = Q.parliament_data;
-    console.log(data)
-    console.log(Q.parliament_data)
-    if (d3 && window && Q.started) {
-        var data = Q.parliament_data;
-        var screenWidth = document.getElementById('qualities').offsetWidth;
+data = Q.parliament_data;
+console.log(data)
+console.log(Q.parliament_data)
+if (d3 && window && Q.started) {
+    var data = Q.parliament_data;
+    var screenWidth = document.getElementById('qualities').offsetWidth;
 
-        var width = Math.max(Math.min(screenWidth, 250), 120);
-        var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
-        var height = width * heightRatio;
+    var width = Math.max(Math.min(screenWidth, 250), 120);
+    var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+    var height = width * heightRatio;
 
-        const reichstag = document.getElementById("#reichstag_st");
-        reichstag.style.height = height + "px";
+    const parliament = document.getElementById("#reichstag");
+    parliament.style.height = height + "px";
 
-        var reichstag_st = d3.parliament();
-        reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
-        reichstag_st.innerRadiusCoef(0.4)
-        reichstag_st.enter.fromCenter(true).smallToBig(true)
-        reichstag_st.exit.toCenter(false).bigToSmall(true);
-        d3.select("#reichstag_st").datum(data).call(reichstag_st);
+    var reichstag_st = d3.parliament();
+    reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
+    reichstag_st.innerRadiusCoef(0.4)
+    reichstag_st.enter.fromCenter(true).smallToBig(true)
+    reichstag_st.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(reichstag_st);
     }
 !}
 
@@ -384,7 +382,7 @@ on-display: {!
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
 [? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
 
-<div style="margin: auto;">{!<svg id="reichstag_st" style="width: 550px; height: 275px;"> </svg>!}</div>
+<div style="margin: auto;">{!<svg id="reichstag" style="width: 550px; height: 275px;"> </svg>!}</div>
 
 {!<table>!}
 {!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
