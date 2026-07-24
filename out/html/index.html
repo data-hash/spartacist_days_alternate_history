@@ -6,7 +6,7 @@
     <meta prefix="ifiction: http://babel.ifarchive.org/protocol/iFiction/"
         property="ifiction:ifid" content="55F4A6A9-848E-43FF-8467-5B89CC795AAA">
     <title>Spartacist Days: An Alternate History - data-hash</title>
-    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" sizes="any">
     <link rel="stylesheet" type="text/css" href="game.css">
     <script src="jquery-1.11.1.min.js"></script>
     <script src="d3.v7.min.js"></script>
@@ -309,12 +309,17 @@
             <div id="tools_wrapper">
                 <div id='stats_sidebar' class='tools left'>
                     <div class="tab_container">
-                        <button class="tab_button active" id="main_tab" onclick="window.changeTab('status', 'main_tab');">Party</button>
-                        <button class="tab_button" id="politics_tab" onclick="window.changeTab('status.politics', 'politics_tab');">Politics</button>
-                        <button class="tab_button" id="paramilitary_tab" onclick="window.changeTab('status.paramilitaries', 'paramilitary_tab');">Defense</button>
-                        <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Polls</button>
-                        <button class="tab_button" id="government_tab" onclick="window.changeTab('status.government', 'government_tab');">Government</button>
-                        <button class="tab_button" id="parliament_tab" onclick="window.changeTab('status.parliament', 'parliament_tab');">Parliament</button>
+                        <div style="display:flex; width:100%;">
+                            <button class="tab_button active" id="main_tab" onclick="window.changeTab('status', 'main_tab');">Party</button>
+                            <button class="tab_button" id="politics_tab" onclick="window.changeTab('status.politics', 'politics_tab');">Politics</button>
+                            <button class="tab_button" id="paramilitary_tab" onclick="window.changeTab('status.paramilitaries', 'paramilitary_tab');">Defense</button>
+                            <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Polls</button>
+                        </div>
+                        <div style="display: flex; width: 100%;">
+                            <button class="tab_button" style="flex:1;" id="government_tab" onclick="window.changeTab('status.government', 'government_tab');">Government</button>
+                            <button class="tab_button" style="flex:1;" id="parliament_tab" onclick="window.changeTab('status.parliament', 'parliament_tab');">Parliament</button>
+                            <button class="tab_button" style="flex:1;" id="map_tab" onclick="window.changeTab('status.map', 'map_tab');">Map</button>
+                        </div>
                     </div>
                     <div id="qualities">
                     </div>
