@@ -488,8 +488,6 @@ go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0
 
 = [+ month : month +] [+ year +]
 
-<hr>
-
 @events_choice
 
 - #event

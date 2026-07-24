@@ -115,21 +115,21 @@ Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
 
 // parties
-Q.spd_leader = "Bebel & Haase";
+Q.spd_leader = "August Bebel & Hugo Haase";
 Q.spd_ideology = "Reformist Socialism";
-Q.uspd_leader = "Haase";
-Q.uspd_ideology = "	Centrist Marxism";
-Q.dnvp_leader = "Heydebrand";
+Q.uspd_leader = "Wilhelm Dittman & Hugo Haase";
+Q.uspd_ideology = "Centrist Marxism";
+Q.dnvp_leader = "Ernst von Heydebrand";
 Q.dnvp_ideology = "Conservative Nationalism";
-Q.dvp_leader = "Bassermann";
+Q.dvp_leader = "Ernst Bassermann";
 Q.dvp_ideology = "National Liberalism";
-Q.ddp_leader = "Fischbeck";
+Q.ddp_leader = "Otto Fischbeck";
 Q.ddp_ideology = "Social Liberalism";
-Q.kpd_leader = "Liebknecht & Luxemburg";
+Q.kpd_leader = "Karl Liebknecht & Rosa Luxemburg";
 Q.kpd_party_leader = "Thälmann";
 Q.kpd_ideology = "Communism";
 // alternative is the Conciliators as party leader
-Q.z_leader = "Hertling";
+Q.z_leader = "Georg von Hertling";
 Q.z_ideology = "Christian Democracy";
 Q.bvp_leader = "Heim";
 Q.bvp_ideology = "Catholic Conservatism";
