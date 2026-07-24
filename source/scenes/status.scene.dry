@@ -271,7 +271,7 @@ Q.nsdap_seats = Math.round(Q.nsdap_r*5);
 !}
 on-display: {!
 
-data = [
+let data_st = [
     {
         "id": "spd",
         "legend": "SPD",
@@ -365,7 +365,7 @@ if (d3 && window) {
     reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
     reichstag_st.enter.fromCenter(true).smallToBig(true);
     reichstag_st.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag_st").datum(data).call(reichstag_st);
+    d3.select("#reichstag_st").datum(data_st).call(reichstag_st);
 }
 !}
 
