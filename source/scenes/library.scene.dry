@@ -446,8 +446,6 @@ if (Q.nsdap_formed && Q.nsdap_r) {
     })
 }
 
-console.log(data)
-
 if (d3 && window) {
     // get screen width
     var width = 500;
