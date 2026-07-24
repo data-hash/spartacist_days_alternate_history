@@ -349,31 +349,30 @@ data = data.concat([
 ]);
 
 Q.parliament_data = data
-
+!}
+on-display: {!
 data = Q.parliament_data;
-console.log(data)
-console.log(Q.parliament_data)
 if (d3 && window && Q.started) {
     var data = Q.parliament_data;
     var screenWidth = document.getElementById('qualities').offsetWidth;
 
-    var width = Math.max(Math.min(screenWidth, 250), 120);
+    var width = Math.max(Math.min(screenWidth , 250), 120);
     var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
     var height = width * heightRatio;
 
-    const parliament = document.getElementById("#reichstag");
-    parliament.style.height = height + "px";
+    document.getElementById("reichstag").style.height = height + "px";
 
     var reichstag_st = d3.parliament();
-    reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
+    reichstag_st.width(width)
+    reichstag_st.height(height)
     reichstag_st.innerRadiusCoef(0.4)
-    reichstag_st.enter.fromCenter(true).smallToBig(true)
-    reichstag_st.exit.toCenter(false).bigToSmall(true);
+    reichstag_st.enter.fromCenter(false).smallToBig(false)
+    reichstag_st.exit.toCenter(false).bigToSmall(false);
     d3.select("#reichstag").datum(data).call(reichstag_st);
-    }
+}
 !}
 
-<h1>Parliament</h1>
+<h1>Reichstag</h1>
 
 <hr>
 
