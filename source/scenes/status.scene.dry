@@ -373,10 +373,13 @@ if (Q.nsdap_formed && Q.nsdap_r) {
 }
 
 Q.parliament_diagram = data_st
+console.log(Q.parliament_diagram)
+console.log(data_st)
 
 if (d3 && window && Q.started) {
     // get screen width
     var data = Q.parliament_diagram
+    console.log(data)
     var width = 500;
     var height = 500;
     var screenWidth = document.getElementById('qualities').offsetWidth;
