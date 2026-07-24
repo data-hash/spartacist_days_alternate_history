@@ -345,7 +345,7 @@ title: Figures and Charts
 go-to: menu
 on-arrival: z_minus_bvp_r = z_r - 3;
 on-display: {!
-data = [
+let data = [
     {
         "id": "spd",
         "legend": "SPD",
