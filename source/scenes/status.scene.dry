@@ -279,15 +279,14 @@ on-display: {!
         var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
         var height = width * heightRatio;
 
-        const reichstag = document.getElementById("reichstag_st");
+        const reichstag = document.getElementById("#reichstag_st");
         reichstag.style.height = height + "px";
 
         var reichstag_st = d3.parliament();
-        reichstag_st.width(width)
-        reichstag_st.height(height)
+        reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
         reichstag_st.innerRadiusCoef(0.4)
-        reichstag_st.enter.fromCenter(false).smallToBig(false)
-        reichstag_st.exit.toCenter(false).bigToSmall(false);
+        reichstag_st.enter.fromCenter(true).smallToBig(true)
+        reichstag_st.exit.toCenter(false).bigToSmall(true);
         d3.select("#reichstag_st").datum(data).call(reichstag_st);
     }
 !}
