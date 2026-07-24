@@ -221,6 +221,7 @@ Q.presidential_powers = 0;
 Q.constitutional_protection = 0;
 Q.kpd_banned = 0;
 Q.nsdap_banned = 0;
+Q.interim_government = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
@@ -350,6 +351,7 @@ Q.catholics_other = 12;
 Q.spd_r = 34;
 Q.kpd_r = 0;
 Q.z_r = 16;
+Q.bvp_r = 0;
 Q.ddp_r = 12;
 Q.dvp_r = 14;
 Q.dnvp_r = 8;
@@ -410,6 +412,8 @@ Q.economic_records = [];
 // State of the government
 Q.president = "Wilhelm II";
 Q.president_party = 'I';
+Q.president_reichstag = "Johannes Kaempf";
+Q.president_reichstag_party = "ddp";
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Hollweg";
 Q.chancellor_party = 'I';
@@ -660,6 +664,89 @@ Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
 
 Q.unavailable = 0; // Unavailable always set to 0, to make text unavailable check if it's greater than 0
+
+data = [
+    {
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(Q.spd_r*5),
+    }];
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+            "id": "sapd",
+            "legend": "SAPD",
+            "name": "SAPD",
+            "seats": Math.round(Q.sapd_r*5),
+            });
+}
+if (Q.nsdap_formed && Q.nsdap_r) {
+    data.push({
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_r*5),
+    })
+}
+if (Q.kpd_formed && Q.kpd_r) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Math.round(Q.kpd_r*5),
+    })
+}
+if (Q.uspd_formed && Q.uspd_r) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r*5),
+    })
+}
+if (Q.nov_revolution == 1) {
+    data.push({
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": Math.round(Q.bvp_r*5),
+    })
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_r*5),
+    },
+    {
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.z_r*5),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_r*5),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r*5),
+    },
+    {
+        "id": "dnvp",
+        "legend": Q.dnvp_name,
+        "name": Q.dnvp_name,
+        "seats": Math.round(Q.dnvp_r*5),
+    },
+]);
+
+Q.parliament_data = data
+
 !}
 set-bg: img/map_2.jpg
 new-page: true

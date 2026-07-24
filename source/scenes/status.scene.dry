@@ -252,8 +252,52 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 <div style="text-align: center;">Minister of Agriculture: <br>[+ agriculture_minister +] (<span style="color: var(--agriculture_minister_party_color)"><strong>[+ agriculture_minister_party +]</strong></span>)</div>
 
 @parliament
+on-arrival: {!
 
-= Reichstag composition
+Q.spd_seats = Math.round(Q.spd_r*5);
+Q.uspd_seats = Math.round(Q.uspd_r*5);
+Q.sapd_seats = Math.round(Q.sapd_r*5);
+Q.kpd_seats = Math.round(Q.kpd_r*5);
+Q.z_seats = Math.round(Q.z_r*5);
+Q.bvp_seats = Math.round(Q.bvp_r*5);
+Q.ddp_seats = Math.round(Q.ddp_r*5);
+Q.dvp_seats = Math.round(Q.dvp_r*5);
+Q.dnvp_seats = Math.round(Q.dnvp_r*5);
+Q.nsdap_seats = Math.round(Q.nsdap_r*5);
+
+!}
+on-display: {!
+    data = Q.parliament_data;
+    if (d3 && window && Q.started) {
+        var data = Q.parliament_data;
+        var screenWidth = document.getElementById('qualities').offsetWidth;
+
+        var width = Math.max(Math.min(screenWidth, 250), 120);
+        var heightRatio = screenWidth < 350 ? 0.5 : 0.6;
+        var height = width * heightRatio;
+
+        const reichstag = document.getElementById("reichstag_st");
+        reichstag.style.height = height + "px";
+
+        var reichstag_st = d3.parliament();
+        reichstag_st.width(width)
+        reichstag_st.height(height)
+        reichstag_st.innerRadiusCoef(0.4)
+        reichstag_st.enter.fromCenter(false).smallToBig(false)
+        reichstag_st.exit.toCenter(false).bigToSmall(false);
+        d3.select("#reichstag_st").datum(data).call(reichstag_st);
+    }
+!}
+
+= Reichstag
+
+[? if president_reichstag == "Johannes Kaempf" : <div><img src="img/portraits/Johannes_Kaempf.jpg" alt="Johannes Kaempf" style="width: 50%;display: block;margin: auto;margin-top: 5px;margin-bottom: 5px;border: 5px solid var(--card-border-color);"></div> ?]
+<div style="text-align: center;">**[+ president_reichstag +]** (<span style="color: var(--president_reichstag_color)"><strong>[+ president_reichstag_party +]</strong></span>)
+[? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
+[? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
+
+<div style="display: flex; width: 100%;">{!<svg id="reichstag_st" style="flex: 1;"> </svg>!}</div>
+
 
 # 1928: 30, 1930: 25, 1932: 22
 <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>: [+ spd_r +]%
