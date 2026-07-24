@@ -310,7 +310,7 @@ if (Q.uspd_formed && Q.uspd_r) {
         "seats": Math.round(Q.uspd_r*5),
     })
 }
-if (Q.nov_revolution == 1) {
+if (Q.nov_revolution) {
     data.push({
         "id": "bvp",
         "legend": "BVP",
@@ -359,13 +359,13 @@ if (d3 && window) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        document.getElementById("reichstag_st").style.height = screenWidth/2 + "px";
     }
-    var parliament = d3.parliament();
-    parliament.width(width).height(height).innerRadiusCoef(0.4);
-    parliament.enter.fromCenter(true).smallToBig(true);
-    parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    var reichstag_st = d3.parliament();
+    reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
+    reichstag_st.enter.fromCenter(true).smallToBig(true);
+    reichstag_st.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(reichstag_st);
 }
 !}
 
@@ -378,7 +378,7 @@ if (d3 && window) {
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
 [? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
 
-<div style="margin: auto;">{!<svg id="reichstag" style="width: 550px; height: 275px;"> </svg>!}</div>
+<div style="margin: auto;">{!<svg id="reichstag_st" style="width: 550px; height: 275px;"> </svg>!}</div>
 
 {!<table>!}
 {!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
