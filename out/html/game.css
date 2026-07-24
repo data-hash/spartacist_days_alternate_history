@@ -213,7 +213,7 @@ blockquote + blockquote.attribution {
 .tools {
   margin-left: -4em;
   padding: 0.6em;
-  width: 18rem;
+  width: 16rem;
   color: var(--text-color);
   background-color: var(--content-bg-color);
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
@@ -253,6 +253,7 @@ blockquote + blockquote.attribution {
     margin-top: -0.6em;
     margin-left: -0.6em;
     margin-right: -0.6em;
+    justify-content: center;
 }
 .tab_button {
     font-family: "Minion Pro", Georgia, serif;
@@ -268,6 +269,18 @@ blockquote + blockquote.attribution {
 }
 .tab_button:hover {
     background-color: var(--tab-hover-color);
+}
+#main_tab {
+  width: 25%;
+}
+#politics_tab {
+  width: 25%;
+}
+#poll_tab {
+  width: 25%;
+}
+#paramilitary_tab {
+  width: 25%;
 }
 #government_tab {
   width: 49%;
