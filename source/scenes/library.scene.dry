@@ -345,6 +345,96 @@ title: Figures and Charts
 go-to: menu
 on-arrival: z_minus_bvp_r = z_r - 3;
 on-display: {!
+const data = []
+
+if (Q.spd_r) {
+    data.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Q.spd_r*5,
+    })
+}
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+            "id": "sapd",
+            "legend": "SAPD",
+            "name": "SAPD",
+            "seats": Math.round(Q.sapd_r*5),
+            });
+}
+if (Q.nsdap_formed && Q.nsdap_r) {
+    data.push({
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Q.nsdap_r*5,
+    })
+}
+if (Q.kpd_formed && Q.kpd_r) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Q.kpd_r*5,
+    })
+}
+if (Q.uspd_formed && Q.uspd_r) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Q.uspd_r*5,
+    })
+}
+if (Q.nov_revolution) {
+    data.push({
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": Q.bvp_r*5,
+    })
+}
+if (Q.ddp_r) {
+    data.push({
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Q.ddp_r*5,
+    })
+}
+if (Q.dvp_r) {
+    data.push({
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Q.dvp_r*5,
+    })
+}
+if (Q.dnvp_r) {
+    data.push({
+        "id": "ddp",
+        "legend": Q.dnvp_name,
+        "name": Q.dnvp_name,
+        "seats": Q.dnvp_r*5,
+    })
+}
+if (Q.z_r) {
+    data.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Q.z_r*5,
+    })
+}
+if (Q.other_r) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Q.other_r*5,
+    })
+}
 
 if (d3 && window) {
     // get screen width
