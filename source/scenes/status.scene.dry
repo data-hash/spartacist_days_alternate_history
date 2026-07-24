@@ -83,10 +83,10 @@ Economic growth: [+ economic_growth_2 +]%
 [? if uspd_formed = 1 and year < 1922 : <span class="tooltip-text" data-tooltip="Majority Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>MSPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
 [? if year > 1922 : <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
 
-{!<span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!} <br>Leader: [+ z_leader +] <br>Ideology: [+ z_ideology +] <br>Relations: [+ z_relation : relationships +]
-
 [? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span> <br>Leader: [+ ddp_leader +] <br>Ideology: [+ ddp_ideology +] <br>Relations: [+ ddp_relation : relationships +] ?]
 [? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span> <br>Leader: [+ ddp_leader +] <br>Ideology: [+ ddp_ideology +] <br>Relations: [+ ddp_relation : relationships +] ?]
+
+{!<span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!} <br>Leader: [+ z_leader +] <br>Ideology: [+ z_ideology +] <br>Relations: [+ z_relation : relationships +]
 
 [? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span> <br>Leader: [+ dvp_leader +] <br>Ideology: [+ dvp_ideology +] <br>Relations: [+ dvp_relation : relationships +] ?]
 [? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>Leader: [+ dvp_leader +] <br>Ideology: [+ dvp_ideology +] <br>Relations: [+ dvp_relation : relationships +] ?]
