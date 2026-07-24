@@ -402,7 +402,7 @@ if (d3 && window && Q.started) {
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
 [? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
 
-<div style="display: flex; justify-content: center;">{!<svg id="reichstag_st" style="flex: 1;"> </svg>!}</div>
+<div style="display: flex; align-items: center; width: 100%;">{!<svg id="reichstag_st" style="width: 550px; height: 275px;"> </svg>!}</div>
 
 {!<table>!}
 {!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}

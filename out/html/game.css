@@ -665,3 +665,8 @@ table {
 .tooltip-text:hover {
   text-decoration: underline;
 }
+
+#reichstag_st{
+  margin: 0 auto;
+  display: block;
+}
