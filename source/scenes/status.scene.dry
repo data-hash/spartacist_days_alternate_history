@@ -61,57 +61,59 @@ Economic growth: [+ economic_growth_2 +]%
 
 # = Public Opinion
 
+[? if kpd_formed = 1 and kpd_merge = 1 : <h1>Internal Factions of the <span style="color: var(--kpd_color)"><strong>KPD</span></strong></h1> ?]
+
+[? if kpd_formed = 1 and kpd_merge = 1 : <span class="tooltip-text" data-tooltip="The Left wants to follow in the footsteps of the Bolsheviks, and seize power through revolution.">Left</span> strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +] ?]
+
+[? if kpd_formed = 1 and kpd_merge = 1 : <span class="tooltip-text" data-tooltip="The Center oppose the war, and wish to pursue an immediate peace.">Center</span> strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
+
+[? if kpd_formed = 1 and kpd_merge = 1 : <span class="tooltip-text" data-tooltip="The Right (MSPD) support the war, however would like for it to end sooner rather than later.">Right</span> strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
+
+[? if kpd_formed = 1 and kpd_merge = 1 : [? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?] ?]
+
 @politics
 
-= Inter-party Relations
+= Inter-party Politics
 
-<span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>: [+ spd_relation : relationships +]
+[? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span> <br>Leader: [+ kpd_leader +] <br>Ideology: [+ kpd_ideology +]?]
 
-{!<span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!}: [+ z_relation : relationships +]
+[? if uspd_formed = 1 : <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color);"><strong>USPD</strong></span> <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +]?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_relation : relationships +]?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_relation : relationships +]?]
+[? if uspd_formed = 0 : <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] ?]
+[? if uspd_formed = 1 and year < 1922 : <span class="tooltip-text" data-tooltip="Majority Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>MSPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
+[? if year > 1922 : <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span>: [+ dvp_relation : relationships +]?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>: [+ dvp_relation : relationships +]?]
+{!<span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!} <br>Leader: [+ z_leader +] <br>Ideology: [+ z_ideology +] <br>Relations: [+ z_relation : relationships +]
 
-[? if kpd_formed: <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span>: [+ kpd_relation : relationships +]?]
+[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span> <br>Leader: [+ ddp_leader +] <br>Ideology: [+ ddp_ideology +] <br>Relations: [+ ddp_relation : relationships +] ?]
+[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span> <br>Leader: [+ ddp_leader +] <br>Ideology: [+ ddp_ideology +] <br>Relations: [+ ddp_relation : relationships +] ?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span>: [+ dnvp_relation : relationships +]?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_relation : relationships +]?]
+[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span> <br>Leader: [+ dvp_leader +] <br>Ideology: [+ dvp_ideology +] <br>Relations: [+ dvp_relation : relationships +] ?]
+[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>Leader: [+ dvp_leader +] <br>Ideology: [+ dvp_ideology +] <br>Relations: [+ dvp_relation : relationships +] ?]
 
-[? if nsdap_formed: <span class="tooltip-text" data-tooltip="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span>: [+ nsdap_relation : relationships +]?]
+[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span> <br>Leader: [+ dnvp_leader +] <br>Ideology: [+ dnvp_ideology +] <br>Relations: [+ dnvp_relation : relationships +] ?]
+[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span> <br>Leader: [+ dnvp_leader +] <br>Ideology: [+ dnvp_ideology +] <br>Relations: [+ dnvp_relation : relationships +] ?]
 
-= Internal Factions of the SPD
+[? if nsdap_formed: <span class="tooltip-text" data-tooltip="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span> <br>Leader: [+ nsdap_leader +] <br>Ideology: [+ nsdap_ideology +] <br>Relations: [+ nsdap_relation : relationships +] ?]
 
-<span class="tooltip-text" data-tooltip="The Left (Spartacus League) oppose the war and pursue peace & revolution.">Left</span> strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+# = Party Leadership
 
-<span class="tooltip-text" data-tooltip="The Center oppose the war, and wish to pursue an immediate peace.">Center</span> strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+# <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>: [+ spd_ideology +] ([+ spd_leader +])
 
-<span class="tooltip-text" data-tooltip="The Right (MSPD) support the war, however would like for it to end sooner rather than later.">Right</span> strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+# [? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_ideology +] ([+ ddp_leader +]) ?]
+# [? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_ideology +] ([+ ddp_leader +]) ?]
 
-[? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
+# [? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span>: [+ dvp_ideology +] ([+ dvp_leader +]) ?]
+# [? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>: [+ dvp_ideology +] ([+ dvp_leader +]) ?]
 
-= Party Leadership
+# {!<span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!}: [+ spd_ideology +] ([+ spd_leader +])
 
-<span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>: [+ spd_ideology +] ([+ spd_leader +])
+# [? if nov_revolution = 1 : {!<span class="tooltip-text" data-tooltip="Bavarian People's Party" style="color: var(--bvp_color);"><strong>BVP</strong></span>!}: [+ bvp_ideology +] ([+ bvp_leader +]) ?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_ideology +] ([+ ddp_leader +]) ?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_ideology +] ([+ ddp_leader +]) ?]
+# [? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span>: [+ dnvp_ideology +] ([+ dnvp_leader +]) ?]
+# [? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_ideology +] ([+ dnvp_leader +]) ?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span>: [+ dvp_ideology +] ([+ dvp_leader +]) ?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>: [+ dvp_ideology +] ([+ dvp_leader +]) ?]
-
-{!<span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!}: [+ spd_ideology +] ([+ spd_leader +])
-
-[? if nov_revolution = 1 : {!<span class="tooltip-text" data-tooltip="Bavarian People's Party" style="color: var(--bvp_color);"><strong>BVP</strong></span>!}: [+ bvp_ideology +] ([+ bvp_leader +]) ?]
-
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span>: [+ dnvp_ideology +] ([+ dnvp_leader +]) ?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_ideology +] ([+ dnvp_leader +]) ?]
-
-[? if nsdap_formed: <span class="tooltip-text" data-tooltip="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span>: [+ spd_ideology +] ([+ spd_leader +]) ?]
-
-
+# [? if nsdap_formed: <span class="tooltip-text" data-tooltip="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span>: [+ spd_ideology +] ([+ spd_leader +]) ?]
 
 @paramilitaries
 on-arrival: {!
@@ -232,7 +234,7 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 
 <div style="text-align: center;">Vice-chancellor: <br>[+ vice_chancellor +] (<span style="color: var(--vice_chancellor_party_color)"><strong>[+ vice_chancellor_party +]</span></strong>)</div>
 
-<div style="text-align: center;">Minister of Labor: <br>[+ labor_minister +] (<span style="color: var(--labor_minister_party_color)"><strong>[+ labor_minister_party +]</strong></span>)</div>
+[? if month = 2 and year = 1919 : <div style="text-align: center;">Minister of Labor: <br>[+ labor_minister +] (<span style="color: var(--labor_minister_party_color)"><strong>[+ labor_minister_party +]</strong></span>)</div> ?]
 
 <div style="text-align: center;">Minister of the Interior: <br>[+ interior_minister +] (<span style="color: var(--interior_minister_party_color)"><strong>[+ interior_minister_party +]</strong></span>)</div>
 

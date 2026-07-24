@@ -117,6 +117,8 @@ Q.NSDAP_relation = 0;
 // parties
 Q.spd_leader = "Bebel & Haase";
 Q.spd_ideology = "Reformist Socialism";
+Q.uspd_leader = "Haase";
+Q.uspd_ideology = "	Centrist Marxism";
 Q.dnvp_leader = "Heydebrand";
 Q.dnvp_ideology = "Conservative Nationalism";
 Q.dvp_leader = "Bassermann";
@@ -125,6 +127,7 @@ Q.ddp_leader = "Fischbeck";
 Q.ddp_ideology = "Social Liberalism";
 Q.kpd_leader = "Liebknecht & Luxemburg";
 Q.kpd_party_leader = "Thälmann";
+Q.kpd_ideology = "Communism"
 // alternative is the Conciliators as party leader
 Q.z_leader = "Hertling";
 Q.z_ideology = "Christian Democracy";
@@ -464,7 +467,7 @@ Q.justice_minister = 'Lisco';
 Q.justice_minister_party = 'I';
 Q.labor_minister = 'None';
 Q.labor_minister_party = 'I';
-Q.reichswehr_minister = 'None';
+Q.reichswehr_minister = 'Stein';
 Q.reichswehr_minister_party = 'I';
 Q.economic_minister = 'None';
 Q.economic_minister_party = 'I';
