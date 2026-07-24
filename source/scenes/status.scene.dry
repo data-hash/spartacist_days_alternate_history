@@ -415,7 +415,7 @@ if (d3 && window && Q.started) {
 
 <div style="display: flex; justify-content: center; align-items: center; width: 100%;">{!<svg id="reichstag_st"> </svg>!}</div>
 
-{!<table style="table-layout: auto; width: 100%;">!}
+{!<table style="margin: 0 auto; table-layout: auto; width: auto;">!}
 {!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
 # [? if kpd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--kpd_color); outline: 2px; outline-style: solid;'> </div> !} <strong>KPD:<strong> {!</td><td>!} <strong>[+ kpd_seats +]</strong> <strong>([+ kpd_r +]%)</strong> {!</td><td>!} [? if kpd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if kpd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
