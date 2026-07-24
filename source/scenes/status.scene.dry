@@ -374,6 +374,11 @@ Q.parliament_diagram = data_st
 !}
 on-display: {!
 data = Q.parliament_diagram
+console.log(data)
+console.log(Q.parliament_diagram)
+console.log(d3)
+console.log(window)
+console.log(Q.started)
 if (d3 && window && Q.started) {
     // get screen width
     var data = Q.parliament_diagram
