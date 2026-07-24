@@ -400,15 +400,129 @@ if (d3 && window && Q.started) {
 <div style="text-align: center;">**[+ president_reichstag +]** (<span style="color: var(--president_reichstag_color)"><strong>[+ president_reichstag_party +]</strong></span>)</div>
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
 [? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
-<script> console.log("TEST") </script>
-{! <script> console.log("TEST2") </script> !}
-<script>
-    console.log("MULTI LINE TEST")
-</script>
 
-{!<script>
-    console.log("MULTI LINE TEST2")
-</script>!}
+{! <script>
+const data_st = []
+
+if (Q.kpd_formed && Q.kpd_r) {
+    data_st.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Q.kpd_r*5,
+    })
+}
+
+if (Q.uspd_formed && Q.uspd_r) {
+    data_st.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Q.uspd_r*5,
+    })
+}
+
+if (Q.spd_r) {
+    data_st.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Q.spd_r*5,
+    })
+}
+
+if (Q.sapd_formed && Q.sapd_r) {
+    data_st.push({
+            "id": "sapd",
+            "legend": "SAPD",
+            "name": "SAPD",
+            "seats": Math.round(Q.sapd_r*5),
+            });
+}
+
+if (Q.ddp_r) {
+    data_st.push({
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Q.ddp_r*5,
+    })
+}
+
+if (Q.z_r) {
+    data_st.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Q.z_r*5,
+    })
+}
+
+if (Q.nov_revolution) {
+    data_st.push({
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": Q.bvp_r*5,
+    })
+}
+
+if (Q.dvp_r) {
+    data_st.push({
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Q.dvp_r*5,
+    })
+}
+
+if (Q.other_r) {
+    data_st.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Q.other_r*5,
+    })
+}
+
+if (Q.dnvp_r) {
+    data_st.push({
+        "id": "dnvp",
+        "legend": Q.dnvp_name,
+        "name": Q.dnvp_name,
+        "seats": Q.dnvp_r*5,
+    })
+}
+
+if (Q.nsdap_formed && Q.nsdap_r) {
+    data_st.push({
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Q.nsdap_r*5,
+    })
+}
+
+if (d3 && window && Q.started) {
+    // get screen width
+    var data = Q.parliament_diagram
+    console.log(data)
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('qualities').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("reichstag_st").style.height = screenWidth/2 + "px";
+    }
+    var reichstag_st = d3.parliament();
+    reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
+    reichstag_st.enter.fromCenter(true).smallToBig(true);
+    reichstag_st.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag_st").datum(data).call(reichstag_st);
+}
+</script> !}
+
 <div style="margin: auto;">{!<svg id="reichstag_st" style="width: 550px; height: 275px;"> </svg>!}</div>
 
 {!<table>!}
