@@ -271,7 +271,7 @@ Q.nsdap_seats = Math.round(Q.nsdap_r*5);
 !}
 on-display: {!
 
-let data_st = [
+data_st = [
     {
         "id": "spd",
         "legend": "SPD",
