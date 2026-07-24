@@ -377,8 +377,9 @@ Q.parliament_diagram = data_st
 if (d3 && window && Q.started) {
     // get screen width
     var data = Q.parliament_diagram
-    /* var width = 500;
+    var width = 500;
     var height = 500;
+    /*
     var screenWidth = document.getElementById('qualities').offsetWidth;
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
