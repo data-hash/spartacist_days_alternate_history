@@ -419,7 +419,7 @@ Q.economic_records = [];
 Q.president = "Wilhelm II";
 Q.president_party = 'I';
 Q.president_reichstag = "Johannes Kaempf";
-Q.president_reichstag_party = "FPv";
+Q.president_reichstag_party = "FVp";
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Hollweg";
 Q.chancellor_party = 'I';
