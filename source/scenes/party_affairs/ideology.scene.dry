@@ -2,7 +2,7 @@ title: Questions of Ideology
 new-page: true
 is-card: true
 tags: party_affairs
-view-if: ideology_timer = 0
+view-if: (ideology_timer = 0 and kpd_formed = 1)
 on-arrival: month_actions += 1; old_ideology = ideology; ideology_timer = 18
 card-image: img/arbeiterbew.jpg
 max-visits: 3
@@ -10,7 +10,7 @@ max-visits: 3
 
 = Questions of Ideology
 
-The SPD is torn between many different ideological currents. What should be our primary ideological guidance for now?
+The KPD is torn between many different ideological currents. What should be our primary ideological guidance for now?
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
