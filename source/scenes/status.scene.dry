@@ -275,7 +275,7 @@ Q.dvp_per = dvpPer.toFixed(1)
 
 Q.dnvp_seats = Math.round(Q.dnvp_r*Q.reichstag_seats);
 let dnvpPer = (Q.dnvp_seats / (Q.reichstag_seats * 100)) * 100
-Q.dnvpper = dnvpPer.toFixed(1)
+Q.dnvp_per = dnvpPer.toFixed(1)
 
 Q.nsdap_seats = Math.round(Q.nsdap_r*Q.reichstag_seats);
 let nsdapPer = (Q.nsdap_seats / (Q.reichstag_seats * 100)) * 100
