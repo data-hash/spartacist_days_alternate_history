@@ -34,13 +34,21 @@ Germany is divided into a number of states, each of which have their own governm
 @weimar_timeline
 go-to: menu
 
-= Timeline of the SPD and the Republic (until 1928)
+= Timeline of the socialist movement and the Empire (until 1917)
 
-**1875**: The SPD is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the SPD grows to become the largest party in the German Empire.
+**1875**: The SAPD, later known as the <span style="color: var(--spd_color)">SPD</span> is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the <span style="color: var(--spd_color)">SPD</span> grows to become the largest party in the German Empire.
 
-**1914**: The Great War begins. The SPD votes in favor of war credits, with substantial internal dissent. This begins a policy of *Burgfriedenspolitik*, a general peace between all political parties and trade unions.
+**1878**: The Anti-socialist law, or the "Law against the public danger of social democratic endeavors" were put in place after two assassination attempts on Chancellor Bismarck's life. After dissolving the Reichstag and holding new elections in which the socialists were suppressed, the law passed with support of the <span style="color: #98C22C">NLP</span>, and the <span style="color: #0781E5">conservative parties</span>. The law banned organizations that supported the overthrow of the existing social or political order, and organizations that are a danger to public peace and or threaten the harmony of the classes. 
 
-**1916**: Karl Liebknecht and Rosa Luxemburg imprisoned for anti-war agitation and socialist activism. Karl Liebknecht was sentenced to four years and one month, and Rosa Luxemburg was held indefintely.
+**1890**: The Anti-socialist law, which needed to be renewed every two-and-a-half years. It failed to gain support from the <span style="color: var(--z_color)">Center</span>, a splinter party from the <span style="color: #98C22C">NLP</span>, the <span style="color: #0781E5">DKP</span>, the <span style="color: var(--spd_color)">SPD</span>, and the representatives of the Poles, Danes, and Alsace-Lorraine. 
+
+**1914**: The Great War begins. The <span style="color: var(--spd_color)">SPD</span> votes in favor of war credits, with substantial internal dissent. This begins a policy of *Burgfriedenspolitik*, a general peace between all political parties and trade unions.
+
+The International Group is founded by Rosa Luxemburg, after inviting several SPD members who were against the war. Soon after distancing itself from SPD leadership they were quickly under surveillance and some were arrested.
+
+**1916**: Karl Liebknecht was expelled from the <span style="color: var(--spd_color)">SPD</span>and quickly arrested. Rosa Luxemburg was imprisoned for anti-war agitation and socialist activism. Karl Liebknecht was sentenced to four years and one month, and Rosa Luxemburg was held indefintely.
+
+The Spartacus Letters first appeared in January, and the groups members adopted the name, the <span style="color: var(--kpd_color)"><strong>Spartacus Group</span></strong>.
 
 @curr_gov
 go-to: cabinet if spd_in_government; menu if not spd_in_government
