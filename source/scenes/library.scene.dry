@@ -10,7 +10,7 @@ Herein contains relevant information about the government and politics of the Ge
 @menu
 
 - @government: Germany's system of government
-- @weimar_timeline: Timeline of the Weimar Republic before 1928
+- @weimar_timeline: Timeline of the Weimar Republic before 1917
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -21,6 +21,7 @@ Herein contains relevant information about the government and politics of the Ge
 - @backSpecialScene: Exit library.
 
 @government
+new-page: true
 go-to: menu
 
 The German Empire, is a semi-constitutional monarchy with a nationally elected parliament with a strong emperor and a weak parliament, called the Reichstag. The emperor is responsible for governing, while the parliament has a largely ceremonial role but also has some important governing responsibilities.
@@ -32,6 +33,7 @@ The President is elected by a national direct vote, in two rounds. The second ro
 Germany is divided into a number of states, each of which have their own governments with some responsibilities. By far the largest and most important state is Prussia.
 
 @weimar_timeline
+new-page: true
 go-to: menu
 
 = Timeline of the socialist movement and the Empire (until 1917)
@@ -46,12 +48,13 @@ go-to: menu
 
 The International Group is founded by Rosa Luxemburg, after inviting several SPD members who were against the war. Soon after distancing itself from SPD leadership they were quickly under surveillance and some were arrested.
 
-**1916**: Karl Liebknecht was expelled from the <span style="color: var(--spd_color)">SPD</span>and quickly arrested. Rosa Luxemburg was imprisoned for anti-war agitation and socialist activism. Karl Liebknecht was sentenced to four years and one month, and Rosa Luxemburg was held indefintely.
+**1916**: Karl Liebknecht was expelled from the <span style="color: var(--spd_color)">SPD</span> and quickly arrested. Rosa Luxemburg was imprisoned for anti-war agitation and socialist activism. Karl Liebknecht was sentenced to four years and one month, and Rosa Luxemburg was held indefintely.
 
 The Spartacus Letters first appeared in January, and the groups members adopted the name, the <span style="color: var(--kpd_color)"><strong>Spartacus Group</span></strong>.
 
 @curr_gov
 go-to: cabinet if spd_in_government; menu if not spd_in_government
+new-page: true
 
 = Current Government
 
@@ -92,6 +95,7 @@ SPD position: [? if spd_toleration : toleration ?][? if spd_in_government : in g
 
 @cabinet
 go-to: menu
+new-page: true
 
 Current cabinet:
 
@@ -113,6 +117,7 @@ Agriculture: [+ agriculture_minister +] ([+ agriculture_minister_party +])
 
 
 @demographics
+new-page: true
 go-to: menu
 
 = Demographic Groups
@@ -131,6 +136,7 @@ go-to: menu
 
 
 @public_opinion
+new-page: true
 on-arrival: {!
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
@@ -151,6 +157,7 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 @election_projections
 view-if: (not historical_mode) or game_over
+new-page: true
 go-to: menu
 
 = Projected election results 
@@ -201,6 +208,7 @@ Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, 
 Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [+ ddp_name +]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @parties
+new-page: true
 go-to: menu
 
 [? if nov_revolution = 0 : <span style="color: var(--spd_color);">**SPD**</span> - <i>Sozialdemokratische Partei Deutschlands</i> (Social Democratic Party of Germany) - this is us. We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. The current SPD is made of the "Majority" <span style="color: var(--spd_color);">SPD</span>, which support the Great War, and the centrists in the <span style="color: var(--spd_color);">SPD</span> who oppose the war. The <span style="color: var(--kpd_color);">Spartacist League</span> is furious with the parties' direction however doesn't want to split away, **for now.**?]
@@ -248,6 +256,7 @@ Current relations: [+ dnvp_relation : relationships +]
 **Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. Their political position usually lies between the DVP and DNVP. 
 
 @paramilitaries
+new-page: true
 on-arrival: {!
 Q.rb_strength = Math.round(Q.rb_strength);
 Q.sh_strength = Math.round(Q.sh_strength);
@@ -296,6 +305,7 @@ Loyalty: [+ prussian_police_loyalty : loyalty +]
 
 
 @factions
+new-page: true
 go-to: neorevisionists if neorevisionism > 0; menu if neorevisionism <= 0
 
 = Internal factions of the SPD
@@ -337,6 +347,7 @@ Strength: [+ reformist_strength : strength +]
 Dissent: [+ reformist_dissent : dissent +]
 
 @neorevisionists
+new-page: true
 go-to: menu
 
 **Neorevisionists**
@@ -349,6 +360,7 @@ Dissent: [+ neorevisionist_dissent : dissent +]
 
 
 @figures
+new-page: true
 title: Figures and Charts
 go-to: menu
 on-arrival: z_minus_bvp_r = z_r - 3;

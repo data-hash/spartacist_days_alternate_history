@@ -437,3 +437,7 @@ if (d3 && window && Q.started) {
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
 <div style="text-align: center;"><span>Next election: [+ next_election_month : month +] [+ next_election_year +]</span></div>
+
+@map
+
+[? if nov_revolution = 0 : <h1>Map of the <span style="color: #000"><strong>German Empire</strong></h1>?]
