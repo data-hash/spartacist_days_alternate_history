@@ -17,7 +17,6 @@ if (Q.economic_growth) {
 [? if kpd_formed = 0 and nov_revolution = 0 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus Group </span></strong>Leadership</h1> ?]
 [? if kpd_formed = 0 and nov_revolution = 1 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus League </span></strong>Leadership</h1> ?]
 [? if kpd_formed = 1 and kpd_merge = 1 : <h1><span style="color: var(--kpd_color)"><strong>KPD </span></strong>Leadership</h1> ?]
-
 <hr>
 
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;"> <img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%; border: 5px solid var(--card-border-color);"> <img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%; border: 5px solid var(--card-border-color);"> </div> ?]
@@ -203,7 +202,6 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 @government
 
 [? if president == "Wilhelm II" : <h1><span style="color: #000000">Imperial </span>Government</h1>?]
-
 <hr>
 
 [? if president == "Wilhelm II" : <div><img src="img/portraits/Wilhelm_II_portrait.jpg" alt="Wilhelm II" style="width: 50%; display: block; margin-top: 5px; margin: auto; margin-bottom: 5px; border: 5px solid var(--card-border-color);"></div> ?]
@@ -240,16 +238,48 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 on-arrival: {!
 
 Q.spd_seats = Math.round(Q.spd_r*Q.reichstag_seats);
+let spdPer = (Q.spd_seats / (Q.reichstag_seats * 100)) * 100
+Q.spd_per = spdPer.toFixed(1)
+
 Q.uspd_seats = Math.round(Q.uspd_r*Q.reichstag_seats);
+let uspdPer = (Q.uspd_seats / (Q.reichstag_seats * 100)) * 100
+Q.uspd_per = uspdPer.toFixed(1)
+
 Q.sapd_seats = Math.round(Q.sapd_r*Q.reichstag_seats);
+let sapdPer = (Q.sapd_seats / (Q.reichstag_seats * 100)) * 100
+Q.sapd_per = sapdPer.toFixed(1)
+
 Q.kpd_seats = Math.round(Q.kpd_r*Q.reichstag_seats);
+let kpdPer = (Q.kpd_seats / (Q.reichstag_seats * 100)) * 100
+Q.kpd_per = kpdPer.toFixed(1)
+
 Q.z_seats = Math.round(Q.z_r*Q.reichstag_seats);
+let zPer = (Q.z_seats / (Q.reichstag_seats * 100)) * 100
+Q.z_per = zPer.toFixed(1)
+
 Q.bvp_seats = Math.round(Q.bvp_r*Q.reichstag_seats);
+let bvpPer = (Q.bvp_seats / (Q.reichstag_seats * 100)) * 100
+Q.bvp_per = bvpPer.toFixed(1)
+
 Q.ddp_seats = Math.round(Q.ddp_r*Q.reichstag_seats);
+let ddpPer = (Q.ddp_seats / (Q.reichstag_seats * 100)) * 100
+Q.ddp_per = ddpPer.toFixed(1)
+
 Q.other_seats = Math.round(Q.other_r*Q.reichstag_seats);
+let otherPer = (Q.other_seats / (Q.reichstag_seats * 100)) * 100
+Q.other_per = otherPer.toFixed(1)
+
 Q.dvp_seats = Math.round(Q.dvp_r*Q.reichstag_seats);
+let dvpPer = (Q.dvp_seats / (Q.reichstag_seats * 100)) * 100
+Q.dvp_per = dvpPer.toFixed(1)
+
 Q.dnvp_seats = Math.round(Q.dnvp_r*Q.reichstag_seats);
+let dnvpPer = (Q.dnvp_seats / (Q.reichstag_seats * 100)) * 100
+Q.dnvpper = dnvpPer.toFixed(1)
+
 Q.nsdap_seats = Math.round(Q.nsdap_r*Q.reichstag_seats);
+let nsdapPer = (Q.nsdap_seats / (Q.reichstag_seats * 100)) * 100
+Q.nsdap_per = nsdapPer.toFixed(1)
 
 Q.pp_seats = Math.round(5*Q.reichstag_seats);
 Q.dhp_seats = Math.round(1.25*Q.reichstag_seats);
@@ -459,10 +489,6 @@ if (d3 && window && Q.started) {
 <h1>Reichstag</h1>
 <hr>
 
-{!<script>
-    console.log( 107/(Q.reichstag_seats*100)*100)
-</script>!}
-
 [? if president_reichstag == "Johannes Kaempf" : <div><img src="img/portraits/Johannes_Kaempf.jpg" alt="Johannes Kaempf" style="width: 50%;display: block;margin: auto;margin-top: 5px;margin-bottom: 5px;border: 5px solid var(--card-border-color);"></div> ?]
 <div style="text-align: center;">**[+ president_reichstag +]** (<span style="color: var(--president_reichstag_color)"><strong>[+ president_reichstag_party +]</strong></span>)</div>
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
@@ -472,13 +498,13 @@ if (d3 && window && Q.started) {
 
 {!<table style="margin: 0 auto; table-layout: auto; width: auto;">!}
 {!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
-[? if kpd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--kpd_color); outline: 2px; outline-style: solid;'> </div> !} <strong> KPD: <strong> {!</td><td>!} <strong>[+ kpd_seats +]</strong> <strong>([+ kpd_r +]%)</strong> {!</td><td>!} [? if kpd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if kpd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if kpd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--kpd_color); outline: 2px; outline-style: solid;'> </div> !} <strong> KPD: <strong> {!</td><td>!} <strong>[+ kpd_seats +]</strong> <strong>([+ kpd_per +]%)</strong> {!</td><td>!} [? if kpd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if kpd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
-[? if uspd_formed = 1 and kpd_formed = 0: {!<tr><td><div class="box" style='background-color: var(--uspd_color); outline: 2px; outline-style: solid;'> </div> !} <strong>USPD:<strong> {!</td><td>!} <strong>[+ uspd_seats +]</strong> <strong>([+ uspd_r +]%)</strong> {!</td><td>!} [? if uspd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if uspd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-[? if uspd_formed = 1 and kpd_formed = 1: {!<tr><td><div class="box" style='background-color: var(--uspd_color);'> </div> !} USPD: {!</td><td>!} [+ uspd_seats +] ([+ uspd_r +]%) {!</td><td>!} [? if uspd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if uspd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if uspd_formed = 1 and kpd_formed = 0: {!<tr><td><div class="box" style='background-color: var(--uspd_color); outline: 2px; outline-style: solid;'> </div> !} <strong>USPD:<strong> {!</td><td>!} <strong>[+ uspd_seats +]</strong> <strong>([+ uspd_per +]%)</strong> {!</td><td>!} [? if uspd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if uspd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if uspd_formed = 1 and kpd_formed = 1: {!<tr><td><div class="box" style='background-color: var(--uspd_color);'> </div> !} USPD: {!</td><td>!} [+ uspd_seats +] ([+ uspd_per +]%) {!</td><td>!} [? if uspd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if uspd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
-[? if uspd_formed = 0 : {!<tr><td><div class="box" style='background-color: var(--spd_color); outline: 2px; outline-style: solid;'> </div> !} <strong>SPD:<strong> {!</td><td>!} <strong>[+ spd_seats +]</strong> <strong>([+ spd_r +]%)</strong> {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-[? if uspd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--spd_color);'> </div> !} SPD: {!</td><td>!} [+ spd_seats +] ([+ spd_r +]%) {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if uspd_formed = 0 : {!<tr><td><div class="box" style='background-color: var(--spd_color); outline: 2px; outline-style: solid;'> </div> !} <strong>SPD:<strong> {!</td><td>!} <strong>[+ spd_seats +]</strong> <strong>([+ spd_per +]%)</strong> {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if uspd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--spd_color);'> </div> !} SPD: {!</td><td>!} [+ spd_seats +] ([+ spd_per +]%) {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
 [? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #D49797;'> </div> !} <span class="tooltip-text" data-tooltip="Polish Parties">PP</span>: {!</td><td>!} [+ pp_seats +] (4.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
@@ -488,26 +514,26 @@ if (d3 && window && Q.started) {
 
 [? if bb_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #008B45;'> </div> !} <span class="tooltip-text" data-tooltip="Bavarian Peasants' League">BB</span>: {!</td><td>!} [+ bb_seats +] (1.8%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
-[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--ddp_color);'> </div> !} FVp: {!</td><td>!} [+ ddp_seats +] ([+ ddp_r +]%) {!</td><td>!} [? if ddp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if ddp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--ddp_color);'> </div> !} DDP: {!</td><td>!} [+ ddp_seats +] ([+ ddp_r +]%) {!</td><td>!} [? if ddp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if ddp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--ddp_color);'> </div> !} FVp: {!</td><td>!} [+ ddp_seats +] ([+ ddp_per +]%) {!</td><td>!} [? if ddp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if ddp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--ddp_color);'> </div> !} DDP: {!</td><td>!} [+ ddp_seats +] ([+ ddp_per +]%) {!</td><td>!} [? if ddp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if ddp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color: var(--z_color);'> </div> !} Z: {!</td><td>!} [+ z_seats +] ([+ z_r +]%) {!</td><td>!} [? if z_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if z_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color: var(--z_color);'> </div> !} Z: {!</td><td>!} [+ z_seats +] ([+ z_per +]%) {!</td><td>!} [? if z_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if z_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!}
 
-[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--bvp_color);'> </div> !} BVP: {!</td><td>!} [+ bvp_seats +] ([+ bvp_r +]%) {!</td><td>!} [? if bvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if bvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--bvp_color);'> </div> !} BVP: {!</td><td>!} [+ bvp_seats +] ([+ bvp_per +]%) {!</td><td>!} [? if bvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if bvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
-[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dvp_color);'> </div> !} NLP: {!</td><td>!} [+ dvp_seats +] ([+ dvp_r +]%) {!</td><td>!} [? if dvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--dvp_color);'> </div> !} DVP: {!</td><td>!} [+ dvp_seats +] ([+ dvp_r +]%) {!</td><td>!} [? if dvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dvp_color);'> </div> !} NLP: {!</td><td>!} [+ dvp_seats +] ([+ dvp_per +]%) {!</td><td>!} [? if dvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--dvp_color);'> </div> !} DVP: {!</td><td>!} [+ dvp_seats +] ([+ dvp_per +]%) {!</td><td>!} [? if dvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color: var(--other_color);'> </div> !} Others: {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [? if other_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if other_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!}
 
 [? if drp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #FFDEAD;'> </div> !} <span class="tooltip-text" data-tooltip="German Reform Party">DRP</span>: {!</td><td>!} [+ drp_seats +] (3.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
-[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DKP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_r +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DNVP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_r +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DKP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_per +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DNVP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_per +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
 [? if ansem_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #8B5A2B;'> </div> !} <span class="tooltip-text" data-tooltip="Various Antisemitic Parties">DSP</span>: {!</td><td>!} [+ ansem_seats +] (2.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
-[? if nsdap_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--nsdap_color);'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_seats +] ([+ nsdap_r +]%) {!</td><td>!} [? if nsdap_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if nsdap_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if nsdap_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--nsdap_color);'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_seats +] ([+ nsdap_per +]%) {!</td><td>!} [? if nsdap_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if nsdap_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 {!</table>!}
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
