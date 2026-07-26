@@ -619,6 +619,25 @@ table {
 .seat.uspd {
     fill: #b90903;
 }
+/* pre nov_revolution parties */
+.seat.pp {
+  fill: #D49797;
+}
+.seat.dhp {
+  fill: #333FFF;
+}
+.seat.elp {
+  fill: #000;
+}
+.seat.bb {
+  fill: #008B45;
+}
+.seat.drp {
+  fill: #FFDEAD;
+}
+.seat.ansem {
+  fill: #8B5A2B;
+}
 
 .tooltip-text {
     cursor: help;

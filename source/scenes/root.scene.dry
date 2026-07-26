@@ -365,7 +365,7 @@ Q.ddp_r = 10;
 Q.dvp_r = 11;
 Q.dnvp_r = 10;
 Q.nsdap_r = 0;
-Q.other_r = 19;
+Q.other_r = 3;
 
 Q.reichstag_seats = 3.97;
 

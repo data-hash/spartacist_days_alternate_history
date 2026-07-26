@@ -13,6 +13,11 @@
     ui = dendryUI;
     game = ui.game;
 
+    function parliamentPercent(seats, total_seats, result) {
+        let unrounded = (seats / total_seats) * 100
+        result = unrounded.toFixed(1)
+        return result
+    }
     // Add your custom code here.
   };
 
