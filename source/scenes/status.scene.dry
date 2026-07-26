@@ -497,12 +497,12 @@ if (d3 && window && Q.started) {
 
 {!<tr><td><div class="box" style='background-color: var(--other_color);'> </div> !} Others: {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [? if other_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if other_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!}
 
-[? if drp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #FFDEAD;'> </div> !} DRP: {!</td><td>!} [+ drp_seats +] (3.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
+[? if drp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #FFDEAD;'> </div> !} <span class="tooltip-text" data-tooltip="German Reform Party">DRP</span>: {!</td><td>!} [+ drp_seats +] (3.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
 [? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DKP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_r +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 [? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DNVP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_r +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
-[? if ansem_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #8B5A2B;'> </div> !} <span class="tooltip-text" data-tooltip="Various Antisemitic Parties">Antisemitic parties</span>: {!</td><td>!} [+ ansem_seats +] (2.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
+[? if ansem_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #8B5A2B;'> </div> !} <span class="tooltip-text" data-tooltip="Various Antisemitic Parties">DSP</span>: {!</td><td>!} [+ ansem_seats +] (2.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
 [? if nsdap_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--nsdap_color);'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_seats +] ([+ nsdap_r +]%) {!</td><td>!} [? if nsdap_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if nsdap_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 {!</table>!}
