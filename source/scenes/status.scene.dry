@@ -77,6 +77,7 @@ Economic growth: [+ economic_growth_2 +]%
 @politics
 
 = Inter-party Politics
+<hr>
 
 [? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span> <br>Leader: [+ kpd_leader +] <br>Ideology: [+ kpd_ideology +]?]
 
@@ -288,6 +289,8 @@ Q.bb_seats = Math.round(1.75*Q.reichstag_seats);
 Q.drp_seats = Math.round(3.5*Q.reichstag_seats);
 Q.ansem_seats = Math.round(2.5*Q.reichstag_seats);
 
+Q.total_seats = (Q.spd_seats + Q.uspd_seats + Q.sapd_seats + Q.kpd_seats + Q.z_seats + Q.bvp_seats + Q.ddp_seats + Q.other_seats + Q.dnvp_seats + Q.nsdap_seats + Q.pp_seats + Q.dhp_seats + Q.elp_seats + Q.bb_seats + Q.drp_seats + Q.ansem_seats) 
+
 !}
 on-display: {!
 /* TODO: potentially move to a js script for ease of access and cleaner code */
@@ -494,7 +497,7 @@ if (d3 && window && Q.started) {
 [? if nov_revolution = 0 and interim_government = 0 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Reichstag</em></div> ?]
 [? if nov_revolution = 1 and interim_government = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President of the Weimar National Assembly</em></div> ?]
 
-<div style="display: flex; justify-content: center; align-items: center; width: 100%;">{!<svg id="reichstag_st"> </svg>!}</div>
+<div style="display: flex; justify-content: center; align-items: center; width: 100%;">{!<svg id="reichstag_st"> </svg>!} [+ total_seats +] </div>
 
 {!<table style="margin: 0 auto; table-layout: auto; width: auto;">!}
 {!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
