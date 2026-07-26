@@ -276,6 +276,13 @@ Q.kpd_merge = 0;
 Q.uspd_formed = 0;
 Q.nsdap_formed = 0;
 
+Q.pp_dissolved = 0;
+Q.dhp_dissolved = 0;
+Q.elp_dissolved = 0;
+Q.bb_dissolved = 0;
+Q.drp_dissolved = 0;
+Q.ansem_dissolved = 0;
+
 // Party tooltips
 Q.spd_tooltip = "Social Democratic Party of Germany";
 Q.kpd_tooltip = "Communist Party of Germany";
