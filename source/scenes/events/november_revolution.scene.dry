@@ -1,0 +1,10 @@
+title: November Revolution
+new-page: true
+view-if: year = 1918 and month = 11
+max-visits: 1
+tags: event
+on-arrival: {!
+	Q.nov_revolution = 1
+!}
+
+= The November Revolution
