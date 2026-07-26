@@ -457,10 +457,11 @@ if (d3 && window && Q.started) {
 !}
 
 <h1>Reichstag</h1>
-
 <hr>
 
-{! console.log( 107/(Q.reichstag_seats*100)*100) !}
+{!<script>
+    console.log( 107/(Q.reichstag_seats*100)*100)
+</script>!}
 
 [? if president_reichstag == "Johannes Kaempf" : <div><img src="img/portraits/Johannes_Kaempf.jpg" alt="Johannes Kaempf" style="width: 50%;display: block;margin: auto;margin-top: 5px;margin-bottom: 5px;border: 5px solid var(--card-border-color);"></div> ?]
 <div style="text-align: center;">**[+ president_reichstag +]** (<span style="color: var(--president_reichstag_color)"><strong>[+ president_reichstag_party +]</strong></span>)</div>
