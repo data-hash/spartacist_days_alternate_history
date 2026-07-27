@@ -11,6 +11,12 @@ Q.rural_uspd = 0;
 Q.unemployed_uspd = 2;
 Q.catholics_uspd = 0;
 
+Q.spd_relation = 35;
+Q.ddp_relation = 30;
+Q.z_relation = 25;
+Q.dvp_relation = 13;
+Q.dnvp_relation = 6;
+
 Q.workers_other -= 5;
 
 if (Q.unions_independent) {
