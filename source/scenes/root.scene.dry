@@ -736,8 +736,10 @@ audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1917
+= January 1917
 
 It is a dark time for German democracy. With anti-war communists like Karl Liebknecht and Rosa Luxemburg imprisoned, the elections postponed until 1920, and the Great War at a standstill, all seems lost for the anti-war German left.
 
-Now, the task of those who remain is to end the Great War. The imperial government of Wilhelm II is unpopular, and we stand to gain. We must rid ourselves of the imperial government and change our own destiny.
+Now, the task of those who remain is to end the Great War. The imperial government of Wilhelm II is unpopular, and we stand to gain. We must throw off the yoke of the Emperor and change our own destiny.
+
+<div style="text-align: center;">Workers of the world, <strong><em>unite!<em><strong></div>
