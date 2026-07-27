@@ -16,12 +16,12 @@ subtitle: Building relations with the other political parties of Germany.
 
 - @liberals: Strengthen our bonds with the left-liberal [?if nov_revolution = 0 : Progressive People's Party ?][?if nov_revolution = 1 : German Democratic Party?] and conservative-liberal [? if nov_revolution = 1 :German People's Party?].
 - @center: Strengthen our bonds with the Catholic Center Party.
-- @spd: Work towards repairing relationships with the Social Democratic Party.
+- @spd_relations: Work towards repairing relationships with the Social Democratic Party.
 - @kpd_alone: The [?if uspd_formed = 0 :SPD?][?if uspd_formed = 1:USPD?][?if kpd_formed = 1:KPD?] can stand alone for now.
 - @easy_discard
 
 
-@spd
+@spd_relations
 subtitle: -1 resources
 choose-if: resources >= 1
 view-if: uspd_formed = 1
