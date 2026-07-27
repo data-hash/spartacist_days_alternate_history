@@ -29,7 +29,7 @@ if (Q.economic_growth) {
 [? if uspd_formed = 0 and kpd_formed = 0 : Currently in: the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
 [? if uspd_formed = 1 and kpd_formed = 0 : Currently in: the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
 [? if kpd_formed = 1 and kpd_merge = 0 : Currently in: the <span style="color: var(--kpd_color)"><strong>KPD</strong></span> ?]
-# [? if kpd_formed = 1 and kpd_merge = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>! ?]
+[? if kpd_formed = 1 and kpd_merge = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>?]
 
 = Finances
 
