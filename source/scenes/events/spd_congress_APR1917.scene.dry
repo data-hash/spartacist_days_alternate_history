@@ -2,7 +2,7 @@ title: SPD Opposition Congress
 new-page: true 
 subtitle: Expelled members of the SPD have organized a congress.
 tags: event
-view-if: month == 4; year == 1917;
+view-if: month = 4; year = 1917;
 go-to: sapd_formed
 max-visits: 1
 
