@@ -27,13 +27,22 @@ for (var record of Q.party_support_records) {
     record['sapd'] = 0;
 }
 
-const spd_seat = document.styleSheets[0].rules[97].style;
-const uspd_seat = document.styleSheets[0].rules[106].style;
+const sheet = document.styleSheets[0]; // or find it by href, see below
 
-spd_seat.removeProperty("stroke");
-spd_seat.removeProperty("stroke-width");
+for (const rule of sheet.cssRules) {
+  if (rule.selectorText === '.seat.spd') { // match the exact selector
+    rule.style.removeProperty('stroke');
+    rule.style.removeProperty('stroke-width');
+    break; // stop once found
+  }
+}
 
-uspd_seat.setProperty("stroke", "var(--border-color)")
-uspd_seat.setProperty("stroke-width", "1.5px")
+for (const rule of sheet.cssRules) {
+  if (rule.selectorText === '.seat.uspd') { // match the exact selector
+    rule.style.setProperty('stroke', 'var(--border-color)');
+    rule.style.setProperty('stroke-width', '1.5px');
+    break; // stop once found
+  }
+}
 
 !}
