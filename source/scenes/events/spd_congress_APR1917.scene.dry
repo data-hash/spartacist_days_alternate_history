@@ -3,7 +3,7 @@ new-page: true
 subtitle: Expelled members of the SPD have organized a congress.
 tags: event
 view-if: month = 4 and year = 1917
-go-to: sapd_formed
+go-to: uspd_formed if uspd_formed = 0
 max-visits: 1
 
 = Second National Conference of the anti-war Social Democratic Opposition
