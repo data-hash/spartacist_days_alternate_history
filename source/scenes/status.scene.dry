@@ -23,7 +23,7 @@ if (Q.economic_growth) {
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex;justify-content: left;"> <div style="text-align: center; width: 50%;"><strong>Karl Liebknecht</strong></div> <div style="text-align: center; width: 50%;"><strong>Rosa Luxemburg</strong></div> </div> ?]
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex;justify-content: left;"> <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div> <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Co-founder</em></div> </div> ?]
 
-[? if kpd_formed = 0 and nov_revolution = 0 : Next congress: none scheduled?]
+[? if uspd_formed = 0 and nov_revolution = 0 : Next congress: April 1917?]
 [? if nov_revolution = 1 : Next congress: December 1918?]
 
 [? if uspd_formed = 0 and kpd_formed = 0 : Currently in: the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]

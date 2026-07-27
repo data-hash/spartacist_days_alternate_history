@@ -1,0 +1,16 @@
+title: SPD Opposition Congress
+new-page: true 
+subtitle: Expelled members of the SPD have organized a congress.
+tags: event
+view-if: month == 4; year == 1917;
+go-to: sapd_formed
+max-visits: 1
+
+= Second National Conference of the anti-war Social Democratic Opposition
+
+The second national conference of the anti-war Social Democratic opposition, with 124 delegates and 15 members of the Reichstag, is held in Gotha. Hugo Haase, of the <span style="color: var(--spd_color)">SPD</span> and Georg Ledebour are elected chairmen of the newly formed <span style="color: var(--uspd_color)">USPD</span>.
+
+We have agreed to join the <span style="color: var(--uspd_color)">USPD</span> on the condition that we are politically independent. 
+
+[? if centrists_resign = 1 : Many former Centrist Marxists have joined with the SAPD, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the SPD for the support of the working class. ?]
+
