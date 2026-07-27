@@ -323,6 +323,24 @@ if (Q.spd_r) {
     })
 }
 
+if (Q.sapd_r && Q.sapd_formed) {
+    data_st.push({
+        "id": "sapd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Math.round(Q.sapd_r*Q.reichstag_seats),
+    })
+}
+
+if (Q.other_r) {
+    data_st.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r*Q.reichstag_seats),
+    })
+}
+
 if (Q.pp_dissolved == 0) {
     data_st.push({
         "id": "pp",
@@ -401,15 +419,6 @@ if (Q.dvp_r) {
         "legend": Q.dvp_name,
         "name": Q.dvp_name,
         "seats": Math.round(Q.dvp_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.other_r) {
-    data_st.push({
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*Q.reichstag_seats),
     })
 }
 
