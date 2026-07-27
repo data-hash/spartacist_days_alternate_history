@@ -11,17 +11,17 @@ subtitle: Building relations with the other political parties of Germany.
 = Inter-Party Relationships
 
 [? if uspd_formed = 0 and burgfrieden = 0 : The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. We are currently in a political pact with all the other parties. ?]
-#[? if uspd_formed = 1 and kpd_formed = 0 : The USPD cannot govern alone, <em>yet</em>. As a splinter of a major party we need the support of the major parties. We could build connections with the other parties. ?]
-#[? kpd_formed = 1 : The KPD cannot govern alone, <em>yet</em>. As a splinter party of a splinter party we could use the support of the major parties. Perhaps we should build connections with the other parties. ?]
+[? if uspd_formed = 1 and kpd_formed = 0 : The USPD cannot govern alone, <em>yet</em>. As a splinter of a major party we need the support of the major parties. We could build connections with the other parties. ?]
+[? kpd_formed = 1 : The KPD cannot govern alone, <em>yet</em>. As a splinter party of a splinter party we could use the support of the major parties. Perhaps we should build connections with the other parties. ?]
 
 - @liberals: Strengthen our bonds with the left-liberal [?if nov_revolution = 0 : Progressive People's Party ?][?if nov_revolution = 1 : German Democratic Party?] and conservative-liberal [? if nov_revolution = 1 :German People's Party?].
 - @center: Strengthen our bonds with the Catholic Center Party.
-- @spd_relations: Work towards repairing relationships with the Social Democratic Party.
+- @spd: Work towards repairing relationships with the Social Democratic Party.
 - @kpd_alone: The [?if uspd_formed = 0 :SPD?][?if uspd_formed = 1:USPD?][?if kpd_formed = 1:KPD?] can stand alone for now.
 - @easy_discard
 
 
-@spd_relations
+@spd
 subtitle: -1 resources
 choose-if: resources >= 1
 view-if: uspd_formed = 1
