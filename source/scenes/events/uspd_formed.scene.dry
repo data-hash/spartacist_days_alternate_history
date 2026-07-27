@@ -18,8 +18,8 @@ if (Q.unions_independent) {
 }
 
 // update all records
-Q.uspd_r = 3.75;
-Q.spd_r -= 3;
+Q.uspd_r = 3.77;
+Q.spd_r = 23.93;
 Q.old_uspd_r = 0;
 for (var record of Q.election_records) {
     record['sapd'] = 0;

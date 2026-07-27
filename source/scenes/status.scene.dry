@@ -316,7 +316,7 @@ if (Q.kpd_formed && Q.kpd_r) {
     })
 }
 
-if (Q.uspd_formed && Q.uspd_r) {
+if (Q.uspd_formed) {
     data_st.push({
         "id": "uspd",
         "legend": "USPD",
