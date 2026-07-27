@@ -6,57 +6,64 @@ is-card: true
 on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
 card-image: img/weimar_coalition_2.jpg
 max-visits: 12
-#subtitle: Building relations with the other political parties of Germany.
+subtitle: Building relations with the other political parties of Germany.
 
 = Inter-Party Relationships
 
-The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+[? if uspd_formed = 0 and burgfrieden = 0 : The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. We are currently in a political pact with all the other parties. ?]
+[? if uspd_formed = 1 and kpd_formed = 0 : The USPD cannot govern alone, <em>yet</em>. As a splinter of a major party we need the support of the major parties. We could build connections with the other parties. ?]
+[? kpd_formed = 1 : The KPD cannot govern alone, <em>yet</em>. As a splinter party of a splinter party we could use the support of the major parties. Perhaps we should build connections with the other parties. ?]
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
+- @liberals: Strengthen our bonds with the left-liberal [?if nov_revolution = 0 : Progressive People's Party ?][?if nov_revolution = 1 : German Democratic Party?] and conservative-liberal [? if nov_revolution = 1 :German People's Party?].
 - @center: Strengthen our bonds with the Catholic Center Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
-- @spd_alone: The SPD can stand alone for now.
+- @spd: Work towards repairing relationships with the Social Democratic Party.
+- @kpd_alone: The [?if uspd_formed = 0 :SPD?][?if uspd_formed = 1:USPD?][?if kpd_formed = 1:KPD?] can stand alone for now.
 - @easy_discard
 
 
-@kpd
+@spd
 subtitle: -1 resources
 choose-if: resources >= 1
+view-if: uspd_formed = 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; kpd_inter_party_seen += 1
-go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
+go-to: spd_1; spd_rectification_of_history if spd_relation >= 40 and spd_rectification_of_history = 0 and spartacist_uprising = 1 and year >= 1924;
+# go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
 
-@kpd_1
-on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 2; dvp_relation -= 3
+@spd_1
+on-arrival: spd_relation += 6*(1 - dissent); left_dissent += 2; z_relation -= 2; dvp_relation -= 3
 
-The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
+The social democrats are suspicious of our overtures, as they consider us too radical. However, connections are made at the grassroots and local levels.
 
-@kpd_rectification_of_history
+@spd_rectification_of_history
 
-One stumbling block for our relations with the KPD is our history of conflict, dating back to 1918 and 1919. The KPD is especially contemptuous of Gustav Noske, the SPD "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other KPD revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the SPD is our history of conflict, dating back to 1918 and 1919. The SPD has refused to denounce Gustav Noske, the SPD "bloodhound" who ordered the violent suppression of the Spartacist uprising and other KPD revolts. They are also to blame for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
 
-For further improvements in KPD relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
+For further improvements in SPD relations, it will be necessary to demand the SPD expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
-- @yes_history: Yes, we must apologize for our past actions.
-- @no_history: No, we have no need to apologize.
+- @yes_history: Yes, we must demand they apologize for their past actions.
+- @no_history: No, we will not collaborate with these traitors.
 
 @yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: left_dissent += 12; left_strength -= 2; neorevisionist_dissent += 5; reform_dissent -= 6; left_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
 
-As part of normalizing relations with the KPD, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
+As part of normalizing relations with the SPD, we have demanded they acknowledge the wrongdoings of their past. They have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 
-This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
+[?if ebert_dead = 0 : They have even expelled Friedrich Ebert.?]
+[?if ebert_dead = 1 : They have even denounced Friedrich Ebert.?]
+
+This leads to tensions with the center and leftists within our party, and criticism from the conservative and liberal parties.
 
 @no_history
-on-arrival: kpd_relation -= 3
+on-arrival: spd_relation -= 3; left_dissent -= 2;
 
-We have no need to apologize for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
+We have no need to collaborate with these traitors to the revolution. 
 
 
-@kpd_2
-on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 3; dvp_relation -= 3
+@spd_2
+on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; left_dissent += 2; z_relation -= 3; dvp_relation -= 3
 
-After the success of the coalition government with the KPD, they are much more amenable to us.
+After the success of the coalition government with the SPD, they are much more amenable to us.
 
 @kpd_blutmai
 on-arrival: kpd_relation += 3*(1 - dissent); reformist_dissent += 1
@@ -68,7 +75,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
-go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
+go-to: center_op if z_in_government = 1 and kpd_in_government = 0 and chancellor != "Brüning"; center_coalition if kpd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"; center_burger if burgfrieden = 1 and uspd_formed = 0; center_burger_2 if burgfrieden = 1 and uspd_formed = 1;
 
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
@@ -85,35 +92,29 @@ on-arrival: z_relation += 5*(1 - dissent)
 
 The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
 
+@center_burger
+on-arrival: z_relation += 5*(1 - dissent)
+
+We are currently in the Burgfrieden truce with the other parties, so improving relations is easy.
+
+@center_burger_2
+on-arrival: z_relation += 3*(1 - dissent)
+
+We are currently outside the Burgfrieden truce with the other parties, so improving relations more difficult.
+
+
 @liberals
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
+on-arrival: resources -= 1; ddp_relation += 3*(1 - dissent)
 
-The [+ ddp_name +] has been one of our closest allies through the course of the Republic.
+[? if nov_revolution = 0 : The [+ ddp_name +] and [+ dvp_name +] have been our enemies throughout the course of the Empire. ?]
+[? if nov_revolution = 1 : The [+ ddp_name +] and [+ dvp_name +] have been our enemies ever since the days of the German Empire.?]
 
-@dvp_stresemann
-on-arrival: dvp_relation += 8*(1 - dissent)
+It will be difficult to convince them to be on our side.
 
-Gustav Stresemann, the leader of the DVP is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
-
-@dvp_loss
-on-arrival: dvp_relation += 5*(1 - dissent)
-
-With the death of Gustav Stresemann, the DVP is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
-
-@dvp_moribund
-on-arrival: dvp_relation += 5*(1 - dissent)
-
-The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
-
-@spd_alone
+@kpd_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
 

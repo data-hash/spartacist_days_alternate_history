@@ -17,6 +17,8 @@ Q.z_relation = 25;
 Q.dvp_relation = 13;
 Q.dnvp_relation = 6;
 
+Q.spd_leader = "Friedrich Ebert";
+
 Q.workers_other -= 5;
 
 if (Q.unions_independent) {
