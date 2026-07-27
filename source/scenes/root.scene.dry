@@ -736,7 +736,7 @@ audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= January 1917
+= 1917
 
 It is a dark time for German democracy. With anti-war communists like Karl Liebknecht and Rosa Luxemburg imprisoned, the elections postponed until 1920, and the Great War at a standstill, all seems lost for the anti-war German left.
 
