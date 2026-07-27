@@ -689,24 +689,3 @@ table {
   margin: 0 auto;
   display: block;
 }
-
-#parliament_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-#parliament_wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-#parliament_seat_display {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  white-space: nowrap;
-}
