@@ -26,4 +26,14 @@ for (var record of Q.election_records) {
 for (var record of Q.party_support_records) {
     record['sapd'] = 0;
 }
+
+const spd_seat = document.styleSheets[0].rules[97].style;
+const uspd_seat = document.styleSheets[0].rules[106].style;
+
+spd_seat.removeProperty("stroke");
+spd_seat.removeProperty("stroke-width");
+
+uspd_seat.setProperty("stroke", "var(--border-color)")
+uspd_seat.setProperty("stroke-width", "1.5px")
+
 !}

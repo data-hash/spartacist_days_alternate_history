@@ -117,7 +117,7 @@ Q.NSDAP_relation = 0;
 // parties
 Q.spd_leader = "August Bebel & Hugo Haase";
 Q.spd_ideology = "Reformist Socialism";
-Q.uspd_leader = "Wilhelm Dittman & Hugo Haase";
+Q.uspd_leader = "Georg Ledebour & Hugo Haase";
 Q.uspd_ideology = "Centrist Marxism";
 Q.dnvp_leader = "Ernst von Heydebrand";
 Q.dnvp_ideology = "Conservative Nationalism";
