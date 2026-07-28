@@ -30,7 +30,7 @@ on-arrival: {!
 	Q.resources -= 1
 	Q.kpd_inter_party_seen += 1
 !}
-go-to: spd_1 if spd_relation <= 40;
+go-to: spd_1
 # spd_rectification_of_history if spd_relation >= 40 and kpd_rectified_history = 0 and spartacist_uprising = 1 and year >= 1924;
 
 @spd_1
