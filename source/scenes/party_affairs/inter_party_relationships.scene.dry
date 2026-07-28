@@ -16,17 +16,18 @@ subtitle: Building relations with the other political parties of Germany.
 
 - @liberals: Strengthen our bonds with the left-liberal DDP and conservative-liberal DVP.
 - @center: Strengthen our bonds with the Catholic Center Party.
-- @spd: Work towards repairing relationships with the Social Democratic Party.
+- @socdems: Work towards repairing relationships with the Social Democratic Party.
 - @kpd_alone: The SPD can stand alone for now.
 - @easy_discard
 
-@spd
-subtitle: -1 resources
-choose-if: resources >= 1
-view-if: uspd_formed = 1
-unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_inter_party_seen += 1
-go-to: spd_1 if spd_relation <= 40; spd_rectification_of_history if spd_relation >= 40 and spd_rectification_of_history = 0 and spartacist_uprising = 1 and year >= 1924;
+
+@socdems
+# subtitle: -1 resources
+# choose-if: resources >= 1
+# view-if: uspd_formed = 1
+# unavailable-subtitle: Not enough resources.
+# on-arrival: resources -= 1; kpd_inter_party_seen += 1
+# go-to: spd_1 if spd_relation <= 40; spd_rectification_of_history if spd_relation >= 40 and spd_rectification_of_history = 0 and spartacist_uprising = 1 and year >= 1924;
 # go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
 
 @spd_1
