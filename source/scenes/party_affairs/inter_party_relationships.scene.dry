@@ -30,7 +30,7 @@ on-arrival: {!
 	Q.resources -= 1
 	Q.kpd_inter_party_seen += 1
 !}
-go-to: spd_1 if spd_relation <= 40; spd_rectification_of_history if spd_relation >= 40 and spd_rectification_of_history = 0 and spartacist_uprising = 1 and year >= 1924;
+go-to: spd_1 if spd_relation <= 40; spd_rectification_of_history if spd_relation >= 40 and kpd_rectification_of_history = 0 and spartacist_uprising = 1 and year >= 1924;
 # go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
 
 @spd_1
@@ -48,7 +48,7 @@ For further improvements in SPD relations, it will be necessary to demand the SP
 - @no_history: No, we will not collaborate with these traitors.
 
 @yes_history
-on-arrival: left_dissent += 12; left_strength -= 2; neorevisionist_dissent += 5; reform_dissent -= 6; left_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: left_dissent += 8; left_strength -= 2; neorevisionist_dissent += 5; reform_dissent -= 6; reformist_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
 
 As part of normalizing relations with the SPD, we have demanded they acknowledge the wrongdoings of their past. They have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 
@@ -58,7 +58,7 @@ As part of normalizing relations with the SPD, we have demanded they acknowledge
 This leads to tensions with the center and leftists within our party, and criticism from the conservative and liberal parties.
 
 @no_history
-on-arrival: spd_relation -= 3; left_dissent -= 2;
+on-arrival: spd_relation -= 3; left_dissent -= 3;
 
 We have no need to collaborate with these traitors to the revolution. 
 
