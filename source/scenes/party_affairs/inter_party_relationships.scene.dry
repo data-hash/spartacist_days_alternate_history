@@ -30,7 +30,7 @@ on-arrival: {!
 	Q.resources -= 1
 	Q.kpd_inter_party_seen += 1
 !}
-go-to: spd_1 if spd_relation <= 40;
+go-to: spd_1 if spd_relation <= 40
 # spd_rectification_of_history if spd_relation >= 40 and kpd_rectified_history = 0 and spartacist_uprising = 1 and year >= 1924;
 
 @spd_1
@@ -81,7 +81,7 @@ on-arrival: {!
 	Q.resources -= 1
 	if (Q.z_party_leader == "Joos") {Q.z_relation += 2}
 !}
-go-to: center_op if z_in_government = 1 and kpd_in_government = 0 and chancellor != "Brüning"; center_coalition if kpd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"; center_burger if burgfrieden = 1 and uspd_formed = 0; center_burger_2 if burgfrieden = 1 and uspd_formed = 1;
+go-to: center_op if z_in_government = 1 and kpd_in_government = 0 and chancellor != "Brüning"; center_coalition if kpd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"; center_burger if burgfrieden = 1 and uspd_formed = 0; center_burger_2 if burgfrieden = 1 and uspd_formed = 1
 
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
