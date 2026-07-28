@@ -1,5 +1,5 @@
 {
-  "name": " spartacist_days_alternate_history",
+  "name": "social_democracy_alternate_history",
   "version": "0.11.1",
   "description": "Building the game:",
   "main": "out/html/index.html",
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/aucchen/social_democracy_alternate_history",
   "dependencies": {
-    "dendrynexus": "github:aucchen/dendrynexus",
+    "dendrynexus": "^0.0.1",
     "parliament-svg": "^3.0.0"
   }
 }
