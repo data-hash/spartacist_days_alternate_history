@@ -8,7 +8,8 @@ Q.workers_spd -= 3;
 Q.new_middle_uspd = 1;
 Q.old_middle_uspd = 0;
 Q.rural_uspd = 0;
-Q.unemployed_uspd = 2;
+Q.unemployed_uspd = 30;
+Q.unemployed_spd -= 10;
 Q.catholics_uspd = 0;
 
 Q.spd_relation = 35;

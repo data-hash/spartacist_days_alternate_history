@@ -1,0 +1,10 @@
+title: Germany
+subtitle: The States of Germany
+new-page: true
+
+[? if nov_revolution = 0 : <h1>Regions of the German Empire</h1>?]
+
+blah blah blah germany stuff stuff
+
+- #regions
+- @root: Return
