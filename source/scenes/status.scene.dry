@@ -159,14 +159,16 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if elections were to be held now):
 
+[? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color)"><strong>KPD</strong></span>: [+ uspd_votes +]?]
+
+[? if uspd_formed = 1 : <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color)"><strong>USPD</strong></span>: [+ uspd_votes +]%?]
+
 {!<span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>!}: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
 [? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>: [+ z_votes +]%?]
 [? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="Center Party + Bavarian People's Party"><span style="color: var(--z_color);"><strong>Z</strong></span>+<span style="color: var(--bvp_color);"><strong>BVP</strong></span></span>: [+ z_votes +]%?]
-
-[? if kpd_formed: <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span>: [+ kpd_votes +]%?]
 
 [? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_votes +]%?]
 [? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_votes +]%?]
