@@ -610,7 +610,9 @@ Q.no_majority_elections = 0;
 Q.in_election = 1;
 Q.next_election_year = 1920;
 Q.next_election_month = 6;
-Q.next_election_time = 5;
+Q.next_election_time = 24;
+Q.next_congress_year = 1917;
+Q.next_congress_month = 4;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
