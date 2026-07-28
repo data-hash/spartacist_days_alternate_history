@@ -6,15 +6,15 @@ is-card: true
 on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
 card-image: img/weimar_coalition_2.jpg
 max-visits: 12
-subtitle: Building relations with the other political parties of Germany.
+# subtitle: Building relations with the other political parties of Germany.
 
 = Inter-Party Relationships
 
-[? if uspd_formed = 0 and burgfrieden = 0 : The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. We are currently in a political pact with all the other parties. ?]
-[? if uspd_formed = 1 and kpd_formed = 0 : The USPD cannot govern alone, yet. As a splinter of a major party we need the support of the major parties. We could build connections with the other parties. ?]
-[? if kpd_formed = 1 : The KPD cannot govern alone, yet. As a splinter party of a splinter party we could use the support of the major parties. Perhaps we should build connections with the other parties. ?]
+[? if uspd_formed = 0 and burgfrieden = 0 : The <span style="color: var(--spd_color)">SPD</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. We are currently in a political pact with all the other parties. ?]
+[? if uspd_formed = 1 and kpd_formed = 0 : The <span style="color: var(--uspd_color)">USPD</span> cannot govern alone, yet. As a splinter of a major party we need the support of the major parties. We could build connections with the other parties. ?]
+[? if kpd_formed = 1 : The <span style="color: var(--kpd_color)">KPD</span> cannot govern alone, yet. As a splinter party of a splinter party we could use the support of the major parties. Perhaps we should build connections with the other parties. ?]
 
-- @liberals: Strengthen our bonds with the left-liberal DDP and conservative-liberal DVP.
+- @liberals: Strengthen our bonds with the left-liberal [+ ddp_name +] and conservative-liberal [+ dvp_name +].
 - @center: Strengthen our bonds with the Catholic Center Party.
 - @socdems: Work towards repairing relationships with the Social Democratic Party.
 - @kpd_alone: The SPD can stand alone for now.
@@ -30,8 +30,7 @@ on-arrival: {!
 	Q.resources -= 1
 	Q.kpd_inter_party_seen += 1
 !}
-go-to: spd_1 if spd_relation <= 40
-# spd_rectification_of_history if spd_relation >= 40 and kpd_rectified_history = 0 and spartacist_uprising = 1 and year >= 1924;
+go-to: spd_1 if spd_relation <= 40; spd_rectification_of_history if spd_relation >= 40 and spd_rectified_history = 0 and spartacist_uprising = 1; spd_2 if spd_coalition_success = 1 and spd_rectified_history = 1
 
 @spd_1
 on-arrival: spd_relation += 6*(1 - dissent); left_dissent += 2; z_relation -= 2; dvp_relation -= 3
@@ -40,7 +39,7 @@ The social democrats are suspicious of our overtures, as they consider us too ra
 
 @spd_rectification_of_history
 
-One stumbling block for our relations with the SPD is our history of conflict, dating back to 1918 and 1919. The SPD has refused to denounce Gustav Noske, the SPD "bloodhound" who ordered the violent suppression of the Spartacist uprising and other KPD revolts. They are also to blame for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the <span style="color: var(--spd_color)">SPD</span> is our history of conflict, dating back to 1918 and 1919. The <span style="color: var(--spd_color)">SPD</span> has refused to denounce Gustav Noske, the <span style="color: var(--spd_color)">SPD</span> "bloodhound" who ordered the violent suppression of the Spartacist uprising and other <span style="color: var(--kpd_color)">KPD</span> revolts. They are also to blame for the deaths of Rosa Luxemburg and Karl Liebknecht, two <span style="color: var(--spd_color)">SPD</span>-turned-<span style="color: var(--kpd_color)">KPD</span> leaders who were killed during the suppression of the uprising.
 
 For further improvements in SPD relations, it will be necessary to demand the SPD expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
@@ -48,7 +47,7 @@ For further improvements in SPD relations, it will be necessary to demand the SP
 - @no_history: No, we will not collaborate with these traitors.
 
 @yes_history
-on-arrival: left_dissent += 8; left_strength -= 2; neorevisionist_dissent += 5; reform_dissent -= 6; reformist_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: left_dissent += 8; left_strength -= 2; neorevisionist_dissent += 5; reform_dissent -= 6; reformist_strength += 5; spd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; spd_relation += 8*(1-dissent); coalition_dissent += 1
 
 As part of normalizing relations with the SPD, we have demanded they acknowledge the wrongdoings of their past. They have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 
@@ -62,16 +61,11 @@ on-arrival: spd_relation -= 3; left_dissent -= 3;
 
 We have no need to collaborate with these traitors to the revolution. 
 
-
 @spd_2
 on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; left_dissent += 2; z_relation -= 3; dvp_relation -= 3
 
 After the success of the coalition government with the SPD, they are much more amenable to us.
 
-@kpd_blutmai
-on-arrival: kpd_relation += 3*(1 - dissent); reformist_dissent += 1
-
-After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
 
 @center
 subtitle: -1 resources
@@ -118,8 +112,8 @@ on-arrival: {!
 	Q.ddp_relation += 3*(1 - Q.dissent) 
 !}
 
-[? if nov_revolution = 0 : The [+ ddp_name +] and [+ dvp_name +] have been our enemies throughout the course of the Empire. ?]
-[? if nov_revolution = 1 : The [+ ddp_name +] and [+ dvp_name +] have been our enemies ever since the days of the German Empire.?]
+The [+ ddp_name +] and [+ dvp_name +] have been our natural enemies, as they liberal end of capital.
+
 
 It will be difficult to convince them to be on our side.
 
