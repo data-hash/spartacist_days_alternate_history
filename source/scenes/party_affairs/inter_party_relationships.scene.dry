@@ -30,7 +30,7 @@ on-arrival: {!
 	Q.resources -= 1
 	Q.kpd_inter_party_seen += 1
 !}
-# go-to: spd_1 if spd_relation <= 40; spd_rectification_of_history if spd_relation >= 40 and spd_rectification_of_history = 0 and spartacist_uprising = 1 and year >= 1924;
+go-to: spd_1 if spd_relation <= 40; spd_rectification_of_history if spd_relation >= 40 and spd_rectification_of_history = 0 and spartacist_uprising = 1 and year >= 1924;
 # go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
 
 @spd_1
@@ -77,7 +77,10 @@ After the events of Blütmai, reconciling with the Communists is difficult, if n
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
+on-arrival: {!
+	Q.resources -= 1
+	if (Q.z_party_leader == "Joos") {Q.z_relation += 2}
+!}
 go-to: center_op if z_in_government = 1 and kpd_in_government = 0 and chancellor != "Brüning"; center_coalition if kpd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"; center_burger if burgfrieden = 1 and uspd_formed = 0; center_burger_2 if burgfrieden = 1 and uspd_formed = 1;
 
 @center_op
@@ -110,7 +113,10 @@ We are currently outside the Burgfrieden truce with the other parties, so improv
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ddp_relation += 3*(1 - dissent)
+on-arrival: {!
+	Q.resources -= 1
+	Q.ddp_relation += 3*(1 - Q.dissent) 
+!}
 
 [? if nov_revolution = 0 : The [+ ddp_name +] and [+ dvp_name +] have been our enemies throughout the course of the Empire. ?]
 [? if nov_revolution = 1 : The [+ ddp_name +] and [+ dvp_name +] have been our enemies ever since the days of the German Empire.?]
