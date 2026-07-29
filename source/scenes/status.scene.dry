@@ -31,6 +31,10 @@ Next congress: [? if next_congress_month > 0 : [+ next_congress_month : month +]
 [? if kpd_formed = 1 and kpd_merge = 0 : Currently in: the <span style="color: var(--kpd_color)"><strong>KPD</strong></span> ?]
 [? if kpd_formed = 1 and kpd_merge = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>?]
 
+[? if russian_revolution = 1 : Soviet relations: [+ soviet_relation : relationships +]?]
+
+Union strength: [+ union_strength : strength +]
+
 = Finances
 
 Resources available: [+ resources +]
@@ -52,7 +56,9 @@ Annual dues: [+ dues +]
 
 # [? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
-Internal dissent: [+ dissent_percent : dissent +]
+[? if kpd_formed = 1 : <h1>Internal Factions of the <span style="color: var(--kpd_color)">KPD</span>?]
+
+[? if kpd_formed = 1 : Internal dissent: [+ dissent_percent : dissent +]?]
 
 = Economics
 
@@ -530,7 +536,7 @@ if (d3 && window && Q.started) {
 [? if uspd_formed = 1 and kpd_formed = 1: {!<tr><td><div class="box" style='background-color: var(--uspd_color);'> </div> !} USPD: {!</td><td>!} [+ uspd_seats +] ([+ uspd_per +]%) {!</td><td>!} [? if uspd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if uspd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
 [? if uspd_formed = 0 : {!<tr><td><div class="box" style='background-color: var(--spd_color); outline: 2px; outline-style: solid;'> </div> !} <strong>SPD:</strong> {!</td><td>!} <strong>[+ spd_seats +]</strong> <strong>([+ spd_per +]%)</strong> {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-[? if uspd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--spd_color);'> </div> !} SPD: {!</td><td>!} [+ spd_seats +] ([+ spd_per +]%) {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if uspd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--spd_color);'> </div> !} MSPD: {!</td><td>!} [+ spd_seats +] ([+ spd_per +]%) {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color: var(--other_color);'> </div> !} Others: {!</td><td>!} [+ other_seats +] ([+ other_r +]%) {!</td><td>!} [? if other_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if other_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!}
 
@@ -574,6 +580,6 @@ if (d3 && window && Q.started) {
 
 <div> 
 <div style="text-align: center;">
-<h1><a href="#" onclick="window.dendryUI.dendryEngine.goToScene('regions'); return false;" style="display: inline-block; padding: 4px 10px; border: 1px solid #431; color: #431; font-size: 1em; cursor: pointer; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 0.05em;">Regions</a></h1>
+[? if started = 1 : <h1><a href="#" onclick="window.dendryUI.dendryEngine.goToScene('regions'); return false;" style="display: inline-block; padding: 4px 10px; border: 1px solid #431; color: #431; font-size: 1em; cursor: pointer; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 0.05em;">Regions</a></h1> ?]
 </div>
 </div>

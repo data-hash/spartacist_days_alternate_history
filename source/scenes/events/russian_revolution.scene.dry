@@ -1,0 +1,16 @@
+title: Russian Revolution
+subtitle: The Bolsheviks have made their move.
+view-if: month = 10 and year = 1917
+new-page: true
+max-visits: 1
+on-arrival: {!
+	Q.russian_revolution = 1
+	Q.soviet_relation = 50
+!}
+tags: event
+
+= The October Revolution
+
+After the events in February with the fall of the Tzar the Bolsheviks have overthrown the Provisional Government.
+
+We have many thoughts about this.

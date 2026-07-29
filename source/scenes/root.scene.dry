@@ -25,6 +25,7 @@ Q.time = 1;
 Q.year = 1917;
 Q.month = 1;
 Q.nov_revolution = 0; // Nov Revolution set to 0 at start, set to 1 when happens
+Q.russian_revolution = 0;
 Q.great_war_over = 0;
 Q.spartacist_uprising = 0;
 // how many actions have been taken this month?
