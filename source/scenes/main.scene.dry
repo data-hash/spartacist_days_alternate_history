@@ -64,5 +64,5 @@ is-deck: true
 @region_card
 title: States of the[? if nov_revolution = 0: German Empire?][? if nov_revolution = 1: German Republic?]
 card-image: img/reichstag_1.jpg
-is-deck: true
+is-deck: false
 go-to: regions
