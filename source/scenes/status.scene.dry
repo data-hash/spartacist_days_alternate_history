@@ -570,7 +570,7 @@ if (d3 && window && Q.started) {
 
 [? if nov_revolution = 0 : <h1>Map of the <span style="color: #000"><strong>German Empire</strong></h1>?]
 
-[? if great_war_over = 0: <div style="display: flex; justify-content: center; align-items: center;"> <img src="img/German_Empire_states_map.svg" alt="Map of the German Empire">?]
+[? if great_war_over = 0: <div style="display: flex; justify-content: center; align-items: center;"> <img src="img/German_Empire_states_map.svg" alt="Map of the German Empire"></div>?]
 
 <div> 
 <div style="text-align: center;">
