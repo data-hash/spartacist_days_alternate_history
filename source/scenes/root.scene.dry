@@ -210,6 +210,7 @@ Q.nationalism = 60;
 Q.socialism = 40;
 // pro-republic vs anti-republic
 Q.pro_republic = 17;
+Q.pro_empire = 17;
 
 Q.emergency_rule = 0;
 
@@ -514,6 +515,7 @@ Q.military_reform = 0;
 Q.womens_rights = 0;
 // level of welfare relative to 1928 (can go negative)
 Q.welfare = 0;
+Q.mutual_aid = 0;
 // level of support for farmers
 Q.agricultural_policy = 0;
 Q.land_reform = 0;

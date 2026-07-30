@@ -5,7 +5,7 @@ tags: party_affairs
 view-if: rally_timer <= 0
 on-arrival: month_actions += 1; rally_timer = 6
 card-image: img/protest.jpg
-go-to: main_rally; sa_disrupt if sa_strength > 180 and not sa_banned and not return_to_normalcy
+go-to: main_rally; sa_disrupt if sa_strength > 180 and not sa_banned and not return_to_normalcy and sa_formed
 
 @sa_disrupt
 
@@ -81,17 +81,57 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
+on-arrival: {!
+	Q.workers_kpd += 4*(1-Q.dissent)
+	Q.workers_spd -= 4*(1-Q.dissent)
+
+	Q.left_strength += 5
+	Q.left_dissent -= 5
+	Q.old_middle_kpd -= 3
+	Q.new_middle_kpd -= 2
+
+	if (Q.left_strength > Q.reformist_strength) {Q.unemployed_kpd += 3*(1-Q.dissent)}
+	if (Q.nationalization_progress > 0) {
+		Q.workers_kpd += 4*(1-Q.dissent)
+		Q.unemployed_kpd += 3*(1-Q.dissent)
+	}
+!}
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 @welfare
-on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
+on-arrival: {!
+	Q.workers_kpd += 3*(1-Q.dissent)
+	Q.workers_spd -= 3*(1-Q.dissent)
 
-The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
+	Q.reformist_strength += 3
+	Q.reformist_dissent -= 3
+	Q.labor_strength += 4
+	Q.labor_dissent -= 3
+	
+	if (Q.welfare > 0 || Q.mutual_aid > 0) {
+		Q.workers_kpd += 3*(1-Q.dissent)
+		Q.unemployed_kpd += 3*(1-Q.dissent)
+	}
+	if (Q.welfare > 1 || Q.mutual_aid > 1) {Q.unemployed += 4*(1-Q.dissent)}
+!}
+
+The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?][? if mutual_aid > 1 : Expanding our mutual aid program has made this message more effective. ?]
 
 @democracy
-on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_spd += 4*(1-dissent) if democratization >= 3; unemployed_spd += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_spd += 4*(1-dissent) if democratization >= 3 
+on-arrival: {!
+	Q.democratization += 1
+	Q.pro_republic += 2(1-Q.dissent)
+
+	if (Q.democratization >= 3) {
+		Q.workers_kpd += 4*(1-Q.dissent)
+		Q.unemployed_kpd += 3*(1-Q.dissent)
+		Q.new_middle_kpd += 4*(1-Q.dissent)
+
+		Q.pro_empire -= 3*(1-Q.dissent)
+		Q.pro_republic += 4*(1-Q.dissent)
+	}
+!}
 
 Our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
 
@@ -99,9 +139,19 @@ Our speakers defend the republican system and rail against the monarchists and a
 [? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @pacifism
-on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_spd += 4*(1 - dissent) if pacifism >= 3; unemployed_spd += 3*(1-dissent) if pacifism >= 3; nationalism -= 3*(1-dissent) if pacifism >= 3; new_middle_spd += 4*(1-dissent) if pacifism >= 3
+on-arrival: {!
+	Q.pacifism += 1
+	Q.nationalism -= 2*(1-Q.dissent)
 
-Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
+	if (Q.pacifism >= 3) {
+		Q.workers_kpd += 4*(1-Q.dissent)
+		Q.unemployed_kpd += 3*(1-Q.dissent)
+		Q.new_middle_kpd += 4*(1-Q.dissent)
+		Q.natinoalism -= 3*(Q.dissent)
+	}
+!}
+
+Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in starting the Great War.
 
 [? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military. ?]
 [? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
@@ -116,6 +166,6 @@ The WTB plan has become a popular rallying cry for our party. The workers are ea
 
 
 @local
-on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 1*(1-dissent); new_middle_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent);
+on-arrival: workers_kpd += 3*(1-dissent); old_middle_kpd += 1*(1-dissent); new_middle_kpd += 2*(1-dissent); unemployed_kpd += 3*(1-dissent);
 
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.
