@@ -49,11 +49,13 @@ for (var party of Q.parties) {
             party_support += Q[c]*Q[c+'_'+party];
         } else  { 
             party_support += Q[c]*Q[c+'_'+party+'_normalized'];
-            console.log(c)
+            console.log(party_support)
         } 
     }
     Q[party + '_support'] = party_support;
+    console.log(Q[party + '_support'])
     total_support += party_support; 
+    console.log(total_support)
 }
 // 2. normalize support (fraction)
 for (var party of Q.parties) {
