@@ -35,6 +35,14 @@ on-arrival: {!
         Q.new_middle_kpd += 4*(1-Q.dissent)
         Q.old_middle_kpd += 3*(1-Q.dissent)
     }
+    if (Q.uspd_formed && !Q.kpd_formed) {
+        Q.new_middle_uspd += 4*(1-Q.dissent)
+        Q.old_middle_uspd += 3*(1-Q.dissent)
+    }
+    if (!Q.uspd_formed) {
+        Q.new_middle_spd += 4*(1-Q.dissent)
+        Q.old_middle_spd += 3*(1-Q.dissent)
+    }
 
     Q.left_dissent += 10
     Q.center_dissent += 10
@@ -58,6 +66,11 @@ on-arrival: {!
     if (Q.uspd_formed && !Q.kpd_formed) {
         Q.workers_uspd += 3*(1-Q.dissent)
         Q.unemployed_uspd += 4*(1-Q.dissent)
+    }
+
+    if (!Q.uspd_formed) {
+        Q.workers_spd += 3*(1-Q.dissent)
+        Q.unemployed_spd += 4*(1-Q.dissent)
     }
 !}
 
@@ -94,8 +107,13 @@ on-arrival: {!
         Q.old_middle_kpd += 3*(1-Q.dissent)
         Q.workers_kpd += 2*(1-Q.dissent)
     }
+
+    if (Q.uspd_formed && !Q.kpd_formed) {
+        Q.new_middle_uspd += 4*(1-Q.dissent)
+        Q.old_middle_uspd += 3*(1-Q.dissent)
+        Q.workers_uspd += 2*(1-Q.dissent)
+    }
 !}
-radio += 1; resources -= 2; new_middle_kpd += 4*(1 - dissent); old_middle_kpd += 3*(1 - dissent); workers_kpd += 2*(1 - dissent); labor_dissent += 5; socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent) if pacifism > 1; pro_republic += 3*(1-dissent) if democratization > 1
 
 Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of socialism along with music and other popular content. Since most proletarians cannot afford family radios right now, we are reaching the middle class, a fact of which our labor comrades are painfully aware.
 
@@ -112,7 +130,7 @@ Our new radio network has a mix of popular and political programming, and is pro
 @radio_3
 title: We must keep on building up our radio network.
 subtitle: It is now financially self-sufficient, and does not require any more resources.
-view-if: radio > 3 and radio <= 5 and year <= 1931
+view-if: radio > 3 and radio <= 5 and year <= 1923
 on-arrival: radio += 1; new_middle_kpd += 5*(1 - dissent); old_middle_kpd += 4*(1 - dissent); workers_kpd += 4*(1 - dissent); rural_kpd += 3*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)*(democratization-2) if democratization > 2
 
 Our radio network has become a successful tool for spreading our message.
@@ -122,7 +140,7 @@ title: We should keep on supporting our radio network.
 subtitle: As radio becomes more common, the novelty is beginning to wear off, and radio is becoming saturated in society. -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-view-if: radio > 3 and (radio >= 6 or year >= 1932) and radio <= 9
+view-if: radio > 3 and (radio >= 6 or year >= 1926) and radio <= 9
 on-arrival: radio += 1; resources -= 1; new_middle_kpd += 3*(1 - dissent); old_middle_kpd += 2*(1 - dissent); workers_kpd += 3*(1 - dissent); rural_kpd += 2*(1 - dissent); unemployed_kpd += 2*(1-dissent); socialism += 2*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 2*(1-dissent)*(democratization-2) if democratization > 2
 
 We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.
