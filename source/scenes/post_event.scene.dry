@@ -33,16 +33,11 @@ for (var c of Q.classes) {
         if (Q[c+'_'+party] < 0) {
             Q[c+'_'+party] = 0;
         }
-        class_votes += Q[c+'_'+party];
-        console.log(Q[c+'_'+party])
-        console.log(class_votes)
+        class_votes += Q[c+'_'+party]; // returning null on political rally class struggle
+        
     }
     for (var party of Q.parties) {
         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
-        console.log(c)
-        console.log(party)
-        console.log(Q[c+'_'+party+'_normalized'])
-        console.log(class_votes)
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
 }
@@ -55,8 +50,6 @@ for (var party of Q.parties) {
             party_support += Q[c]*Q[c+'_'+party];
         } else  { 
             party_support += Q[c]*Q[c+'_'+party+'_normalized'];
-            console.log(Q[c+'_'+party+'_normalized'])
-            console.log(party)
         } 
     }
     Q[party + '_support'] = party_support;
