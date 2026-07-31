@@ -34,9 +34,11 @@ for (var c of Q.classes) {
             Q[c+'_'+party] = 0;
         }
         class_votes += Q[c+'_'+party];
+        console.log(class_votes)
     }
     for (var party of Q.parties) {
         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
+        console.log(Q[c + '_' + party + '_normalized'])
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
 }
@@ -52,7 +54,6 @@ for (var party of Q.parties) {
         } 
     }
     Q[party + '_support'] = party_support;
-    console.log(Q[party + '_support'])
     total_support += party_support; 
 }
 // 2. normalize support (fraction)
@@ -60,7 +61,6 @@ for (var party of Q.parties) {
     Q[party+'_normalized'] = Q[party + '_support']/total_support;
     Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
     Q[party+'_votes_display'] = Math.round(Q[party+'_normalized']*100);
-    console.log(Q[party+'_votes'])
 }
 
 

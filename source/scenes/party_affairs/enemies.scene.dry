@@ -36,6 +36,7 @@ on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; nazi_urgency += 1; 
 [? if nazi_urgency == 0 or nsdap_r < 10 : The NSDAP is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if nazi_urgency > 0 and nsdap_r >= 10 : The Nazis are the most urgent problem for us to deal with. ?]
 
 @spd
+view-if: uspd_formed = 1
 on-arrival: enemies = "SPD"; left_strength += 5; reformist_dissent += 8; left_dissent -= 5; spd_relation -= 15; uspd_relation += 5; workers_spd -= 4;
 
 Attacking the SPD is supported by all but the reformist socialists, and wins us some measure of approval among the <span style="color: var(--uspd_color)">USPD</span>. However, If we are to reconcile with the <span style="color: var(--spd_color)">SPD</span>, this may not be the best choice.
