@@ -11,7 +11,7 @@ for (var c of Q.classes) {
         }
     }
 }
-
+Q.pro_empire = Math.round(Q.pro_empire)
 Q.pro_republic = Math.round(Q.pro_republic);
 Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
@@ -34,9 +34,15 @@ for (var c of Q.classes) {
             Q[c+'_'+party] = 0;
         }
         class_votes += Q[c+'_'+party];
+        console.log(Q[c+'_'+party])
+        console.log(class_votes)
     }
     for (var party of Q.parties) {
         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
+        console.log(c)
+        console.log(party)
+        console.log(Q[c+'_'+party+'_normalized'])
+        console.log(class_votes)
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
 }
@@ -49,9 +55,8 @@ for (var party of Q.parties) {
             party_support += Q[c]*Q[c+'_'+party];
         } else  { 
             party_support += Q[c]*Q[c+'_'+party+'_normalized'];
-            console.log(c)
             console.log(Q[c+'_'+party+'_normalized'])
-            console.log(party_support)
+            console.log(party)
         } 
     }
     Q[party + '_support'] = party_support;
