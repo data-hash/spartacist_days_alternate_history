@@ -196,6 +196,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 = Support for Socialism / Nationalism
 
 Socialism: [+ socialism_disp : support +], [+ socialism_disp +]%
+
 Nationalism: [+ nationalism_disp : support_inverted +], [+ nationalism_disp +]%
 
 **Detailed results for each demographic**
@@ -584,6 +585,6 @@ if (d3 && window && Q.started) {
 
 <div> 
 <div style="text-align: center;">
-[? if started = 1 : <h1><a href="#" onclick="window.dendryUI.dendryEngine.goToScene('regions'); return false;" style="display: inline-block; padding: 4px 10px; border: 1px solid #431; color: #431; font-size: 1em; cursor: pointer; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 0.05em;">Regions</a></h1> ?]
+[? if real_started = 1 : <h1><a href="#" onclick="window.dendryUI.dendryEngine.goToScene('regions'); return false;" style="display: inline-block; padding: 4px 10px; border: 1px solid #431; color: #431; font-size: 1em; cursor: pointer; font-family: Georgia, serif; text-transform: uppercase; letter-spacing: 0.05em;">Regions</a></h1> ?]
 </div>
 </div>
