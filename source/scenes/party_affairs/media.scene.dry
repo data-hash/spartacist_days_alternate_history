@@ -27,14 +27,39 @@ card-image: img/sangerbund.jpg
 @commercial
 title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
 subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
-on-arrival: resources += 1; commercialized_media += 1; new_middle_kpd += 4*(1 - dissent); old_middle_kpd += 3*(1-dissent); left_dissent += 10; center_dissent += 10; grassroots_support += 4*(1-dissent);
+on-arrival: {!
+    Q.resources += 1
+    Q.commercialized_media += 1
+
+    if (Q.kpd_formed) {
+        Q.new_middle_kpd += 4*(1-Q.dissent)
+        Q.old_middle_kpd += 3*(1-Q.dissent)
+    }
+
+    Q.left_dissent += 10
+    Q.center_dissent += 10
+    Q.grassroots_support += 4*(1-Q.dissent)
+
+!}
 
 Our commercialized newspapers are able to bring in more funds. However, the left and center factions express their displeasure. [? if uspd_formed == 0 : The party divide seems to be growing.?]
 
 @campaign
-title: [? if kpd_formed = 0 : The purpose of our media is to elect more Social Democrats. ?][? if kpd_formed = 1 : We should use the media to elect more Communists.?]
+title: [? if kpd_formed = 0 and uspd_formed = 0 : The purpose of our media is to elect more Social Democrats. ?][? if uspd_formed = 1 and kpd_formed = 0 : The purpose of our media is to elect more socialists. ?][? if kpd_formed = 1 : We should use the media to elect more Communists.?]
 subtitle: Our newspapers will focus on the electoral campaign.
-on-arrival: campaign_media += 1; workers_kpd += 3*(1 - dissent); unemployed_kpd += 4*(1-dissent);
+on-arrival: {!
+    Q.campaign_media += 1
+
+    if (Q.kpd_formed) {
+        Q.workers_kpd += 3*(1-Q.dissent)
+        Q.unemployed_kpd += 4*(1-Q.dissent)
+    }
+
+    if (Q.uspd_formed && !Q.kpd_formed) {
+        Q.workers_uspd += 3*(1-Q.dissent)
+        Q.unemployed_uspd += 4*(1-Q.dissent)
+    }
+!}
 
 Our campaign media is mostly reaching the workers and the unemployed who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
 
@@ -51,7 +76,26 @@ subtitle: -2 resources
 choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
 view-if: radio = 0 and year >= 1920
-on-arrival: radio += 1; resources -= 2; new_middle_kpd += 4*(1 - dissent); old_middle_kpd += 3*(1 - dissent); workers_kpd += 2*(1 - dissent); labor_dissent += 5; socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent) if pacifism > 1; pro_republic += 3*(1-dissent) if democratization > 1
+on-arrival: {!
+    Q.radio += 1
+    Q.resources -= 2
+    Q.socialism += 3*(1-Q.dissent)
+
+    if (Q.pacifism > 1) {Q.nationalism -= 3*(1-Q.dissent)}
+    if (Q.democratization > 1) {
+        Q.pro_republic += 3*(1-Q.dissent)
+        Q.pro_empire -= 3*(1-Q.dissent)
+    }
+
+    // Q.labor_dissent += 5
+
+    if (Q.kpd_formed) {
+        Q.new_middle_kpd += 4*(1-Q.dissent)
+        Q.old_middle_kpd += 3*(1-Q.dissent)
+        Q.workers_kpd += 2*(1-Q.dissent)
+    }
+!}
+radio += 1; resources -= 2; new_middle_kpd += 4*(1 - dissent); old_middle_kpd += 3*(1 - dissent); workers_kpd += 2*(1 - dissent); labor_dissent += 5; socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent) if pacifism > 1; pro_republic += 3*(1-dissent) if democratization > 1
 
 Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of socialism along with music and other popular content. Since most proletarians cannot afford family radios right now, we are reaching the middle class, a fact of which our labor comrades are painfully aware.
 

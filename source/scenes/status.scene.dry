@@ -190,8 +190,13 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 = Support for the [? if nov_revolution = 0 : **Imperial Government** ?][? if nov_revolution = 1 : **Republic** ?]
 
-[? if nov_revolution = 0 : Support for the {!<span style="color:#000000"><strong>Empire</strong></span>!}: [+ pro_republic_disp +]%?]
+[? if nov_revolution = 0 : Support for the {!<span style="color:#000000"><strong>Empire</strong></span>!}: [+ pro_empire_disp +]%?]
 [? if nov_revolution = 1 : Support for the {!<span style="color:#FF0000"><strong>Republic</strong></span>!}: [+ pro_republic_disp +]%?]
+
+= Support for Socialism / Nationalism
+
+Socialism: [+ socialism_disp : support +], [+ socialism_disp +]%
+Nationalism: [+ nationalism_disp : support_inverted +], [+ nationalism_disp +]%
 
 **Detailed results for each demographic**
 
