@@ -16,6 +16,9 @@ Q.pro_republic = Math.round(Q.pro_republic);
 Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
 
+if (Q.pro_empire < 0) {Q.pro_empire = 0}
+if (Q.pro_empire >= 100) {Q.pro_empire = 99}
+
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
 }
