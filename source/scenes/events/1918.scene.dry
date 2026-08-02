@@ -1,0 +1,13 @@
+title: 1918
+subtitle: A new year
+on-arrival: {!
+// see post_event.scene.dry for changes.
+Q.economic_growth -= 4;
+
+!}
+tags: event
+view-if: year = 1918 and month = 1
+priority: 2
+max-visits: 1
+
+A new year begins. The war is still raging on despite our efforts. More resources are being diverted to the war, and strikes have significantly hurt the war effort. We should take advantage of this.
