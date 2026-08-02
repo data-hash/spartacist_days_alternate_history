@@ -14,7 +14,7 @@ In our media and campaign materials, who should we consider as our main opponent
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
 # - @anti_dem: The anti-democratic parties of the far right and left - the KPD, NSDAP, and DNVP.
-- @far_right: [? if nsdap_formed = 0 : The far right party - the [+ dvnp_name +].?][? if nsdap_formed = 1 : The far right parties - the [+ dnvp_name +] and the NSDAP?]
+- @far_right: [? if nsdap_formed = 0 : The far right party - the [+ dnvp_name +].?][? if nsdap_formed = 1 : The far right parties - the [+ dnvp_name +] and the NSDAP?]
 - @nsdap: The NSDAP alone.
 - @spd: The SPD.
 - @bourgeois: The bourgeois parties - the Center, [+ ddp_name +] and [+ dvp_name +].
