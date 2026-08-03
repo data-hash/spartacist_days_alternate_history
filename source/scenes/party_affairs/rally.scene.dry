@@ -82,22 +82,23 @@ Mass rallies are a common feature of social democratic life, especially in the l
 
 @class_struggle
 on-arrival: {!
-	if (Q.kpd_formed == 0 && Q.uspd_formed == 0) {Q.workers_spd -= 4*(1-Q.dissent)}
+	if (Q.kpd_formed == 0 && Q.uspd_formed == 0) {Q.workers_spd += 4*(1-Q.dissent)}
 	if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {Q.workers_uspd += 4*(1-Q.dissent)}
 	if (Q.kpd_formed == 1) {
 		Q.workers_kpd += 4*(1-Q.dissent)
 		Q.old_middle_kpd -= 3
 		Q.new_middle_kpd -= 2
+
+		if (Q.nationalization_progress > 0) {
+			Q.workers_kpd += 4*(1-Q.dissent)
+			Q.unemployed_kpd += 3*(1-Q.dissent)
+		}
+		
+		if (Q.left_strength > Q.reformist_strength) {Q.unemployed_kpd += 3*(1-Q.dissent)}
 	}
 
 	Q.left_strength += 5
 	Q.left_dissent -= 5
-
-	if (Q.left_strength > Q.reformist_strength) {Q.unemployed_kpd += 3*(1-Q.dissent)}
-	if (Q.kpd_formed == 1 && Q.nationalization_progress > 0) {
-		Q.workers_kpd += 4*(1-Q.dissent)
-		Q.unemployed_kpd += 3*(1-Q.dissent)
-	}
 !}
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
@@ -106,18 +107,23 @@ Our message of class struggle appeals to the left wing of the working class, whi
 on-arrival: {!
 	if (Q.kpd_formed == 0 && Q.uspd_formed == 0) {Q.workers_spd -= 3*(1-Q.dissent)}
 	if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {Q.workers_uspd += 3*(1-Q.dissent)}
-	if (Q.kpd_formed == 1) {Q.workers_kpd += 3*(1-Q.dissent)}
+	if (Q.kpd_formed == 1) {
+		Q.workers_kpd += 3*(1-Q.dissent)
+
+		if (Q.welfare > 0 || Q.mutual_aid > 0) {
+			Q.workers_kpd += 3*(1-Q.dissent)
+			Q.unemployed_kpd += 3*(1-Q.dissent)
+		}
+
+		if (Q.welfare > 1 || Q.mutual_aid > 1) {
+			Q.unemployed_kpd += 4*(1-Q.dissent)
+		}
+	}
 
 	Q.reformist_strength += 3
 	Q.reformist_dissent -= 3
 	Q.labor_strength += 4
 	Q.labor_dissent -= 3
-	
-	if (Q.kpd_formed == 1 && Q.welfare > 0 || Q.mutual_aid > 0) {
-		Q.workers_kpd += 3*(1-Q.dissent)
-		Q.unemployed_kpd += 3*(1-Q.dissent)
-	}
-	if (Q.kpd_formed == 1 && Q.welfare > 1 || Q.mutual_aid > 1) {Q.unemployed_kpd += 4*(1-Q.dissent)}
 !}
 
 The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?][? if mutual_aid > 1 : Expanding our mutual aid program has made this message more effective. ?]
