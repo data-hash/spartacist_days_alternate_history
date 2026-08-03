@@ -38,6 +38,8 @@ for (var c of Q.classes) {
     }
     for (var party of Q.parties) {
         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
+        console.log(Q[c+'_'+party])
+        console.log(class_votes)
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
 }
