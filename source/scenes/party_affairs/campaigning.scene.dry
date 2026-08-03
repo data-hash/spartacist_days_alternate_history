@@ -54,13 +54,14 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: {!
-	/*if (Q.uspd_formed == 0) {
+	if (Q.uspd_formed == 0) {
 		Q.new_middle_spd += 6*(1-Q.dissent)
 
 		if (Q.socialism <=49 && peoples_party == 0) {Q.new_middle_spd -= 4}
 		Q.resources -= 1
 		Q.peoples_party_support += 1
 	}
+
 	if (Q.uspd_formed == 1 && kpd_formed == 0) {
 		Q.new_middle_uspd += 6*(1-Q.dissent)
 
@@ -68,12 +69,14 @@ on-arrival: {!
 		Q.resources -= 1
 		Q.peoples_party_support += 1
 	}
-	if (Q.kpd_formed == 1) {*/
+
+	if (Q.kpd_formed == 1) {
 		Q.new_middle_kpd += 6*(1-Q.dissent)
 
 		if (Q.socialism <=49 && peoples_party == 0) {Q.new_middle_kpd -= 4}
 		Q.resources -= 1
 		Q.peoples_party_support += 1
+	}
 	
 !}
 
@@ -84,13 +87,14 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: {!
-	/*if (Q.uspd_formed == 0) {
+	if (Q.uspd_formed == 0) {
 		Q.old_middle_spd += 5*(1-Q.dissent)
 		Q.peoples_party_support += 1
 		Q.resources -= 1
 
 		if (Q.nationalism >= 51 && peoples_party == 0) {Q.old_middle_spd -= 3}
 	}
+
 	if (Q.uspd_formed == 1 && kpd_formed == 0) {
 		Q.old_middle_uspd += 5*(1-Q.dissent)
 		Q.peoples_party_support += 1
@@ -98,13 +102,14 @@ on-arrival: {!
 
 		if (Q.nationalism >= 51 && peoples_party == 0) {Q.old_middle_uspd -= 3}
 	}
-	if (Q.kpd_formed == 1) { */
+
+	if (Q.kpd_formed == 1) { 
 		Q.old_middle_kpd += 5*(1-Q.dissent)
 		Q.peoples_party_support += 1
 		Q.resources -= 1
 
 		if (Q.nationalism >= 51 && peoples_party == 0) {Q.old_middle_kpd -= 3}
-	
+	}	
 !}
 
 We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
@@ -114,7 +119,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: {!
-	/*if (Q.uspd_formed == 0) {
+	if (Q.uspd_formed == 0) {
 		Q.rural_spd += 5*(1-Q.dissent)
 		Q.resources -= 1
 		Q.peoples_party_support += 1
@@ -122,6 +127,7 @@ on-arrival: {!
 		if (Q.peoples_party == 0) {Q.rural_spd -= 3*(Q.dissent)}
 		if (Q.rural_policy >= 2) {Q.rural_spd += 3*(1-Q.dissent)}
 	}
+	
 	if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {
 		Q.rural_uspd += 5*(1-Q.dissent)
 		Q.resources -= 1
@@ -130,14 +136,15 @@ on-arrival: {!
 		if (Q.peoples_party == 0) {Q.rural_uspd -= 3*(Q.dissent)}
 		if (Q.rural_policy >= 2) {Q.rural_uspd += 3*(1-Q.dissent)}
 	}
-	if (Q.kpd_formed == 1) { */
+
+	if (Q.kpd_formed == 1) { 
 		Q.rural_kpd += 5*(1-Q.dissent)
 		Q.resources -= 1
 		Q.peoples_party_support += 1
 
 		if (Q.peoples_party == 0) {Q.rural_kpd -= 3*(Q.dissent)}
 		if (Q.rural_policy >= 2) {Q.rural_kpd += 3*(1-Q.dissent)}
-	
+	}
 !}
 
 We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
