@@ -82,9 +82,16 @@ Mass rallies are a common feature of social democratic life, especially in the l
 
 @class_struggle
 on-arrival: {!
-	if (Q.kpd_formed == 0 && Q.uspd_formed == 0) {Q.workers_spd += 4*(1-Q.dissent)}
-	if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {Q.workers_uspd += 4*(1-Q.dissent)}
+	if (Q.kpd_formed == 0 && Q.uspd_formed == 0) {
+		Q.workers_spd += 4*(1-Q.dissent)
+		console.log("KPD FORMED 0, AND USPD FORMED 0")
+	}
+	if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {
+		Q.workers_uspd += 4*(1-Q.dissent)
+		console.log("KPD FORMED 0, AND USPD FORMED 1")
+	}
 	if (Q.kpd_formed == 1) {
+		console.log("KPD FORMED 1")
 		Q.workers_kpd += 4*(1-Q.dissent)
 		Q.old_middle_kpd -= 3
 		Q.new_middle_kpd -= 2
