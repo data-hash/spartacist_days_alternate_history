@@ -1,0 +1,36 @@
+title: February Revolution in Russia
+subtitle: The Russian monarch has fallen.
+view-if: month = 2 and year = 1917
+new-page: true
+max-visits: 1
+on-arrival: {!
+	Q.russian_revolution = 1
+	Q.soviet_relation = 50
+!}
+tags: event
+
+= The February Revolution
+
+After much instability in the previous months in Russia it has boiled over, and the Tsar has stepped down. With the Tsar's son refusing to take the throne, and the monarchy is over. 
+
+A Provisional Government is formed, however the workers have formed their own councils. It is doubted that this situation will last long.
+
+We could take advantage of this to print more pamphlets, though it may not be very effective due to resistance from the Party and suppression from the State.
+
+- @pamphlets: Print pamphlets calling for revolution.
+- @nothing: Do nothing.
+
+@pamphlets
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: {!
+	Q.resources -= 1
+	Q.workers_spd += 3*(1-Q.dissent)
+	Q.union_support += 4*(1-Q.dissent)
+!}
+
+@nothing
+subtitle: Sometimes doing nothing is doing something.
+
+In this case though it is nothing.
