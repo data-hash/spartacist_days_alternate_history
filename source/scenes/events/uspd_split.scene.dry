@@ -1,0 +1,10 @@
+title: Communist Party of Germany Formed
+subtitle: The KPD is formed after a formal split with the USPD.
+tags: event
+view-if: nov_revolution = 1 and month = 12
+max-visits: 1
+go-to: kpd_formed if kpd_formed = 0
+
+<h1>The <span style="color: var(--kpd_color)"><strong>KPD</strong></span> is formed</h1>
+
+TODO

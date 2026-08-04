@@ -1,0 +1,13 @@
+title: [+ month : month +] Revolution
+new-page: true
+subtitle: The Kaiser has been overthrown!
+tags: event
+view-if: year >= 1918 and month >= 11 and pro_empire <= 20
+max-visits: 1
+on-arrival: {!
+    Q.nov_revolution = 1
+!}
+
+= The [+ month : month +] Revolution
+
+TODO

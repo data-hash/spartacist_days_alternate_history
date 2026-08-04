@@ -1,0 +1,53 @@
+on-arrival: {!
+// set up the infrastructure
+Q.kpd_formed = 1;
+Q.parties.push('kpd');
+
+Q.workers_kpd = 18;
+Q.workers_spd -= 3;
+Q.new_middle_kpd = 1;
+Q.old_middle_uspd = 0;
+Q.rural_uspd = 0;
+Q.unemployed_kpd = 40;
+Q.catholics_kpd = 0;
+
+Q.spd_relation = 15;
+Q.uspd_relation = 35
+Q.ddp_relation = 25;
+Q.z_relation = 20;
+Q.dvp_relation = 13;
+Q.dnvp_relation = 3;
+
+Q.spd_leader = "Friedrich Ebert";
+
+Q.workers_other -= 5;
+
+// update all records
+Q.kpd_r = 0;
+Q.old_kpd_r = 0;
+for (var record of Q.election_records) {
+    record['kpd'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['kpd'] = 0;
+}
+
+const sheet = document.styleSheets[0]; // or find it by href, see below
+
+for (const rule of sheet.cssRules) {
+  if (rule.selectorText === '.seat.uspd') { // match the exact selector
+    rule.style.removeProperty('stroke');
+    rule.style.removeProperty('stroke-width');
+    break; // stop once found
+  }
+}
+
+for (const rule of sheet.cssRules) {
+  if (rule.selectorText === '.seat.kpd') { // match the exact selector
+    rule.style.setProperty('stroke', 'var(--border-color)');
+    rule.style.setProperty('stroke-width', '1.5px');
+    break; // stop once found
+  }
+}
+
+!}
