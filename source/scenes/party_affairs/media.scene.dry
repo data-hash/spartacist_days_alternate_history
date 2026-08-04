@@ -31,15 +31,15 @@ on-arrival: {!
     Q.resources += 1
     Q.commercialized_media += 1
 
-    if (Q.kpd_formed) {
+    if (Q.kpd_formed == 1) {
         Q.new_middle_kpd += 4*(1-Q.dissent)
         Q.old_middle_kpd += 3*(1-Q.dissent)
     }
-    if (Q.uspd_formed && !Q.kpd_formed) {
+    if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {
         Q.new_middle_uspd += 4*(1-Q.dissent)
         Q.old_middle_uspd += 3*(1-Q.dissent)
     }
-    if (!Q.uspd_formed) {
+    if (Q.uspd_formed == 0) {
         Q.new_middle_spd += 4*(1-Q.dissent)
         Q.old_middle_spd += 3*(1-Q.dissent)
     }
@@ -53,22 +53,22 @@ on-arrival: {!
 Our commercialized newspapers are able to bring in more funds. However, the left and center factions express their displeasure. [? if uspd_formed == 0 : The party divide seems to be growing.?]
 
 @campaign
-title: [? if kpd_formed = 0 and uspd_formed = 0 : The purpose of our media is to elect more Social Democrats. ?][? if uspd_formed = 1 and kpd_formed = 0 : The purpose of our media is to elect more socialists. ?][? if kpd_formed = 1 : We should use the media to elect more Communists.?]
+title: [? if kpd_formed = 0 and uspd_formed = 0 : The purpose of our media is to elect more Social Democrats. ?][? if uspd_formed = 1 and kpd_formed = 0 : The purpose of our media is to elect more Socialists. ?][? if kpd_formed = 1 : We should use the media to elect more Communists.?]
 subtitle: Our newspapers will focus on the electoral campaign.
 on-arrival: {!
     Q.campaign_media += 1
 
-    if (Q.kpd_formed) {
+    if (Q.kpd_formed == 1) {
         Q.workers_kpd += 3*(1-Q.dissent)
         Q.unemployed_kpd += 4*(1-Q.dissent)
     }
 
-    if (Q.uspd_formed && !Q.kpd_formed) {
+    if (Q.uspd_formed && Q.kpd_formed == 0) {
         Q.workers_uspd += 3*(1-Q.dissent)
         Q.unemployed_uspd += 4*(1-Q.dissent)
     }
 
-    if (!Q.uspd_formed) {
+    if (Q.uspd_formed == 0) {
         Q.workers_spd += 3*(1-Q.dissent)
         Q.unemployed_spd += 4*(1-Q.dissent)
     }
@@ -102,13 +102,13 @@ on-arrival: {!
 
     // Q.labor_dissent += 5
 
-    if (Q.kpd_formed) {
+    if (Q.kpd_formed == 1) {
         Q.new_middle_kpd += 4*(1-Q.dissent)
         Q.old_middle_kpd += 3*(1-Q.dissent)
         Q.workers_kpd += 2*(1-Q.dissent)
     }
 
-    if (Q.uspd_formed && !Q.kpd_formed) {
+    if (Q.uspd_formed == 1 && Q.kpd_formed == 1) {
         Q.new_middle_uspd += 4*(1-Q.dissent)
         Q.old_middle_uspd += 3*(1-Q.dissent)
         Q.workers_uspd += 2*(1-Q.dissent)

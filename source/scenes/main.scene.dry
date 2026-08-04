@@ -19,7 +19,6 @@ max-cards: 4
 - @party
 - @govt
 - #advisor
-- @region_card
 - @shuffle_leadership_pinned
 
 @main_easy
@@ -60,9 +59,3 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
-
-@region_card
-title: States of the[? if nov_revolution = 0: German Empire?][? if nov_revolution = 1: German Republic?]
-card-image: img/reichstag_1.jpg
-is-deck: false
-go-to: regions

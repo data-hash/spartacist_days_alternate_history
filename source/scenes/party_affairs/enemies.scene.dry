@@ -14,10 +14,10 @@ In our media and campaign materials, who should we consider as our main opponent
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
 # - @anti_dem: The anti-democratic parties of the far right and left - the KPD, NSDAP, and DNVP.
-- @far_right: The far right - the NSDAP and DNVP.
+- @far_right: [? if nsdap_formed = 0 : The far right party - the [+ dnvp_name +].?][? if nsdap_formed = 1 : The far right parties - the [+ dnvp_name +] and the NSDAP?]
 - @nsdap: The NSDAP alone.
 - @spd: The SPD.
-- @bourgeois: The bourgeois parties - the Center, [+ ddp_name +], [+ dvp_name +].
+- @bourgeois: The bourgeois parties - the Center, [+ ddp_name +] and [+ dvp_name +].
 - @easy_discard
 
 # @anti_dem
@@ -26,11 +26,12 @@ In our media and campaign materials, who should we consider as our main opponent
 # Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the KPD in the future.
 
 @far_right
-on-arrival: enemies = "far right"; left_strength += 5; left_dissent -= 5; workers_nsdap -= 3; workers_dnvp -= 3;
+on-arrival: enemies = "right"; left_strength += 5; left_dissent -= 5; workers_dvp -= 3; workers_dnvp -= 3;
 
 Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, and they are critical of our lack of response to the <span style="color: var(--spd_color)">SPD</span>.
 
 @nsdap
+view-if: nsdap_formed = 1
 on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4;
 
 [? if nazi_urgency == 0 or nsdap_r < 10 : The NSDAP is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if nazi_urgency > 0 and nsdap_r >= 10 : The Nazis are the most urgent problem for us to deal with. ?]
@@ -44,4 +45,5 @@ Attacking the SPD is supported by all but the reformist socialists, and wins us 
 @bourgeois
 on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; dvp_relation -= 5; ddp_relation -= 5; z_relation -= 5; reformist_dissent += 8; workers_z -= 3; coalition_dissent += 1
 
-Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.
+[? if kpd_formed == 0 : Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future. ?]
+[? if kpd_formed == 1 : Our anti-bourgeois rhetoric is popular amongst the party, but may make it harder to build coalitions with them in the future. ?]
