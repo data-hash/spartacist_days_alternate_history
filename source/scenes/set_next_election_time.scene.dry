@@ -1,2 +1,19 @@
 title: next election time
-on-arrival: next_election_time = time+time_to_election if next_election_time >= time+time_to_election; next_election_month = month + 3 if next_election_time >= time+time_to_election; next_election_year = year if next_election_time >= time+time_to_election; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
+on-arrival: {!
+    if (Q.next_election_time >= Q.time+Q.time_to_election) {
+        Q.next_election_time = Q.time + Q.time_to_election
+        Q.next_election_month = Q.month + 3
+        Q.next_election_year = Q.year
+    }
+    if (Q.next_election_month > 12) {
+        Q.next_election_year += 1
+        Q.next_election_month -= 12
+    }
+
+!}
+
+# next_election_time = time+time_to_election if next_election_time >= time+time_to_election;
+# next_election_month = month + 3 if next_election_time >= time+time_to_election; 
+# next_election_year = year if next_election_time >= time+time_to_election;
+# next_election_year += 1 if next_election_month > 12;
+# next_election_month -= 12 if next_election_month > 12; 

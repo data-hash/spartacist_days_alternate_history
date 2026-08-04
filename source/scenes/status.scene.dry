@@ -164,7 +164,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if elections were to be held now):
 
-[? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color)"><strong>KPD</strong></span>: [+ uspd_votes +]?]
+[? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color)"><strong>KPD</strong></span>: [+ kpd_votes +]%?]
 
 [? if uspd_formed = 1 : <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color)"><strong>USPD</strong></span>: [+ uspd_votes +]%?]
 
