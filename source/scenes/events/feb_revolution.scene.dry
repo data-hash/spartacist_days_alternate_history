@@ -15,7 +15,7 @@ After much instability in the previous months in Russia it has boiled over, and 
 
 A Provisional Government is formed, however the workers have formed their own councils. It is doubted that this situation will last long.
 
-We could take advantage of this to print more pamphlets, though it may not be very effective due to resistance from the Party and suppression from the State.
+We could take advantage of this to print more pamphlets advocating for the overthrow of the government.
 
 - @pamphlets: Print pamphlets calling for revolution.
 - @nothing: Do nothing.
@@ -30,7 +30,9 @@ on-arrival: {!
 	Q.union_support += 4*(1-Q.dissent)
 !}
 
-@nothing
-subtitle: Sometimes doing nothing is doing something.
+The pamphlets were somewhat effective, due to resistance from the Party and suppression from the State.
 
-In this case though it is nothing.
+@nothing
+subtitle: No action taken.
+
+We will watch the events in Russia with great interest.
