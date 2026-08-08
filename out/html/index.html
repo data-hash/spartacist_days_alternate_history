@@ -25,7 +25,7 @@
     <div id="options" class="overlay options" style="display: none;">
 
         <div class="overlay_top">
-            <div>
+            <div class="music_player">
                 <h3>Music</h3>
                 <p>Currently playing: <span id="currently_playing"></span></p>
                 <p><label for="volume">Volume:</label><input type="range" min="0" max="100" value="100" id="volume" name="volume" oninput="window.setVolume(this.value);"></p>
@@ -152,7 +152,7 @@
                 <tr>
                     <td> <hr> </td>
                 </tr>
-                
+
                 <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>

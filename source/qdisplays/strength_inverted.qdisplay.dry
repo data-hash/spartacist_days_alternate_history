@@ -1,0 +1,8 @@
+
+# faction strength
+
+(0..10) <span style="color: #62a300">weak</span>
+(10..25) <span style="color: #cbbb00">moderate</span>
+(25..40) <span style="color: #ff7300">strong</span>
+(40..60) <span style="color: #f94700">very strong</span>
+(60..) <span style="color: #8c0900">dominant</span>
