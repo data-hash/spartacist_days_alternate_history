@@ -42,6 +42,50 @@
     }
   };
   
+  window.parliamentRemoveStrokeStyle = function(parliamentParty) {
+    for (const rule of sheet.cssRules) {
+         if (rule.selectorText === parliamentParty) { // match the exact selector
+        rule.style.removeProperty('stroke');
+        rule.style.removeProperty('stroke-width');
+        break; // stop once found
+        }
+    }
+  };
+  
+  window.parliamentAddStrokeStyle = function(parliamentParty) {
+    for (const rule of sheet.cssRules) {
+        if (rule.selectorText === parliamentParty) { // match the exact selector
+        rule.style.setProperty('stroke', 'var(--border-color)');
+        rule.style.setProperty('stroke-width', '1.5px');
+        break; // stop once found
+        }
+    }
+  };
+
+  // TODO: update audio displays
+  window.updateAudio = function(song) {
+      var now_playing = document.getElementById('currently_playing');
+      if (song) {
+          var a = song.split('/');
+          now_playing.textContent = a[a.length-1];
+      } else {
+          var s = window.dendryUI.currentAudioURL;
+          var a = s.split('/');
+          now_playing.textContent = a[a.length-1];
+      }
+  };
+
+  // sets the volume
+  window.setVolume = function(volume) {
+      window.dendryUI.volume = volume/100;
+      window.dendryUI.currentAudio.volume = volume/100;
+  };
+
+  // go to the next song - this just sets the time to 9999 lol.
+  window.shuffle = function() {
+      window.dendryUI.currentAudio.currentTime = 9999;
+  };
+
   window.showOptions = function() {
       var save_element = document.getElementById('options');
       window.populateOptions();
