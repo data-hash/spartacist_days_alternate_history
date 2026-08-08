@@ -33,7 +33,7 @@ for (var record of Q.party_support_records) {
     record['uspd'] = 0;
 }
 
-const sheet = document.styleSheets[0]; // or find it by href, see below
+// const sheet = document.styleSheets[0];
 
 window.parliamentRemoveStrokeStyle('.seat.spd')
 window.parliamentAddStrokeStyle('.seat.uspd')

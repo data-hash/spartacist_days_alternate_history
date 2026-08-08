@@ -43,6 +43,7 @@
   };
   
   window.parliamentRemoveStrokeStyle = function(parliamentParty) {
+    const sheet = document.styleSheets[0];
     for (const rule of sheet.cssRules) {
          if (rule.selectorText === parliamentParty) { // match the exact selector
         rule.style.removeProperty('stroke');
@@ -53,6 +54,7 @@
   };
   
   window.parliamentAddStrokeStyle = function(parliamentParty) {
+    const sheet = document.styleSheets[0];
     for (const rule of sheet.cssRules) {
         if (rule.selectorText === parliamentParty) { // match the exact selector
         rule.style.setProperty('stroke', 'var(--border-color)');
