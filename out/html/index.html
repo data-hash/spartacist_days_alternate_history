@@ -23,7 +23,15 @@
     </div>
 
     <div id="options" class="overlay options" style="display: none;">
+
         <div class="overlay_top">
+            <div>
+                <h3>Music</h3>
+                <p>Currently playing: <span id="currently_playing"></span></p>
+                <p><label for="volume">Volume:</label><input type="range" min="0" max="100" value="100" id="volume" name="volume" oninput="window.setVolume(this.value);"></p>
+                <p style="text-align: center;"><button onclick="window.shuffle();">Next song</button></p>
+            </div>
+            <h3>Settings</h3>
             <table>
                 <tr>
                     <td>
@@ -122,6 +130,29 @@
                         <input type="radio" id="dark_mode" name="ld_mode" value="0" onclick="window.enableDarkMode();">
                     </td>
                 </tr>
+
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                <tr>
+                    <td>
+                        Font size:
+                    </td>
+
+                    <td colspan=2>
+                        <button onclick="window.decreaseFontSize();">Decrease font size</button>
+                    </td>
+                    <td colspan=2>
+                        <button onclick="window.increaseFontSize();">Increase font size</button>
+                    </td>
+                    <td>
+                        <span id="font_size_value"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                
                 <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>

@@ -304,6 +304,13 @@ blockquote + blockquote.attribution {
     z-index: 2;
     overflow: scroll;
 }
+.options h3 {
+    text-align: center;
+}
+.music_player {
+    text-align: left;
+}
+
 .options {
     text-align: right;
 }

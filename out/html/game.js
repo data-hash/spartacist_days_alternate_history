@@ -294,11 +294,39 @@
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
+  window.increaseFontSize = function() {
+        window.dendryUI.font_size += 0.1;
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+        //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
+        window.dendryUI.saveSettings();
+  };
+
+  window.decreaseFontSize = function() {
+        window.dendryUI.font_size -= 0.1;
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+        //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
+        window.dendryUI.saveSettings();
+  };
+
+
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: false});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
     }
+    if (window.dendryUI.font_size != 1.1) {
+        var fs = window.dendryUI.font_size;
+        var sidebar_fs = fs - 0.1;
+        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
+        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+    }
+    //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
 
