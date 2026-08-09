@@ -2,7 +2,7 @@ title: Wildcat Strikes!
 subtitle: Strikes have begun, against the wishes of union leaders.
 view-if: burgfrieden = 1
 new-page: true
-max-visits: 3
+max-visits: 1
 on-arrival: {!
 	Q.union_strength -= 3
 	Q.union_unrest += 3
@@ -19,9 +19,9 @@ Workers in several industries have gone on strike, in defiance of their leaders 
 
 It is up to us to support these strikes, or order them back to work.
 
-- @return_work: Ask they go back to work.
-- @support: We will aid them.
-- @nothing: Let these strikes handle themselves.
+- @return_work: Ask they return to work.
+- @support: Aid the striking workers.
+- @nothing: Let the strikes handle themselves.
 
 @return_work
 subtitle: +1 resources
