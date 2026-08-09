@@ -107,7 +107,7 @@ if (d3 && window && Q.started) {
     reichstag_st.enter.fromCenter(false).smallToBig(false);
     reichstag_st.exit.toCenter(false).bigToSmall(false);
 
-    var svg = d3.select("#reichstag_st")
+    var svg = d3.select("#landtag_pr")
         .datum(data)
         .call(reichstag_st);
 
@@ -131,7 +131,7 @@ if (d3 && window && Q.started) {
 <h1>Prussian House of Representatives</h1>
 <hr>
 
-<div style="display: flex; justify-content: center; align-items: center; width: 100%;">{!<svg id="reichstag_st"> </svg>!} </div>
+<div style="display: flex; justify-content: center; align-items: center; width: 100%;">{!<svg id="landtag_pr"> </svg>!} </div>
 <div style="display: flex; justify-content: center; align-items: center; height: 100%;"><span style="margin-top: -50px;"><strong><h1>443</h1></strong></span></div>
 
 {!<table style="margin: 0 auto; table-layout: auto; width: auto;">!}
