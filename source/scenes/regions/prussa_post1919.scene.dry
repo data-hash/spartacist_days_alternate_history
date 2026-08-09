@@ -1,0 +1,15 @@
+title: Prussia
+subtitle: Free State of Prussia
+view-if: nov_revolution = 1 and jan_parliament = 1
+new-page: true
+tags: regions
+
+= Free State of Prussia
+
+stuff
+
+- @prussian_affairs
+- @return: Back
+
+@return
+go-to: regions

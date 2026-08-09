@@ -373,6 +373,7 @@ Q.nsdap_r = 0;
 Q.other_r = 2.25;
 
 Q.reichstag_seats = 3.97;
+Q.prussa_seats = 4.43;
 
 // party colors
 Q.spd_color = "#E3000F";

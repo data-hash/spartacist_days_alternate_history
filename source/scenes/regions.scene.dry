@@ -3,8 +3,10 @@ subtitle: The States of Germany
 new-page: true
 
 [? if nov_revolution = 0 : <h1>Regions of the German Empire</h1>?]
+[? if nov_revolution = 1 : <h1>Regions of the German Republic</h1>?]
+[? if kpd_revolution = 1 : <h1>Regions of the German Socialist Republic</h1>?]
 
-blah blah blah germany stuff stuff
+TODO: States of germany description.
 
 - #regions
 - @root: Return

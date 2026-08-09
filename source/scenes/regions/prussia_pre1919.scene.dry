@@ -1,0 +1,149 @@
+title: Prussia
+subtitle: Kingdom of Prussia
+view-if: nov_revolution = 0
+new-page: true
+tags: regions
+on-arrival: {!
+/* TODO: potentially move to a js script for ease of access and cleaner code */
+const data_pr = []
+
+const spd_pr_seats = Math.round(2.25*Q.prussa_seats)
+const pp_pr_seats = Math.round(2.7*Q.prussa_seats)
+const dp_pr_seats = Math.round(0.45*Q.prussa_seats)
+const ddp_pr_seats = Math.round(9.25*Q.prussa_seats)
+const z_pr_seats = Math.round(23.25*Q.prussa_seats)
+const dvp_pr_seats = Math.round(16.47*Q.prussa_seats)
+const drp_pr_seats = Math.round(12*Q.prussa_seats)
+const dnvp_pr_seats = Math.round(33.63*Q.prussa_seats)
+
+if (Q.spd_r) {
+    data_pr.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(2.25*Q.prussa_seats),
+    })
+}
+
+if (Q.pp_dissolved == 0) {
+    data_pr.push({
+        "id": "pp",
+        "legend": "PP",
+        "name": "PP",
+        "seats": Math.round(2.7*Q.prussa_seats),
+    })
+}
+
+if (Q.bb_dissolved == 0) {
+    data_pr.push({
+        "id": "bb",
+        "legend": "DP",
+        "name": "DP",
+        "seats": Math.round(0.45*Q.prussa_seats),
+    })
+}
+
+if (Q.ddp_r) {
+    data_pr.push({
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(9.25*Q.prussa_seats),
+    })
+}
+
+if (Q.z_r) {
+    data_pr.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(23.25*Q.prussa_seats),
+    })
+}
+
+if (Q.dvp_r) {
+    data_pr.push({
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(16.47*Q.prussa_seats),
+    })
+}
+
+if (Q.drp_dissolved == 0) {
+    data_pr.push({
+        "id": "drp",
+        "legend": "DRP",
+        "name": "DRP",
+        "seats": Math.round(12*Q.prussa_seats),
+    })
+}
+
+if (Q.dnvp_r) {
+    data_pr.push({
+        "id": "dnvp",
+        "legend": Q.dnvp_name,
+        "name": Q.dnvp_name,
+        "seats": Math.round(33.63*Q.prussa_seats),
+    })
+}
+
+Q.prussia_parliament_diagram = data_pr
+
+if (d3 && window && Q.started) {
+    // get screen width
+    var data = Q.prussia_parliament_diagram
+    var width = 500;
+    var height = 500;
+    /*
+    var screenWidth = document.getElementById('qualities').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("reichstag_st").style.height = screenWidth/2 + "px"; 
+    }*/
+    var reichstag_st = d3.parliament();
+    reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
+    reichstag_st.enter.fromCenter(false).smallToBig(false);
+    reichstag_st.exit.toCenter(false).bigToSmall(false);
+
+    var svg = d3.select("#reichstag_st")
+        .datum(data)
+        .call(reichstag_st);
+
+    var bbox = svg.node().getBBox();
+    var padding = 10; // small buffer so seat edges aren't clipped
+
+    svg
+        .attr("viewBox",
+            `${bbox.x - padding} ${bbox.y - padding} ${bbox.width + padding * 2} ${bbox.height + padding * 2}`
+        )
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .attr("width", null)
+        .attr("height", null)
+        .style("width", "100%")
+        .style("max-width", "500px")
+        .style("height", "auto")
+        .style("display", "block");
+}
+!}
+
+<h1>Prussian House of Representatives</h1>
+<hr>
+
+<div style="display: flex; justify-content: center; align-items: center; width: 100%;">{!<svg id="reichstag_st"> </svg>!} </div>
+<div style="display: flex; justify-content: center; align-items: center; height: 100%;"><span style="margin-top: -50px;"><strong><h1>443</h1></strong></span></div>
+
+{!<table style="margin: 0 auto; table-layout: auto; width: auto;">!}
+{!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
+
+[? if uspd_formed = 0 : {!<tr><td><div class="box" style='background-color: var(--spd_color); outline: 2px; outline-style: solid;'> </div> !} <strong>SPD:</strong> {!</td><td>!} <strong>[+ spd_pr_seats +]</strong> <strong>([+ spd_per +]%)</strong> {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+[? if uspd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--spd_color);'> </div> !} MSPD: {!</td><td>!} [+ spd_pr_seats +] ([+ spd_per +]%) {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+
+[? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #D49797;'> </div> !} <span class="tooltip-text" data-tooltip="Polish Parties">PP</span>: {!</td><td>!} [+ pp_seats +] (4.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
+
+
+- @return: Back
+
+@return
+go-to: regions
