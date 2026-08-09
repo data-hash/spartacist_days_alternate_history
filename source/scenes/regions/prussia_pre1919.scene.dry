@@ -102,14 +102,14 @@ if (d3 && window && Q.started) {
         height = width;
         document.getElementById("reichstag_st").style.height = screenWidth/2 + "px"; 
     }*/
-    var reichstag_st = d3.parliament();
-    reichstag_st.width(width).height(height).innerRadiusCoef(0.4);
-    reichstag_st.enter.fromCenter(false).smallToBig(false);
-    reichstag_st.exit.toCenter(false).bigToSmall(false);
+    var landtag_pr = d3.parliament();
+    landtag_pr.width(width).height(height).innerRadiusCoef(0.4);
+    landtag_pr.enter.fromCenter(false).smallToBig(false);
+    landtag_pr.exit.toCenter(false).bigToSmall(false);
 
     var svg = d3.select("#landtag_pr")
         .datum(data)
-        .call(reichstag_st);
+        .call(landtag_pr);
 
     var bbox = svg.node().getBBox();
     var padding = 10; // small buffer so seat edges aren't clipped
