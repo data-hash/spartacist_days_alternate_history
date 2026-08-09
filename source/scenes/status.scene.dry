@@ -35,6 +35,8 @@ Next congress: [? if next_congress_month > 0 : [+ next_congress_month : month +]
 
 Union strength: [+ union_strength : strength +]
 
+Union unrest: [+ union_unrest : dissent +]
+
 = Finances
 
 Resources available: [+ resources +]
