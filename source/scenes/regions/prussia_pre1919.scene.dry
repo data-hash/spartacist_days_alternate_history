@@ -3,7 +3,7 @@ subtitle: Kingdom of Prussia
 view-if: nov_revolution = 0
 new-page: true
 tags: regions
-on-arrival: {!
+on-display: {!
 /* TODO: potentially move to a js script for ease of access and cleaner code */
 const data_pr = []
 
