@@ -323,167 +323,27 @@ on-display: {!
 /* TODO: potentially move to a js script for ease of access and cleaner code */
 const data_st = []
 
-if (Q.kpd_formed && Q.kpd_r) {
-    data_st.push({
-        "id": "kpd",
-        "legend": "KPD",
-        "name": "KPD",
-        "seats": Math.round(Q.kpd_r*Q.reichstag_seats),
-    })
+function _addStatusParty(id, legend, seats) {
+    if (seats && seats > 0) data_st.push({id: id, legend: legend, name: legend, seats});
 }
 
-if (Q.uspd_formed) {
-    data_st.push({
-        "id": "uspd",
-        "legend": "USPD",
-        "name": "USPD",
-        "seats": Math.round(Q.uspd_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.spd_r) {
-    data_st.push({
-        "id": "spd",
-        "legend": "SPD",
-        "name": "SPD",
-        "seats": Math.round(Q.spd_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.sapd_r && Q.sapd_formed) {
-    data_st.push({
-        "id": "sapd",
-        "legend": "SAPD",
-        "name": "SAPD",
-        "seats": Math.round(Q.sapd_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.other_r) {
-    data_st.push({
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.pp_dissolved == 0) {
-    data_st.push({
-        "id": "pp",
-        "legend": "PP",
-        "name": "PP",
-        "seats": Math.round(4.5*Q.reichstag_seats),
-    })
-}
-
-if (Q.dhp_dissolved == 0) {
-    data_st.push({
-        "id": "dhp",
-        "legend": "DHP",
-        "name": "DHP",
-        "seats": Math.round(1.25*Q.reichstag_seats),
-    })
-}
-
-if (Q.elp_dissolved == 0) {
-    data_st.push({
-        "id": "elp",
-        "legend": "ELP",
-        "name": "ELP",
-        "seats": Math.round(2.25*Q.reichstag_seats),
-    })
-}
-
-if (Q.bb_dissolved == 0) {
-    data_st.push({
-        "id": "bb",
-        "legend": "BB",
-        "name": "BB",
-        "seats": Math.round(1.75*Q.reichstag_seats),
-    })
-}
-
-if (Q.sapd_formed && Q.sapd_r) {
-    data_st.push({
-            "id": "sapd",
-            "legend": "SAPD",
-            "name": "SAPD",
-            "seats": Math.round(Q.sapd_r*Q.reichstag_seats),
-            });
-}
-
-if (Q.ddp_r) {
-    data_st.push({
-        "id": "ddp",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
-        "seats": Math.round(Q.ddp_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.z_r) {
-    data_st.push({
-        "id": "z",
-        "legend": "Center",
-        "name": "Center",
-        "seats": Math.round(Q.z_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.nov_revolution) {
-    data_st.push({
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
-        "seats": Math.round(Q.bvp_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.dvp_r) {
-    data_st.push({
-        "id": "dvp",
-        "legend": Q.dvp_name,
-        "name": Q.dvp_name,
-        "seats": Math.round(Q.dvp_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.drp_dissolved == 0) {
-    data_st.push({
-        "id": "drp",
-        "legend": "DRP",
-        "name": "DRP",
-        "seats": Math.round(3.5*Q.reichstag_seats),
-    })
-}
-
-if (Q.dnvp_r) {
-    data_st.push({
-        "id": "dnvp",
-        "legend": Q.dnvp_name,
-        "name": Q.dnvp_name,
-        "seats": Math.round(Q.dnvp_r*Q.reichstag_seats),
-    })
-}
-
-if (Q.ansem_dissolved == 0) {
-    data_st.push({
-        "id": "ansem",
-        "legend": "ANSEM",
-        "name": "ANSEM",
-        "seats": Math.round(2.5*Q.reichstag_seats),
-    })
-}
-
-if (Q.nsdap_formed && Q.nsdap_r) {
-    data_st.push({
-        "id": "nsdap",
-        "legend": "NSDAP",
-        "name": "NSDAP",
-        "seats": Math.round(Q.nsdap_r*Q.reichstag_seats),
-    })
-}
+if (Q.kpd_formed && Q.kpd_r) {_addStatusParty('kpd', "KPD", Q.kpd_seats)}
+if (Q.uspd_formed) {_addStatusParty('uspd', "USPD", Q.uspd_seats)}
+if (Q.spd_r) {_addStatusParty('spd', "SPD", Q.spd_seats)}
+if (Q.sapd_r && Q.sapd_formed) {_addStatusParty('spd', "SPD", Q.spd_seats)}
+if (Q.other_r) {_addStatusParty('other', "SPD", Q.other_seats)}
+if (Q.pp_dissolved == 0) {_addStatusParty('pp', "PP", Q.pp_seats)}
+if (Q.dhp_dissolved == 0) {_addStatusParty('dhp', "DHP", Q.dhp_seats)}
+if (Q.elp_dissolved == 0) {_addStatusParty('elp', "ELP", Q.elp_seats)}
+if (Q.bb_dissolved == 0) {_addStatusParty('bb', "BB", Q.BB_seats)}
+if (Q.ddp_r) {_addStatusParty('ddp', Q.ddp_name, Q.ddp_seats)}
+if (Q.z_r) {_addStatusParty('z', "Z", Q.z_seats)}
+if (Q.bvp_r) {_addStatusParty('bvp', "BVP", Q.bvp_seats)}
+if (Q.dvp_r) {_addStatusParty('dvp', Q.dvp_name, Q.dvp_seats)}
+if (Q.drp_dissolved) {_addStatusParty('drp', "DRP", Q.drp_seats)}
+if (Q.dnvp_r) {_addStatusParty('dnvp', Q.dnvp_name, Q.dnvp_seats)}
+if (Q.ansem_dissolved) {_addStatusParty('ansem', "ANSEM", Q.ansem_seats)}
+if (Q.nsdap_formed && Q.nsdap_banned == 0 && Q.nsdap_r) {_addStatusParty('nsdap', "NSDAP", Q.nsdap_seats)}
 
 Q.parliament_diagram = data_st
 
