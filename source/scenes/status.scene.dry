@@ -313,10 +313,10 @@ if (Q.bb_dissolved == 1) {Q.bb_seats = 0}
 if (Q.drp_dissolved == 0) {Q.drp_seats = Math.round(3.5*Q.reichstag_seats)}
 if (Q.drp_dissolved == 1) {Q.drp_seats = 0}
 
-if (Q.ansem_dissolved == 0) {Q.dvp_seats = Math.round(2.5*Q.reichstag_seats)}
-if (Q.ansem_dissolved == 1) {Q.dvp_seats = 0}
+if (Q.ansem_dissolved == 0) {Q.ansem_seats = Math.round(2.5*Q.reichstag_seats)}
+if (Q.ansem_dissolved == 1) {Q.ansem_seats = 0}
 
-Q.total_seats = (Q.spd_seats + Q.uspd_seats + Q.sapd_seats + Q.kpd_seats + Q.z_seats + Q.bvp_seats + Q.ddp_seats + Q.other_seats + + Q.dvp_seats + Q.dnvp_seats + Q.nsdap_seats + Q.pp_seats + Q.dhp_seats + Q.elp_seats + Q.bb_seats + Q.drp_seats + Q.ansem_seats) 
+Q.total_seats = (Q.spd_seats + Q.uspd_seats + Q.sapd_seats + Q.kpd_seats + Q.z_seats + Q.bvp_seats + Q.ddp_seats + Q.other_seats + Q.dvp_seats + Q.dnvp_seats + Q.nsdap_seats + Q.pp_seats + Q.dhp_seats + Q.elp_seats + Q.bb_seats + Q.drp_seats + Q.ansem_seats) 
 
 !}
 on-display: {!
@@ -335,10 +335,10 @@ if (Q.other_r) {_addStatusParty('other', "SPD", Q.other_seats)}
 if (Q.pp_dissolved == 0) {_addStatusParty('pp', "PP", Q.pp_seats)}
 if (Q.dhp_dissolved == 0) {_addStatusParty('dhp', "DHP", Q.dhp_seats)}
 if (Q.elp_dissolved == 0) {_addStatusParty('elp', "ELP", Q.elp_seats)}
-if (Q.bb_dissolved == 0) {_addStatusParty('bb', "BB", Q.BB_seats)}
+if (Q.bb_dissolved == 0) {_addStatusParty('bb', "BB", Q.bb_seats)}
 if (Q.ddp_r) {_addStatusParty('ddp', Q.ddp_name, Q.ddp_seats)}
 if (Q.z_r) {_addStatusParty('z', "Z", Q.z_seats)}
-if (Q.bvp_r) {_addStatusParty('bvp', "BVP", Q.bvp_seats)}
+if (Q.bvp_r && Q.bvp_formed) {_addStatusParty('bvp', "BVP", Q.bvp_seats)}
 if (Q.dvp_r) {_addStatusParty('dvp', Q.dvp_name, Q.dvp_seats)}
 if (Q.drp_dissolved == 0) {_addStatusParty('drp', "DRP", Q.drp_seats)}
 if (Q.dnvp_r) {_addStatusParty('dnvp', Q.dnvp_name, Q.dnvp_seats)}
