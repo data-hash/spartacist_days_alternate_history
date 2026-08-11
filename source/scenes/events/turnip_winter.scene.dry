@@ -1,0 +1,33 @@
+title: Turnip Winter
+subtitle: Famine ravages most of Germany.
+tags: event
+view-if: nov_revolution = 0 and turnip_winter_timer = 0
+max-visits: 1
+on-arrival: {!
+	Q.pro_empire -= 5
+	Q.unemployed += 1
+!}
+
+= The Turnip Winter
+
+TODO
+
+- @help: Give the hungry some aid.
+- @no_help: Nothing we can do.
+
+@help
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: {!
+	Q.resources -= 1
+	Q.grassroots_support += 5
+
+	Q.unemployed_spd += 5*(1-Q.dissent)
+	Q.workers_spd += 3*(1-Q.dissent)
+	Q.catholics_spd += 2(1-Q.dissent)
+!}
+
+This is popular among the workers and the unemployed. 
+
+@no_help

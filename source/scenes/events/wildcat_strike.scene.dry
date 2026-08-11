@@ -1,6 +1,6 @@
 title: Wildcat Strikes!
 subtitle: Strikes have begun, against the wishes of union leaders.
-view-if: burgfrieden = 1
+view-if: wildcat_strikes_timer = 0
 new-page: true
 max-visits: 1
 on-arrival: {!
