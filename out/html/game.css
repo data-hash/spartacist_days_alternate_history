@@ -687,10 +687,10 @@ table {
     opacity: 0.3;
 }
 body.dark-mode .parliament-tooltip {
-    background: #1a1a2e;
+    background: var(--content-bg-color);
     color: #e0e0e0;
-    border-color: #8093ff;
-    border: 1px solid #2235b2;
+    border-color: var(--border-color);
+    border: 1px solid var(--border-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -738,6 +738,51 @@ body.dark-mode .parliament-tooltip {
 /* Optional: make highlight slightly different on hover */
 .tooltip-text:hover {
   text-decoration: underline;
+}
+
+/* tooltips from originalname/Dynamic Dev, edited by Communist45, from dynamic_biennio_rosso_alternate_history*/
+.mytooltip {
+  position: relative;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  background-color: transparent;
+  padding: 2px 1px;
+}
+.mytooltip:hover { 
+  background-color: var(--content-bg-color);
+}
+
+.mytooltip .mytooltiptext {
+  position: fixed;
+  z-index: 999999;
+  width: 130px;
+  background: var(--content-bg-color);
+  color: var(--text-color);
+  text-align: left;
+  border-radius: 8px;
+  padding: 12px 14px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  border: 1px solid var(--border-color);
+  pointer-events: none;
+  font-size: 14px !important;
+  line-height: 1.5em !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: translateY(5px);
+  text-align: center;
+}
+.mytooltip:hover .mytooltiptext { 
+  opacity: 1; 
+}
+.mytooltip .mytooltiptext img { display: block; margin: 0 auto 4px auto; max-width: 90%; height: auto; }
+
+.mytooltip .mytooltiptext {
+  bottom: auto;
+  top: calc(var(--mouse-y, 0px) - 20px);
+  left: calc(var(--mouse-x, 0px));
+  transform: translate(-50%, -100%);
 }
 
 #reichstag_st{
