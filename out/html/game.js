@@ -175,6 +175,276 @@
       window.dendryUI.saveSettings();
   };
 
+    //To get a value, from dynamic_biennio_rosso_alternate_history
+    function getRelationshipText(value) {
+        if (value === undefined || value === null) return '';
+        if (value <= 5) return '<span style="color: #FF0000;">Hostile</span>';
+        if (value <= 14.9) return '<span style="color: #FF4500;">Frigid</span>';
+        if (value <= 29.9) return '<span style="color: #FF8C00;">Cold</span>';
+        if (value <= 39.9) return '<span style="color: #FFA500;">Cool</span>';
+        if (value <= 54.9) return '<span style="color: #FFD700;">Neutral</span>';
+        if (value <= 64.9) return '<span style="color: #9ACD32;">Warm</span>';
+        if (value <= 74.9) return '<span style="color: #32CD32;">Friendly</span>';
+        return '<span style="color: #008000;">Very friendly</span>';
+    }
+
+    function getSizeText(value) {
+        if (value === undefined || value === null) return '';
+        if (value <= 20) return '<span style="color: #6B7280;">Minimal</span>';
+        if (value <= 40) return '<span style="color: #8B6F47;">Weak</span>';
+        if (value <= 60) return '<span style="color: #556B2F;">Moderate</span>';
+        if (value <= 80) return '<span style="color: #7A0000;">Strong</span>';
+        return '<span style="color: #2B0000;">Very Strong</span>';
+    }
+
+    function getMilitancyText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value <= 0.05) return '<span style="color: #008000;">Nonexistent</span>';
+        if (value <= 0.14) return '<span style="color: #32CD32;">Very low</span>';
+        if (value <= 0.24) return '<span style="color: #9ACD32;">Low</span>';
+        if (value <= 0.44) return '<span style="color: #FFD700;">Medium-low</span>';
+        if (value <= 0.69) return '<span style="color: #FFA500;">Medium</span>';
+        if (value <= 1) return '<span style="color: #FF4500;">High</span>';
+        return '<span style="color: #FF0000;">Very high</span>';
+    }
+
+    function getLoyaltyText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value <= 0.06) return '<span style="color: #FF0000;">Completely disloyal</span>';
+        if (value <= 0.19) return '<span style="color: #FF4500;">Very disloyal</span>';
+        if (value <= 0.31) return '<span style="color: #FF8C00;">Generally disloyal</span>';
+        if (value <= 0.41) return '<span style="color: #FFA500;">Mostly disloyal</span>';
+        if (value <= 0.54) return '<span style="color: #FFD700;">Divided</span>';
+        if (value <= 0.71) return '<span style="color: #9ACD32;">Mostly loyal</span>';
+        if (value <= 0.95) return '<span style="color: #32CD32;">Generally loyal</span>';
+        return '<span style="color: #008000;">Completely loyal</span>';
+    }
+
+    function getStrenghtText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value < 10) return '<span style="color: #FF4500;">Weak</span>';
+        if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
+        if (value < 40) return '<span style="color: #9ACD32;">Strong</span>';
+        if (value < 60) return '<span style="color: #32CD32;">Very strong</span>';
+        return '<span style="color: #008000;">Dominant</span>';
+    }
+
+    function getInvertedStrenghtText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value < 10) return '<span style="color: #9ACD32;">Weak</span>';
+        if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
+        if (value < 40) return '<span style="color: #FF8C00;">Strong</span>';
+        if (value < 60) return '<span style="color: #FF4500;">Very strong</span>';
+        return '<span style="color: #FF0000;">Dominant</span>';
+    }
+
+    function getDissentText(value) {
+        if (value === undefined || value === null) return 'Unknown';
+        if (value < 4.999) return '<span style="color: #008000;">Very low</span>';
+        if (value < 14.999) return '<span style="color: #9ACD32;">Low</span>';
+        if (value < 30.999) return '<span style="color: #FFD700;">Medium</span>';
+        if (value < 49.999) return '<span style="color: #FF4500;">High</span>';
+        return '<span style="color: #FF0000;">Very high</span>';
+    }
+
+    //To check if extra dynamic or not
+    function getDynamicTooltipContent(searchString, baseTooltip) {
+        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state ? 
+                window.dendryUI.dendryEngine.state.qualities : null;
+
+        if (!Q) return baseTooltip.explanationText;
+
+       if (searchString === 'SPD' && Q.spd_relation !== undefined) {
+            var relationText = getRelationshipText(Q.spd_relation) 
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'KPD' ) {
+            return baseTooltip.explanationText 
+        }
+      
+        if (searchString === 'DHP' ) {
+            return baseTooltip.explanationText 
+        }
+            
+        if (searchString === 'BB' ) {
+            return baseTooltip.explanationText 
+        }
+                  
+        if (searchString === 'BVP' ) {
+            return baseTooltip.explanationText 
+        }
+                  
+        if (searchString === 'DRP' ) {
+            return baseTooltip.explanationText 
+        }
+                        
+        if (searchString === 'DKP' ) {
+            return baseTooltip.explanationText 
+        }
+
+        if (searchString === "USPD" && Q.uspd_relation !== undefined) {
+            var relationText = getRelationshipText(Q.uspd_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'SAPD' && Q.sapd_relation !== undefined) {
+            var relationText = getRelationshipText(Q.sapd_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+      
+        if (searchString === 'FPv' && Q.ddp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.ddp_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'DDP' && Q.ddp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.ddp_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'Z' && Q.z_relation !== undefined) {
+            var relationText = getRelationshipText(Q.z_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'NLP' && Q.dvp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dvp_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'DVP' && Q.dvp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dvp_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'DKP' && Q.dnvp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dnvp_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'DNVP' && Q.dnvp_relation !== undefined) {
+            var relationText = getRelationshipText(Q.dnvp_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        if (searchString === 'NSDAP' && Q.nsdap_relation !== undefined) {
+            var relationText = getRelationshipText(Q.nsdap_relation);
+            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
+        }
+
+        /* if (searchString === 'Red Guard' && Q.rg_strength !== undefined) {
+            var strength = getSizeText(Q.rg_strength);
+            var militancy = getMilitancyText(Q.rg_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+
+        if (searchString === "Red Guards - PCd'I" && Q.sov_rg_strength !== undefined) {
+            var strength = getSizeText(Q.sov_rg_strength);
+            var militancy = getMilitancyText(Q.sov_rg_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+
+        if (searchString === 'Red Guards - PSI' && Q.rg_strength !== undefined) {
+            var strength = getSizeText(Q.rg_strength);
+            var militancy = getMilitancyText(Q.rg_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+
+        if (searchString === 'Arditi del Popolo' && Q.adp_strength !== undefined) {
+            var strength = getSizeText(Q.adp_strength);
+            var militancy = getMilitancyText(Q.adp_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+
+
+        if (searchString === 'Fasci' && Q.fdc_strength !== undefined) {
+            var strength = getSizeText(Q.fdc_strength);
+            var militancy = getMilitancyText(Q.fdc_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+
+        if (searchString === 'Arditismo' && Q.ard_strength !== undefined) {
+            var strength = getSizeText(Q.ard_strength);
+            var militancy = getMilitancyText(Q.ard_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+
+        if (searchString === 'Anti-Bolshevik Leagues' && Q.abl_strength !== undefined) {
+            var strength = getSizeText(Q.abl_strength);
+            var militancy = getMilitancyText(Q.abl_militancy);
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
+        }
+
+        if (searchString === 'Regio Esercito' && Q.army_strength !== undefined) {
+            var strength = Q.army_strength ? Q.army_strength : '0';
+            var loyalty = getLoyaltyText(Q.army_loyalty);
+            var militancy = getMilitancyText(Q.army_militancy)
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Loyalty: ' + loyalty + '<br>Militancy:' + militancy;
+        }
+
+        if (searchString === 'Esercito Italiano' && Q.army_strength !== undefined) {
+            var strength = Q.army_strength ? Q.army_strength : '0';
+            var loyalty = getLoyaltyText(Q.army_loyalty);
+            var militancy = getMilitancyText(Q.army_militancy)
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Loyalty: ' + loyalty + '<br>Militancy:' + militancy;
+        }
+
+        if (searchString === 'Carabinieri' && Q.interior_police_strength !== undefined) {
+            var strength = Q.interior_police_strength ? Q.interior_police_strength : '0';
+            var loyalty = getLoyaltyText(Q.interior_police_loyalty);
+            var militancy = getMilitancyText(Q.interior_police_militancy)
+            return baseTooltip.explanationText + '<br>Strength: ' + strength + 'k<br>Loyalty: ' + loyalty + '<br>Militancy: ' + militancy;
+        } */
+
+    return baseTooltip.explanationText;
+
+    }
+
+ window.getDynamicTooltipContent = getDynamicTooltipContent;
+
+    function applyWholesome(str) {
+        const allWords = new Set([
+            ...tooltipList.map(t => t.searchString),
+            ...colourList.map(c => c.word)
+        ]);
+
+        // Escape special regex characters in the words
+        const escapedWords = [...allWords].map(word => 
+            word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        );
+
+        //fix for longer words not showing up if they contained smaller entry words inside of them
+        escapedWords.sort((a, b) => b.length - a.length);
+
+        const regex = new RegExp(`\\b(${escapedWords.join('|')})\\b`, 'g');
+
+        return str.replace(/(<(?:span|strong)[^>]*>.*?<\/(?:span|strong)>|<[^>]+>|[^<]+)/g, (segment) => {
+            if (segment.startsWith('<')) return segment;
+
+            return segment.replace(regex, (match) => {
+                const tooltip = tooltipList.find(t => t.searchString === match);
+                const colour = colourList.find(c => c.word === match);
+
+                let style = colour ? colour.style : '';
+                let innerText = match;
+
+                if (colour && colour.img) {
+                    innerText = `<img src="${colour.img}" class="p_icon" alt="">${innerText}`;
+                }
+
+                if (tooltip) {
+                    var tooltipContent = getDynamicTooltipContent(match, tooltip);
+                    return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
+                } else if (colour) {
+                    return `<span style='${style}'>${innerText}</span>`;
+                }
+
+                return match;
+            });
+        });
+    }
+
   // populates the checkboxes in the options view
   window.populateOptions = function() {
     var disable_bg = window.dendryUI.disable_bg;

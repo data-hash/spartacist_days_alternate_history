@@ -330,7 +330,7 @@ function _addStatusParty(id, legend, seats) {
 if (Q.kpd_formed && Q.kpd_r) {_addStatusParty('kpd', "KPD", Q.kpd_seats)}
 if (Q.uspd_formed) {_addStatusParty('uspd', "USPD", Q.uspd_seats)}
 if (Q.spd_r) {_addStatusParty('spd', "SPD", Q.spd_seats)}
-if (Q.sapd_r && Q.sapd_formed) {_addStatusParty('spd', "SPD", Q.spd_seats)}
+if (Q.sapd_r && Q.sapd_formed) {_addStatusParty('sapd', "SAPD", Q.sapd_seats)} /* Before or after SPD? Dont feel like googling rn */
 if (Q.other_r) {_addStatusParty('other', "SPD", Q.other_seats)}
 if (Q.pp_dissolved == 0) {_addStatusParty('pp', "PP", Q.pp_seats)}
 if (Q.dhp_dissolved == 0) {_addStatusParty('dhp', "DHP", Q.dhp_seats)}
@@ -340,9 +340,9 @@ if (Q.ddp_r) {_addStatusParty('ddp', Q.ddp_name, Q.ddp_seats)}
 if (Q.z_r) {_addStatusParty('z', "Z", Q.z_seats)}
 if (Q.bvp_r) {_addStatusParty('bvp', "BVP", Q.bvp_seats)}
 if (Q.dvp_r) {_addStatusParty('dvp', Q.dvp_name, Q.dvp_seats)}
-if (Q.drp_dissolved) {_addStatusParty('drp', "DRP", Q.drp_seats)}
+if (Q.drp_dissolved == 0) {_addStatusParty('drp', "DRP", Q.drp_seats)}
 if (Q.dnvp_r) {_addStatusParty('dnvp', Q.dnvp_name, Q.dnvp_seats)}
-if (Q.ansem_dissolved) {_addStatusParty('ansem', "ANSEM", Q.ansem_seats)}
+if (Q.ansem_dissolved == 0) {_addStatusParty('ansem', "ANSEM", Q.ansem_seats)}
 if (Q.nsdap_formed && Q.nsdap_banned == 0 && Q.nsdap_r) {_addStatusParty('nsdap', "NSDAP", Q.nsdap_seats)}
 
 Q.parliament_diagram = data_st
@@ -431,7 +431,7 @@ if (d3 && window && Q.started) {
 [? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DKP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_per +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 [? if nov_revolution = 1 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DNVP: {!</td><td>!} [+ dnvp_seats +] ([+ dnvp_per +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 
-[? if ansem_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #8B5A2B;'> </div> !} <span class="tooltip-text" data-tooltip="Various Antisemitic Parties">DSP</span>: {!</td><td>!} [+ ansem_seats +] (2.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
+[? if ansem_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #8B5A2B;'> </div> !} <span class="tooltip-text" data-tooltip="German Völkisch Party">DvP</span>: {!</td><td>!} [+ ansem_seats +] (2.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
 [? if nsdap_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--nsdap_color);'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_seats +] ([+ nsdap_per +]%) {!</td><td>!} [? if nsdap_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if nsdap_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 {!</table>!}
