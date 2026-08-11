@@ -14,7 +14,6 @@ const colourList = [
 	style: "color: var(--sapd_color); font-weight: bold"
 },
 
-
 {
 	word: "SPD",
 	style: "color: var(--spd_color); font-weight: bold"
@@ -30,18 +29,15 @@ const colourList = [
 	style: "color: #D49797; font-weight: bold"
 },
 
-
 {
 	word: "DHP",
 	style: "color: #333FFF; font-weight: bold"
 },
 
-
 {
 	word: "ELP",
 	style: "color: #000; font-weight: bold"
 },
-
 
 {
 	word: "BB",
@@ -82,7 +78,6 @@ const colourList = [
 	word: "DRP",
 	style: "color: #00C0ff; font-weight: bold"
 },
-
 
 {
 	word: "FKP",
