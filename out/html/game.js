@@ -174,6 +174,9 @@
       document.body.classList.add('dark-mode');
       window.dendryUI.saveSettings();
   };
+  window.displayText = function (text) {
+      return applyWholesome(text);
+    };
 
     //To get a value, from dynamic_biennio_rosso_alternate_history
     function getRelationshipText(value) {
