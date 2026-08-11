@@ -64,6 +64,10 @@
     }
   };
 
+  window.changeRootColor = function(variable, color) {
+        document.documentElement.style.setProperty(variable, color)
+  }
+
   // TODO: update audio displays
   window.updateAudio = function(song) {
       var now_playing = document.getElementById('currently_playing');

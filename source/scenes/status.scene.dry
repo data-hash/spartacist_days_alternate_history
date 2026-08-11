@@ -228,6 +228,7 @@ Catholics:  [? if kpd_formed = 1 : KPD: [+ catholics_kpd_display +]%,?] [? if us
 = Cabinet
 
 [? if chancellor == "Hollweg" : <div><img src="img/portraits/Bethmann_Hollweg_portrait.jpg" alt="Theobald von Bethmann Hollweg" style="width: 50%; display: block; margin-top: 5px; margin: auto; margin-bottom: 5px; border: 5px solid var(--card-border-color);"></div> ?]
+[? if chancellor == "Michaelis" : <div><img src="img/portraits/Georg_Michaelis.jpg" alt="Georg Michaelis" style="width: 50%; display: block; margin-top: 5px; margin: auto; margin-bottom: 5px; border: 5px solid var(--card-border-color);"></div> ?]
 <div style="text-align: center;"><strong>[+ chancellor +]</strong> (<span style="color: var(--chancellor_party_color)"><strong>[+ chancellor_party +]</span></strong>)</div>
 <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>Chancellor</em></div>
 
