@@ -609,19 +609,13 @@ table {
     fill: #69A2BE;
 }
 .seat.dvp {
-    fill: #98C22C;
-}
-.seat.dvp {
     fill: #C0A054;
-}
-.seat.nlp {
-    fill: #98C22C;
 }
 .seat.other {
     fill: #909090;
 }
 .seat.dnvp {
-    fill: #0781E5;
+    fill: #3F7BC1;
 }
 .seat.nsdap {
     fill: #954B00;
@@ -648,8 +642,17 @@ table {
 .seat.drp {
   fill: #00C0ff;
 }
-.seat.dvp {
+.seat.dsp {
   fill: #8B5A2B;
+}
+.seat.dkp {
+    fill: #0781E5;
+}
+.seat.nlp {
+    fill: #98C22C;
+}
+.seat.fvp {
+    fill: #d4b402;
 }
 
 /*parliament tooltip code based/from road to ithaca and dynamic_biennio_rosso_alternate_history */

@@ -5,6 +5,7 @@ new-page: true
 max-visits: 1
 on-arrival: {!
 	Q.oct_revolution = 1
+	Q.russian_revolution = 1
 	/*Q.soviet_relation = 35 TODO, add or subtract depending on player position on the revolution*/
 !}
 tags: event

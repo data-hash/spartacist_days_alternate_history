@@ -270,6 +270,14 @@
         if (searchString === 'BB' ) {
             return baseTooltip.explanationText 
         }
+
+        if (searchString === 'Others') {
+            return baseTooltip.explanationText
+        }
+
+        if (searchString === 'PP') {
+            return baseTooltip.explanationText
+        }
                   
         if (searchString === 'BVP' ) {
             return baseTooltip.explanationText 

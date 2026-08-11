@@ -20,6 +20,10 @@ const colourList = [
 	style: "color: var(--spd_color); font-weight: bold"
 },
 
+{
+	searchString: "Others",
+    style: "color: #909090; font-weight: bold"
+},
 
 {
 	word: "PP",

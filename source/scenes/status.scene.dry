@@ -16,21 +16,20 @@ if (Q.economic_growth) {
 
 [? if kpd_formed = 0 and nov_revolution = 0 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus Group </span></strong>Leadership</h1> ?]
 [? if kpd_formed = 0 and nov_revolution = 1 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus League </span></strong>Leadership</h1> ?]
-[? if kpd_formed = 1 and kpd_merge = 1 : <h1><span style="color: var(--kpd_color)"><strong>KPD </span></strong>Leadership</h1> ?]
+[? if kpd_formed = 1 : <h1><span style="color: var(--kpd_color)"><strong>KPD </span></strong>Leadership</h1> ?]
 <hr>
 
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;"> <img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%; border: 5px solid var(--card-border-color);"> <img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%; border: 5px solid var(--card-border-color);"> </div> ?]
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex;justify-content: left;"> <div style="text-align: center; width: 50%;"><strong>Karl Liebknecht</strong></div> <div style="text-align: center; width: 50%;"><strong>Rosa Luxemburg</strong></div> </div> ?]
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex;justify-content: left;"> <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Imprisoned</em></div> <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Imprisoned</em></div> </div> ?]
 
-Next congress: [? if next_congress_month > 0 : [+ next_congress_month : month +] [+ year +]?][? if next_congress_month = 0 : none scheduled?]
-[? if nov_revolution = 1 : Next congress: December 1918?]
+Next congress: [? if next_congress_month > 0 : [+ next_congress_month : month +] [+ next_congress_year +]?][? if next_congress_month = 0 : none scheduled?]
 
 [? if uspd_formed = 0 and kpd_formed = 0 : Currently in: the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
 [? if uspd_formed = 1 and kpd_formed = 0 : Currently in: the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
-[? if kpd_formed = 1 and kpd_merge = 0 : Currently in: the <span style="color: var(--kpd_color)"><strong>KPD</strong></span> ?]
-[? if kpd_formed = 1 and kpd_merge = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>?]
+[? if kpd_formed = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>?]
 
+[? if russian_revolution = 0 : Bolshevik relations: [+ bolshevik_relation : relationships +]?]
 [? if russian_revolution = 1 : Soviet relations: [+ soviet_relation : relationships +]?]
 
 Union strength: [+ union_strength : strength +]
@@ -56,18 +55,6 @@ Annual dues: [+ dues +]
 
 # [? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
-[? if kpd_formed = 1 : <h1>Internal Factions of the <span style="color: var(--kpd_color)">KPD</span>?]
-
-[? if kpd_formed = 1 : Internal dissent: [+ dissent_percent : dissent +]?]
-
-= Economics
-
-Inflation: [+ inflation_2 +]%
-
-[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
-
-Economic growth: [+ economic_growth_2 +]%
-
 # = Public Opinion
 
 [? if kpd_formed = 1 and kpd_merge = 1 : <h1>Internal Factions of the <span style="color: var(--kpd_color)"><strong>KPD</span></strong></h1> ?]
@@ -80,6 +67,14 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if kpd_formed = 1 and kpd_merge = 1 : [? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?] ?]
 
+= Economics
+
+Inflation: [+ inflation_2 +]%
+
+[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
+
+Economic growth: [+ economic_growth_2 +]%
+
 @politics
 
 = Inter-party Politics
@@ -87,7 +82,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span> <br>Leader: [+ kpd_leader +] <br>Ideology: [+ kpd_ideology +]?]
 
-[? if uspd_formed = 1 : <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color);"><strong>USPD</strong></span> <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +]?]
+[? if uspd_formed = 1 and kpd_formed = 0: <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color);"><strong>USPD</strong></span> <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +]?]
+[? if uspd_formed = 1 and kpd_formed = 1: <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color);"><strong>USPD</strong></span> <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +] <br>Relations: [+ uspd_relation : relationships +]?]
 
 [? if uspd_formed = 0 : <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] ?]
 [? if uspd_formed = 1 and year < 1922 : <span class="tooltip-text" data-tooltip="Majority Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>MSPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
@@ -331,17 +327,28 @@ if (Q.kpd_formed && Q.kpd_r) {_addStatusParty('kpd', "KPD", Q.kpd_seats)}
 if (Q.uspd_formed) {_addStatusParty('uspd', "USPD", Q.uspd_seats)}
 if (Q.spd_r) {_addStatusParty('spd', "SPD", Q.spd_seats)}
 if (Q.sapd_r && Q.sapd_formed) {_addStatusParty('sapd', "SAPD", Q.sapd_seats)} /* Before or after SPD? Dont feel like googling rn */
+
 if (Q.other_r) {_addStatusParty('other', "SPD", Q.other_seats)}
+
 if (Q.pp_dissolved == 0) {_addStatusParty('pp', "PP", Q.pp_seats)}
 if (Q.dhp_dissolved == 0) {_addStatusParty('dhp', "DHP", Q.dhp_seats)}
 if (Q.elp_dissolved == 0) {_addStatusParty('elp', "ELP", Q.elp_seats)}
 if (Q.bb_dissolved == 0) {_addStatusParty('bb', "BB", Q.bb_seats)}
-if (Q.ddp_r) {_addStatusParty('ddp', Q.ddp_name, Q.ddp_seats)}
+
+if (Q.ddp_r && Q.ddp_name_change == 0) {_addStatusParty('fvp', Q.ddp_name, Q.ddp_seats)}
+if (Q.ddp_r && Q.ddp_name_change == 1) {_addStatusParty('ddp', Q.ddp_name, Q.ddp_seats)}
+
 if (Q.z_r) {_addStatusParty('z', "Z", Q.z_seats)}
 if (Q.bvp_r && Q.bvp_formed) {_addStatusParty('bvp', "BVP", Q.bvp_seats)}
-if (Q.dvp_r) {_addStatusParty('dvp', Q.dvp_name, Q.dvp_seats)}
+
+if (Q.dvp_r && Q.dvp_name_change == 0) {_addStatusParty('nlp', Q.dvp_name, Q.dvp_seats)}
+if (Q.dvp_r && Q.dvp_name_change == 1) {_addStatusParty('dvp', Q.ddp_name, Q.ddp_seats)}
+
 if (Q.drp_dissolved == 0) {_addStatusParty('drp', "DRP", Q.drp_seats)}
-if (Q.dnvp_r) {_addStatusParty('dnvp', Q.dnvp_name, Q.dnvp_seats)}
+
+if (Q.dnvp_r && Q.dnvp_name_change == 0) {_addStatusParty('dkp', Q.dnvp_name, Q.dnvp_seats)}
+if (Q.dnvp_r && Q.dnvp_name_change == 1) {_addStatusParty('dnvp', Q.dnvp_name, Q.dnvp_seats)}
+
 if (Q.ansem_dissolved == 0) {_addStatusParty('dsp', "DvP", Q.ansem_seats)}
 if (Q.nsdap_formed && Q.nsdap_banned == 0 && Q.nsdap_r) {_addStatusParty('nsdap', "NSDAP", Q.nsdap_seats)}
 
