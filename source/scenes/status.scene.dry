@@ -313,8 +313,8 @@ if (Q.bb_dissolved == 1) {Q.bb_seats = 0}
 if (Q.drp_dissolved == 0) {Q.drp_seats = Math.round(3.5*Q.reichstag_seats)}
 if (Q.drp_dissolved == 1) {Q.drp_seats = 0}
 
-if (Q.ansem_dissolved == 0) {Q.ansem_seats = Math.round(2.5*Q.reichstag_seats)}
-if (Q.ansem_dissolved == 1) {Q.ansem_seats = 0}
+if (Q.ansem_dissolved == 0) {Q.dvp_seats = Math.round(2.5*Q.reichstag_seats)}
+if (Q.ansem_dissolved == 1) {Q.dvp_seats = 0}
 
 Q.total_seats = (Q.spd_seats + Q.uspd_seats + Q.sapd_seats + Q.kpd_seats + Q.z_seats + Q.bvp_seats + Q.ddp_seats + Q.other_seats + + Q.dvp_seats + Q.dnvp_seats + Q.nsdap_seats + Q.pp_seats + Q.dhp_seats + Q.elp_seats + Q.bb_seats + Q.drp_seats + Q.ansem_seats) 
 
@@ -342,7 +342,7 @@ if (Q.bvp_r) {_addStatusParty('bvp', "BVP", Q.bvp_seats)}
 if (Q.dvp_r) {_addStatusParty('dvp', Q.dvp_name, Q.dvp_seats)}
 if (Q.drp_dissolved == 0) {_addStatusParty('drp', "DRP", Q.drp_seats)}
 if (Q.dnvp_r) {_addStatusParty('dnvp', Q.dnvp_name, Q.dnvp_seats)}
-if (Q.ansem_dissolved == 0) {_addStatusParty('ansem', "ANSEM", Q.ansem_seats)}
+if (Q.ansem_dissolved == 0) {_addStatusParty('dsp', "DvP", Q.ansem_seats)}
 if (Q.nsdap_formed && Q.nsdap_banned == 0 && Q.nsdap_r) {_addStatusParty('nsdap', "NSDAP", Q.nsdap_seats)}
 
 Q.parliament_diagram = data_st

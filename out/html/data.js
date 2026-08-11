@@ -45,7 +45,7 @@ const colourList = [
 },
 
 {
-	word: "FPv",
+	word: "FPV",
 	style: "color: var(--ddp_color); font-weight: bold"
 },
 
@@ -91,7 +91,7 @@ const colourList = [
 },
 
 {
-	word: "DSP",
+	word: "DvP",
 	style: "color: #8B5A2B; font-weight: bold"
 },
 
@@ -104,22 +104,22 @@ const colourList = [
 const tooltipList = [
 {
 	searchString: "KPD",
-    explanationText: "<img src=img/kpd_logo.svg> Kommunistische Partei Deutschlands </br></br> Communist Party of Germany"
+    explanationText: "<img src=img/logos/kpd_logo.svg> Kommunistische Partei Deutschlands </br></br> Communist Party of Germany"
 },
 
 {
 	searchString: "USPD",
-    explanationText: "<img src=img/uspd_logo.svg> Unabhängige Sozialdemokratische Partei Deutschlands </br></br> Independent Social Democratic Party of Germany"
+    explanationText: "<img src=img/logos/uspd_logo.svg> Unabhängige Sozialdemokratische Partei Deutschlands </br></br> Independent Social Democratic Party of Germany"
 },
 
 {
 	searchString: "SAPD",
-    explanationText: "<img src=img/SAPD_logo.png> Sozialistische Arbeiterpartei Deutschlands </br></br> Socialist Workers' Party of Germany"
+    explanationText: "<img src=img/logos/SAPD_logo.png> Sozialistische Arbeiterpartei Deutschlands </br></br> Socialist Workers' Party of Germany"
 },
 
 {
 	searchString: "SPD",
-    explanationText: "<img src=img/SPD_logo_2.png> Sozialdemokratische Partei Deutschlands </br></br> Social Democratic Party of Germany"
+    explanationText: "<img src=img/logos/SPD_logo_2.png> Sozialdemokratische Partei Deutschlands </br></br> Social Democratic Party of Germany"
 },
 
 {
@@ -138,7 +138,7 @@ const tooltipList = [
 },
 
 {
-	searchString: "FPv",
+	searchString: "FVP",
     explanationText: " Fortschrittliche Volkspartei </br></br> Progressive People's Party"
 },
 
@@ -149,12 +149,12 @@ const tooltipList = [
 
 {
 	searchString: "Z",
-    explanationText: "<img src=img/zentrum.png> Deutsche Zentrumspartei </br></br> German Centre Party"
+    explanationText: "<img src=img/logos/zentrum.png> Deutsche Zentrumspartei </br></br> German Centre Party"
 },
 
 {
 	searchString: "BVP",
-    explanationText: "<img src=img/bvp_logo.jpeg> Bayerische Volkspartei </br></br> Bavarian People's Party"
+    explanationText: "<img src=img/logos/bvp_logo.jpeg> Bayerische Volkspartei </br></br> Bavarian People's Party"
 },
 
 {
@@ -188,7 +188,7 @@ const tooltipList = [
 },
 
 {
-	searchString: "DvP",
+	searchString: "dsp",
     explanationText: " Deutschvölkische Partei </br></br> German Völkisch Party"
 },
 

@@ -611,6 +611,12 @@ table {
 .seat.dvp {
     fill: #98C22C;
 }
+.seat.dvp {
+    fill: #C0A054;
+}
+.seat.nlp {
+    fill: #98C22C;
+}
 .seat.other {
     fill: #909090;
 }
@@ -642,7 +648,7 @@ table {
 .seat.drp {
   fill: #00C0ff;
 }
-.seat.ansem {
+.seat.dvp {
   fill: #8B5A2B;
 }
 

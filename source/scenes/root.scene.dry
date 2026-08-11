@@ -416,8 +416,11 @@ Q.old_nsdap_r = 0;
 // for changing the DDP's name to the DStP
 // party names before nov revolution
 Q.ddp_name = "FVp"; // DDP by default
+Q.ddp_name_change = 0
 Q.dvp_name = "NLP";
+Q.dvp_name_change = 0
 Q.dnvp_name = "DKP";
+Q.dnvp_name_change = 0
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];

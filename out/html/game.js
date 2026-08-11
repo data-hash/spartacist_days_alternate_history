@@ -293,7 +293,7 @@
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
       
-        if (searchString === 'FPv' && Q.ddp_relation !== undefined) {
+        if (searchString === 'FVP' && Q.ddp_relation !== undefined) {
             var relationText = getRelationshipText(Q.ddp_relation);
             return baseTooltip.explanationText + '<br>Relation: ' + relationText;
         }
