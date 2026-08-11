@@ -1,5 +1,6 @@
 title: Germany
 subtitle: The States of Germany
+is-special: true
 new-page: true
 
 [? if nov_revolution = 0 : <h1>Regions of the German Empire</h1>?]
@@ -9,4 +10,4 @@ new-page: true
 TODO: States of germany description.
 
 - #regions
-- @root: Return
+- @backSpecialScene: Back.
