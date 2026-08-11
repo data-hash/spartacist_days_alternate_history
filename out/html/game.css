@@ -646,6 +646,45 @@ table {
   fill: #8B5A2B;
 }
 
+/*parliament tooltip code based/from road to ithaca and dynamic_biennio_rosso_alternate_history */
+.parliament-tooltip {
+    position: absolute;
+    z-index: 999999;
+    width: 120px;
+    background: var(--content-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 4px;
+    padding: 12px 14px;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    border: 1px solid var(--border-color);
+    pointer-events: none;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 500;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+.parliament-tooltip.visible {
+    opacity: 1;
+}
+.parliament-tooltip img {
+    display: block;
+    margin: 0 auto 4px auto;
+    max-width: 90%;
+    height: auto;
+}
+.seat.party-nothovered {
+    opacity: 0.3;
+}
+body.dark-mode .parliament-tooltip {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    border-color: #8093ff;
+    border: 1px solid #2235b2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
 .tooltip-text {
     cursor: help;
     text-decoration: underline;

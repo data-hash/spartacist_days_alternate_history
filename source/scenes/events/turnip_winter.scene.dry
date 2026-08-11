@@ -23,7 +23,6 @@ unavailable-subtitle: Not enough resources.
 on-arrival: {!
 	Q.resources -= 1
 	Q.grassroots_support += 5
-	Q.union_support 
 
 	Q.unemployed_spd += 4*(1-Q.dissent)
 	Q.workers_spd += 3*(1-Q.dissent)
