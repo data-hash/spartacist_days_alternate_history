@@ -4,8 +4,7 @@ view-if: month = 2 and year = 1917
 new-page: true
 max-visits: 1
 on-arrival: {!
-	Q.russian_revolution = 1
-	Q.soviet_relation = 50
+	Q.feb_revolution = 1
 !}
 tags: event
 
@@ -33,6 +32,5 @@ on-arrival: {!
 The pamphlets were somewhat effective, due to resistance from the Party and suppression from the State.
 
 @nothing
-subtitle: No action taken.
 
 We will watch the events in Russia with great interest.

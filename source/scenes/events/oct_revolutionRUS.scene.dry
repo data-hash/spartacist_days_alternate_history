@@ -4,7 +4,7 @@ view-if: month = 10 and year = 1917
 new-page: true
 max-visits: 1
 on-arrival: {!
-	Q.russian_revolution = 1
+	Q.oct_revolution = 1
 	Q.soviet_relation = 35
 !}
 tags: event

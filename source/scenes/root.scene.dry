@@ -143,7 +143,7 @@ Q.nsdap_ideology = "Fascism";
 
 //party stats
 Q.party_leader = "Karl Liebknecht & Rosa Luxemburg";
-Q.grassroots_support = 55;
+Q.grassroots_support = 40;
 Q.union_support = 65;
 Q.union_unrest = 35;
 Q.union_strength = 15;
@@ -644,7 +644,7 @@ Q.sa_ban_timer = 0;
 Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
-Q.wildcat_strikes_timer = 1;
+Q.wildcat_strikes_timer = 2;
 Q.turnip_winter_timer = 1;
 
 Q.ebert_dead = 0;
