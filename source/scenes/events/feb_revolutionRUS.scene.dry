@@ -4,6 +4,7 @@ view-if: month = 2 and year = 1917
 new-page: true
 max-visits: 1
 on-arrival: {!
+	Q.soviet_relation = 35
 	Q.feb_revolution = 1
 !}
 tags: event

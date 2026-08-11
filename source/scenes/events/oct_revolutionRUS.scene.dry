@@ -5,7 +5,7 @@ new-page: true
 max-visits: 1
 on-arrival: {!
 	Q.oct_revolution = 1
-	Q.soviet_relation = 35
+	/*Q.soviet_relation = 35 TODO, add or subtract depending on player position on the revolution*/
 !}
 tags: event
 
@@ -14,3 +14,22 @@ tags: event
 After the events in February with the fall of the Tzar the Bolsheviks have overthrown the Provisional Government.
 
 We have many thoughts about this.
+
+- @support: We must congratulate the Bolsheviks in Russia! 
+- @denounce: This is too hasty.
+
+@support
+subtitle: Long live the Revolution!
+on-arrival: {!
+	Q.soviet_relation += 10
+!}
+
+Some of our members have mixed feelings, but nevertheless they still congratulate the Bolsheviks.
+
+@denounce
+on-arrival: {!
+	Q.soviet_relation -= 10
+!}
+
+Some of our members have mixed feelings, but nevertheless agree to denounce the Bolsheviks.
+

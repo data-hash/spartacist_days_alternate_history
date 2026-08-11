@@ -3,11 +3,14 @@ subtitle: Hollweg resigns after pressure from the Reichstag.
 view-if: hollweg_timer = 0
 tags:event
 new-page: true
+max-visits: 1
 on-departure: {!
 	Q.chancellor = "Michaelis"
 !}
 
-Theobald von Bethmann Hollweg resigns after his support for equal suffrage, and ending the Great War without a negotiated peace led him into conflict with some of the major parties (<span style="color: var(--dnvp_color)">DKP</span>, <span style="color: var(--ddp_color)">NLP</span>,<span class="tooltip-text" data-tooltip="Free Conservative Party (DRP)" style="color: #00C0ff)">FKP</span>).
+= Hollweg Resigns!
+
+Theobald von Bethmann Hollweg resigns after his support for equal suffrage, and ending the Great War without a negotiated peace led him into conflict with some of the major parties (<span style="color: var(--dnvp_color)">DKP</span>, <span style="color: var(--ddp_color)">NLP</span>, <span class="tooltip-text" data-tooltip="Free Conservative Party (DRP)" style="color: #00C0ff)">FKP</span>).
 
 Both Erich Ludendorff and Paul von Hindenburg threaten to resign, and Hollweg, wanting to save himself and the Emperor embarrassment, decides to resign.
 
