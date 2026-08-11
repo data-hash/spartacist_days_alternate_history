@@ -414,21 +414,21 @@
 
  window.getDynamicTooltipContent = getDynamicTooltipContent;
 
-    function applyWholesome(str) {
-        const allWords = new Set([
-            ...tooltipList.map(t => t.searchString),
-            ...colourList.map(c => c.word)
-        ]);
+ function applyWholesome(str) {
+    const allWords = new Set([
+        ...tooltipList.map(t => t.searchString),
+        ...colourList.map(c => c.word)
+    ]);
 
-        // Escape special regex characters in the words
-        const escapedWords = [...allWords].map(word => 
-            word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-        );
+    // Escape special regex characters in the words
+    const escapedWords = [...allWords].map(word => 
+        word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    );
 
-        //fix for longer words not showing up if they contained smaller entry words inside of them
-        escapedWords.sort((a, b) => b.length - a.length);
+    //fix for longer words not showing up if they contained smaller entry words inside of them
+    escapedWords.sort((a, b) => b.length - a.length);
 
-        const regex = new RegExp(`\\b(${escapedWords.join('|')})\\b`, 'g');
+    const regex = new RegExp(`\\b(${escapedWords.join('|')})\\b`, 'g');
 
         return str.replace(/(<(?:span|strong)[^>]*>.*?<\/(?:span|strong)>|<[^>]+>|[^<]+)/g, (segment) => {
             if (segment.startsWith('<')) return segment;
@@ -454,7 +454,7 @@
                 return match;
             });
         });
-    }
+  }
 
   // populates the checkboxes in the options view
   window.populateOptions = function() {
@@ -490,11 +490,11 @@
   };
 
   
-  // This function allows you to modify the text before it's displayed.
-  // E.g. wrapping chat-like messages in spans.
-  window.displayText = function(text) {
-      return text;
-  };
+//   // This function allows you to modify the text before it's displayed.
+//   // E.g. wrapping chat-like messages in spans.
+//   window.displayText = function(text) {
+//       return text;
+//   };
 
   // This function allows you to do something in response to signals.
   window.handleSignal = function(signal, event, scene_id) {
