@@ -291,10 +291,6 @@
         if (searchString === 'DRP' ) {
             return baseTooltip.explanationText 
         }
-                        
-        if (searchString === 'DKP' ) {
-            return baseTooltip.explanationText 
-        }
 
         if (searchString === "USPD" && Q.uspd_relation !== undefined) {
             var relationText = getRelationshipText(Q.uspd_relation);
