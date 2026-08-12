@@ -269,7 +269,7 @@ Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 // append kpd and nsdap after they are formed to Q.parties
-Q.parties = ['spd', 'z', 'ddp', 'dvp', 'dnvp', 'other']; // SPD: SPD, KPD: KPD, Z: Z (Center), DDP: FVp, DVP: NLP, DNVP: DKP
+Q.parties = ['spd', 'z', 'ddp', 'dvp', 'dnvp', 'other']; // SPD: SPD, KPD: KPD, Z: Z (Center), DDP: FVP, DVP: NLP, DNVP: DKP
 
 // TODO: add 'sapd' later on
 // Formed parties
@@ -436,7 +436,7 @@ Q.economic_records = [];
 Q.president = "Wilhelm II";
 Q.president_party = 'I';
 Q.president_reichstag = "Johannes Kaempf";
-Q.president_reichstag_party = "FVp";
+Q.president_reichstag_party = "FVP";
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Hollweg";
 Q.chancellor_party = 'I';

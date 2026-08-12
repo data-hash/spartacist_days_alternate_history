@@ -50,7 +50,7 @@ const colourList = [
 },
 
 {
-	word: "FPV",
+	word: "FVP",
 	style: "color: var(--ddp_color); font-weight: bold"
 },
 
@@ -95,7 +95,7 @@ const colourList = [
 },
 
 {
-	word: "DvP",
+	word: "DSP",
 	style: "color: #8B5A2B; font-weight: bold"
 },
 

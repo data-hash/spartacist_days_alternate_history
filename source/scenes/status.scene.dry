@@ -408,7 +408,7 @@ if (d3 && window && Q.started) {
 
 [? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #D49797;'> </div> !} PP: {!</td><td>!} [+ pp_seats +] (4.5%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
-[? if dhp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #333FFF;'> </div> !} >DHP: {!</td><td>!} [+ dhp_seats +] (1.3%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
+[? if dhp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #333FFF;'> </div> !} DHP: {!</td><td>!} [+ dhp_seats +] (1.3%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
 [? if elp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #000;'> </div> !} ELP: {!</td><td>!} [+ elp_seats +] (2.3%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
