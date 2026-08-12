@@ -169,11 +169,13 @@
       document.body.classList.remove('dark-mode');
       window.dendryUI.saveSettings();
   };
+
   window.enableDarkMode = function() {
       window.dendryUI.dark_mode = true;
       document.body.classList.add('dark-mode');
       window.dendryUI.saveSettings();
   };
+  
   window.displayText = function (text) {
       return applyWholesome(text);
     };

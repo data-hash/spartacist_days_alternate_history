@@ -20,7 +20,7 @@ const colourList = [
 },
 
 {
-	searchString: "Others",
+	word: "Others",
     style: "color: #909090; font-weight: bold"
 },
 
