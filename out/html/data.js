@@ -139,52 +139,52 @@ const colourList = [
 const tooltipList = [
 {
 	searchString: "KPD",
-    explanationText: "<img src=img/logos/kpd_logo.svg> <span class=title>KPD</span> Communist Party of Germany </br></br> Kommunistische Partei Deutschlands"
+    explanationText: "<img src=img/logos/kpd_logo.svg> <span class=title>KPD</span></br> Communist Party of Germany </br></br> Kommunistische Partei Deutschlands"
 },
 
 {
 	searchString: "USPD",
-    explanationText: "<img src=img/logos/uspd_logo.svg> <span class=title>USPD</span> <hr> Independent Social Democratic Party of Germany Deutschlands </br></br> Unabhängige Sozialdemokratische Partei Deutschlands"
+    explanationText: "<img src=img/logos/uspd_logo.svg> <span class=title>USPD</span></br> Independent Social Democratic Party of Germany Deutschlands </br></br> Unabhängige Sozialdemokratische Partei Deutschlands"
 },
 
 {
 	searchString: "SAPD",
-    explanationText: "<img src=img/logos/SAPD_logo.png> <span class=title>SAPD</span> Socialist Workers' Party of Germany </br></br> Sozialistische Arbeiterpartei Deutschlands"
+    explanationText: "<img src=img/logos/SAPD_logo.png> <span class=title>SAPD</span></br> Socialist Workers' Party of Germany </br></br> Sozialistische Arbeiterpartei Deutschlands"
 },
 
 {
 	searchString: "SPD",
-    explanationText: "<img src=img/logos/SPD_logo_2.png> <span class=title>SPD</span> Social Democratic Party of Germany </br></br> Sozialdemokratische Partei Deutschlands"
+    explanationText: "<img src=img/logos/SPD_logo_2.png> <span class=title>SPD</span></br> Social Democratic Party of Germany </br></br> Sozialdemokratische Partei Deutschlands"
 },
 
 {
 	searchString: "MSPD",
-    explanationText: "<img src=img/logos/SPD_logo_2.png> <span class=title>MSPD</span> Majority Social Democratic Party of Germany </br></br> Mehrheitssozialdemokratische Partei Deutschlands"
+    explanationText: "<img src=img/logos/SPD_logo_2.png> <span class=title>MSPD</span></br> Majority Social Democratic Party of Germany </br></br> Mehrheitssozialdemokratische Partei Deutschlands"
 },
 
 {
 	searchString: "DHP",
-    explanationText: " <span class=title>DHP</span> German-Hanoverian Party </br></br> Deutsch-Hannoversche Partei"
+    explanationText: " <span class=title>DHP</span></br> German-Hanoverian Party </br></br> Deutsch-Hannoversche Partei"
 },
 
 {
 	searchString: "ELP",
-    explanationText: " <span class=title>ELP</span> Alsace-Lorraine Party </br></br> Elsass-Lothringen Partei"
+    explanationText: " <span class=title>ELP</span></br> Alsace-Lorraine Party </br></br> Elsass-Lothringen Partei"
 },
 
 {
 	searchString: "BB",
-    explanationText: " <span class=title>BB</span> Bavarian Peasants' League </br></br> Bayerischer Bauernbund"
+    explanationText: " <span class=title>BB</span></br> Bavarian Peasants' League </br></br> Bayerischer Bauernbund"
 },
 
 {
 	searchString: "PP",
-    explanationText: " <span class=title>PP</span> Polish Party </br></br> Polenpartei"
+    explanationText: " <span class=title>PP</span></br> Polish Party </br></br> Polenpartei"
 },
 
 {
 	searchString: "DP",
-    explanationText: " <span class=title>DP</span> Danish Party </br></br> Dänische Partei"
+    explanationText: " <span class=title>DP</span></br> Danish Party </br></br> Dänische Partei"
 },
 
 {
@@ -199,67 +199,67 @@ const tooltipList = [
 
 {
 	searchString: "FVP",
-    explanationText: "<img src=img/logos/fvp_logo.png> <span class=title>FVP</span> Progressive People's Party </br></br> Fortschrittliche Volkspartei"
+    explanationText: "<img src=img/logos/fvp_logo.png> <span class=title>FVP</span></br> Progressive People's Party </br></br> Fortschrittliche Volkspartei"
 },
 
 {
 	searchString: "DDP",
-    explanationText: "<img src=img/logos/weimar_flag.svg> <span class=title>DDP</span> German Democratic Party </br></br> Deutsche Demokratische Partei"
+    explanationText: "<img src=img/logos/weimar_flag.svg> <span class=title>DDP</span></br> German Democratic Party </br></br> Deutsche Demokratische Partei"
 },
 
 {
 	searchString: "Z",
-    explanationText: "<img src=img/logos/z_flag.svg> <span class=title>Z</span> German Centre Party </br></br> Deutsche Zentrumspartei"
+    explanationText: "<img src=img/logos/z_flag.svg> <span class=title>Z</span></br> German Centre Party </br></br> Deutsche Zentrumspartei"
 },
 
 {
 	searchString: "BVP",
-    explanationText: "<img src=img/logos/bvp_logo.jpeg> <span class=title>BVP</span> Bavarian People's Party </br></br> Bayerische Volkspartei"
+    explanationText: "<img src=img/logos/bvp_logo.jpeg> <span class=title>BVP</span></br> Bavarian People's Party </br></br> Bayerische Volkspartei"
 },
 
 {
 	searchString: "NLP",
-    explanationText: "<img src=img/logos/nlp_logo.png> <span class=title>NLP</span> National Liberal Party </br></br> Nationalliberale Partei"
+    explanationText: "<img src=img/logos/nlp_logo.png> <span class=title>NLP</span></br> National Liberal Party </br></br> Nationalliberale Partei"
 },
 
 {
 	searchString: "DVP",
-    explanationText: "<img src=img/logos/dvp_logo.svg> <span class=title>DVP</span> German People's Party </br></br> Deutsche Volkspartei"
+    explanationText: "<img src=img/logos/dvp_logo.svg> <span class=title>DVP</span></br> German People's Party </br></br> Deutsche Volkspartei"
 },
 
 {
 	searchString: "DRP",
-    explanationText: "<img src=img/logos/drp_logo.png> <span class=title>DRP (FKP)</span> German Reich Party </br></br> Deutsche Reichspartei"
+    explanationText: "<img src=img/logos/drp_logo.png> <span class=title>DRP (FKP)</span></br> German Reich Party </br></br> Deutsche Reichspartei"
 },
 
 {
 	searchString: "FKP",
-    explanationText: "<img src=img/logos/drp_logo.png> <span class=title>FKP (DRP)</span> Free Conservative Party </br></br> Freikonservative Partei"
+    explanationText: "<img src=img/logos/drp_logo.png> <span class=title>FKP (DRP)</span></br> Free Conservative Party </br></br> Freikonservative Partei"
 },
 
 {
 	searchString: "DKP",
-    explanationText: "<img src=img/logos/imperial_flag.svg> <span class=title>DKP</span> German Conservative Party </br></br> Deutschkonservative Partei"
+    explanationText: "<img src=img/logos/imperial_flag.svg> <span class=title>DKP</span></br> German Conservative Party </br></br> Deutschkonservative Partei"
 },
 
 {
 	searchString: "DNVP",
-    explanationText: "<img src=img/logos/dnvp_logo.svg> <span class=title>DNVP</span> German National People's Party </br></br> Deutschnationale Volkspartei"
+    explanationText: "<img src=img/logos/dnvp_logo.svg> <span class=title>DNVP</span></br> German National People's Party </br></br> Deutschnationale Volkspartei"
 },
 
 {
 	searchString: "DvP",
-    explanationText: "<img src=img/logos/freikorps_flag.png> <span class=title>DvP</span> German Völkisch Party </br></br> Deutschvölkische Partei"
+    explanationText: "<img src=img/logos/freikorps_flag.png> <span class=title>DvP</span></br> German Völkisch Party </br></br> Deutschvölkische Partei"
 },
 
 {
 	searchString: "DSP",
-    explanationText: "<img src=img/logos/freikorps_flag.png> <span class=title>DvP</span> German Völkisch Party </br></br> Deutschvölkische Partei"
+    explanationText: "<img src=img/logos/freikorps_flag.png> <span class=title>DvP</span></br> German Völkisch Party </br></br> Deutschvölkische Partei"
 },
 
 {
 	searchString: "NSDAP",
-    explanationText: " <span class=title>NSDAP</span> National Socialist German Workers' Party </br></br> Nationalsozialistische Deutsche Arbeiterpartei"
+    explanationText: " <span class=title>NSDAP</span></br> National Socialist German Workers' Party </br></br> Nationalsozialistische Deutsche Arbeiterpartei"
 },
 
 {
