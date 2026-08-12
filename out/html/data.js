@@ -223,7 +223,7 @@ const tooltipList = [
 },
 
 {
-	searchString: "dsp",
+	searchString: "DvP",
     explanationText: " Deutschvölkische Partei </br></br> German Völkisch Party"
 },
 
