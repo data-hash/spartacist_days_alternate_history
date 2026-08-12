@@ -154,7 +154,7 @@ const tooltipList = [
 
 {
 	searchString: "SPD",
-    explanationText: "<img src=img/logos/SPD_logo_2.png> <h1>SPD</h1> <hr> Social Democratic Party of Germany </br></br> Sozialdemokratische Partei Deutschlands"
+    explanationText: "<img src=img/logos/SPD_logo_2.png> </h1>SPD</h1> </hr> Social Democratic Party of Germany </br></br> Sozialdemokratische Partei Deutschlands"
 },
 
 {
