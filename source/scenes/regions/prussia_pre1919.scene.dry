@@ -120,7 +120,7 @@ if (d3 && window && Q.started) {
 
 [? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #D49797;'> </div> !} PP: {!</td><td>!} [+ pp_pr_seats +] ([+ ppPrPer +]%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
-[? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #008B45;'> </div> !} DP: {!</td><td>!} [+ dp_pr_seats +] ([+ dpPrPer +]%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
+[? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #CE1126;'> </div> !} DP: {!</td><td>!} [+ dp_pr_seats +] ([+ dpPrPer +]%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
 
 [? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--ddp_color);'> </div> !} FVP: {!</td><td>!} [+ ddp_pr_seats +] ([+ ddpPrPer +]%) {!</td><td>!} [? if ddp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if ddp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
 

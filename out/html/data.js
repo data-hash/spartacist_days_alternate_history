@@ -183,6 +183,11 @@ const tooltipList = [
 },
 
 {
+	searchString: "DP",
+    explanationText: " Dänische Partei </br></br> Danish Party"
+},
+
+{
 	searchString: "Others",
     explanationText: " Independents </br></br> Agrarian League, Independent Conservatives, etc."
 },
