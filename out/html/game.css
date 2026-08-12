@@ -753,7 +753,7 @@ body.dark-mode .parliament-tooltip {
   padding: 2px 1px;
 }
 .mytooltip:hover { 
-  background-color: var(--content-bg-color);
+  /* background-color: var(--content-bg-color); */
   text-decoration: underline;
 }
 

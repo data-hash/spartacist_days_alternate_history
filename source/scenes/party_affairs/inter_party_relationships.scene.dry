@@ -10,14 +10,14 @@ max-visits: 12
 
 = Inter-Party Relationships
 
-[? if uspd_formed = 0 and burgfrieden = 0 : The <span style="color: var(--spd_color)">SPD</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. We are currently in a political pact with all the other parties. ?]
-[? if uspd_formed = 1 and kpd_formed = 0 : The <span style="color: var(--uspd_color)">USPD</span> cannot govern alone, yet. As a splinter of a major party we need the support of the major parties. We could build connections with the other parties. ?]
-[? if kpd_formed = 1 : The <span style="color: var(--kpd_color)">KPD</span> cannot govern alone, yet. As a splinter party of a splinter party we could use the support of the major parties. Perhaps we should build connections with the other parties. ?]
+[? if uspd_formed = 0 and burgfrieden = 0 : The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. We are currently in a political pact with all the other parties. ?]
+[? if uspd_formed = 1 and kpd_formed = 0 : The USPD cannot govern alone, yet. As a splinter of a major party we need the support of the major parties. We could build connections with the other parties. ?]
+[? if kpd_formed = 1 : The KPD cannot govern alone, yet. As a splinter party of a splinter party we could use the support of the major parties. Perhaps we should build connections with the other parties. ?]
 
 - @liberals: Strengthen our bonds with the left-liberal [+ ddp_name +] and conservative-liberal [+ dvp_name +].
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @socdems: Work towards repairing relationships with the Social Democratic Party.
-- @kpd_alone: The SPD can stand alone for now.
+- @center: Strengthen our bonds with the Catholic Center Party (Z).
+- @socdems: Work towards repairing relationships with the Social Democratic Party (SPD).
+- @kpd_alone: The [? if kpd_formed :KPD?][? if uspd_formed and kpd_formed = 0 :USPD?][? if uspd_formed = 0 :SPD?] can stand alone for now.
 - @easy_discard
 
 

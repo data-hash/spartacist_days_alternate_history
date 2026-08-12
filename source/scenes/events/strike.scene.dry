@@ -40,6 +40,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: {!
 	Q.resources -= 1
+	Q.aid_given += 1 /* perhaps after it reaches a certain level some members are arrested for supporting illegal strikes, todo */
 
 	Q.union_strength += 6
 	Q.union_support += 4
@@ -50,6 +51,8 @@ on-arrival: {!
 	if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {Q.workers_uspd += 5*(1-Q.dissent)}
 	if (Q.uspd_formed == 1 && Q.kpd_formed == 1) {Q.workers_kpd += 5*(1-Q.dissent)}
 !}
+
+We have delivered aid to the workers on strike. 
 
 @blame
 subtitle: -1 resources
