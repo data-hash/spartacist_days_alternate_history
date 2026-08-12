@@ -178,7 +178,7 @@ const tooltipList = [
 },
 
 {
-	searchString: "OTHERS",
+	searchString: "others",
     explanationText: " Independents </br></br> Agrarian League, Independent Conservatives, etc."
 },
 
