@@ -50,6 +50,11 @@ const colourList = [
 },
 
 {
+	word: "DP",
+	style: "color: #CE1126; font-weight: bold"
+},
+
+{
 	word: "FVP",
 	style: "color: var(--ddp_color); font-weight: bold"
 },
@@ -122,6 +127,11 @@ const colourList = [
 {
 	word: "Imperial",
 	style: "color: #000; font-weight: bold"
+},
+
+{
+	word: "RFB",
+	style: "color: var(--kpd_color); font-weight: bold"
 },
 
 ];
@@ -245,6 +255,11 @@ const tooltipList = [
 {
 	searchString: "NSDAP",
     explanationText: " Nationalsozialistische Deutsche Arbeiterpartei </br></br> National Socialist German Workers' Party"
+},
+
+{
+	searchString: "RFB",
+    explanationText: " Roter Frontkämpferbund </br></br> Red Front Fighters' League"
 },
 
 ]

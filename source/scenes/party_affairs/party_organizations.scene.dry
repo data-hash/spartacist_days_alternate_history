@@ -15,7 +15,7 @@ In addition to being a political party, the SPD is a social world onto itself, w
 - @newspapers: Fund more newspapers and journalists.
 - @welfare: Fund more mutual aid and welfare programs.
 - @culture: Fund sports leagues, educational, and cultural programs.
-- @rb: Fund the Roter Frontkämpferbund, our self-defense organization.
+- @rfb: Fund the Roter Frontkämpferbund, our self-defense organization.
 - @youth: We have the reputation of being a party for old men. Support the youth organizations.
 - @nothing: Do not increase funding for any program.
 - @easy_discard
@@ -37,6 +37,7 @@ subtitle: -1 resources
 on-arrival: {!
 	Q.resources -= 1
 	Q.workers_aid += 1
+	Q.grassroots_support += 5*(1-Q.dissent)
 
 	if (Q.kpd_formed == 1) {Q.unemployed_kpd += 5*(1-Q.dissent)}
 	if (Q.uspd_formed == 1 && Q.kpd_formed == 0) {Q.unemployed_uspd += 5*(1-Q.dissent)}
@@ -57,14 +58,14 @@ on-arrival: resources -= 1; cultural_organizations += 1; left_dissent -= 6; cent
 
 [? if sa_strength > 500 : However, it feels frivolous to spend on sports and choirs when the fascists are murdering us in the streets. ?]
 
-@rb
+@rfb
 choose-if: resources > 0
 unavailable-subtitle: Not enough resources.
 view-if: rfb_formed = 1
 subtitle: -1 resources
 on-arrival: resources -= 1; rfb_strength  += 100; rfb_militancy += 0.01; rfb_timer = 0; funded_rfb += 1
 
-We have increased recruiting to the <span class="tooltip-text" data-tooltip="Roter Frontkämpferbund (Our paramilitary organization)" style="color: var(--kpd_color)" >RFB</span>.
+We have increased recruiting to the RFB.
 
 @youth
 choose-if: resources > 0
@@ -85,8 +86,8 @@ on-arrival: {!
 !}
 
 [? if neorevisionism = 0 and rfb_formed = 0 : Our new youth members flock to the left wing of our party.?]
-[? if neorevisionism = 0 and rfb_formed = 1 : Our new youth members flock to the left wing of our party, and also bring new radicalism to the <span class="tooltip-text" data-tooltip="Roter Frontkämpferbund (Our paramilitary organization)" style="color: var(--kpd_color)" >RFB</span>.?]
-[? if neorevisionism = 1 and rfb_formed = 1 : Our new youth members flock to the left or neorevisionist wings of the party, and also bring new radicalism to the <span class="tooltip-text" data-tooltip="Roter Frontkämpferbund (Our paramilitary organization)" style="color: var(--kpd_color)" >RFB</span>.?]
+[? if neorevisionism = 0 and rfb_formed = 1 : Our new youth members flock to the left wing of our party, and also bring new radicalism to the RFB.?]
+[? if neorevisionism = 1 and rfb_formed = 1 : Our new youth members flock to the left and neorevisionist wings of the party, and also bring new radicalism to the RFB.?]
 
 @nothing
 

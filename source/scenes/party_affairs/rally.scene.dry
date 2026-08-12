@@ -136,6 +136,7 @@ The reformist message appeals to the organized workers, whose benefits are the a
 on-arrival: {!
 	Q.democratization += 1
 	Q.pro_republic += 2(1-Q.dissent)
+	if (Q.nov_revolution == 0) {Q.pro_empire -= 3}
 
 	if (Q.democratization >= 3 && Q.kpd_formed == 1) {
 		Q.workers_kpd += 4*(1-Q.dissent)

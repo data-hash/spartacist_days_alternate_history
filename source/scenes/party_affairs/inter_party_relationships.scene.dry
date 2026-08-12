@@ -39,12 +39,12 @@ The social democrats are suspicious of our overtures, as they consider us too ra
 
 @spd_rectification_of_history
 
-One stumbling block for our relations with the <span style="color: var(--spd_color)">SPD</span> is our history of conflict, dating back to 1918 and 1919. The <span style="color: var(--spd_color)">SPD</span> has refused to denounce Gustav Noske, the <span style="color: var(--spd_color)">SPD</span> "bloodhound" who ordered the violent suppression of the Spartacist uprising and other <span style="color: var(--kpd_color)">KPD</span> revolts. They are also to blame for the deaths of Rosa Luxemburg and Karl Liebknecht, two <span style="color: var(--spd_color)">SPD</span>-turned-<span style="color: var(--kpd_color)">KPD</span> leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the SPD is our history of conflict, dating back to 1918 and 1919. The SPD has refused to denounce Gustav Noske, the SPD "bloodhound" who ordered the violent suppression of the Spartacist uprising and other KPD uprisings. They are also to blame for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
 
 For further improvements in SPD relations, it will be necessary to demand the SPD expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
 - @yes_history: Yes, we must demand they apologize for their past actions.
-- @no_history: No, we will not collaborate with these traitors.
+- @no_history: No, we will not collaborate with the traitors of the revolution.
 
 @yes_history
 on-arrival: left_dissent += 8; left_strength -= 2; neorevisionist_dissent += 5; reform_dissent -= 6; reformist_strength += 5; spd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; spd_relation += 8*(1-dissent); coalition_dissent += 1
@@ -57,12 +57,12 @@ As part of normalizing relations with the SPD, we have demanded they acknowledge
 This leads to tensions with the center and leftists within our party, and criticism from the conservative and liberal parties.
 
 @no_history
-on-arrival: spd_relation -= 3; left_dissent -= 3;
+on-arrival: spd_relation -= 3; left_dissent -= 5;
 
 We have no need to collaborate with these traitors to the revolution. 
 
 @spd_2
-on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; left_dissent += 2; z_relation -= 3; dvp_relation -= 3
+on-arrival: spd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; left_dissent += 2; z_relation -= 3; dvp_relation -= 3
 
 After the success of the coalition government with the SPD, they are much more amenable to us.
 
@@ -109,11 +109,20 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: {!
 	Q.resources -= 1
-	Q.ddp_relation += 3*(1 - Q.dissent) 
+	Q.ddp_relation += 3*(1 - Q.dissent)
+	
+	if (kpd_formed == 0) {
+		Q.ddp_relation += 4*(1 - Q.dissent)
+		Q.dvp_relation += 3*(1 - Q.dissent)
+	}
+	if (kpd_formed == 1) {
+		Q.ddp_relation += 3*(1 - Q.dissent)
+		Q.dvp_relation += 2*(1 - Q.dissent)
+	}
 !}
 
-The [+ ddp_name +] and [+ dvp_name +] are our natural enemies, improving relations will be difficult. Nevertheless, we will try to sway them.
-
+[? if kpd_formed = 0: The [+ ddp_name +] and [+ dvp_name +] are our somewhat close allies, improving relations will be difficult. Nevertheless, we will try to sway them. ?]
+[? if kpd_formed : The [+ ddp_name +] and [+ dvp_name +] are our natural enemies, improving relations will be difficult. Nevertheless, we will try to sway them. ?]
 
 @kpd_alone
 

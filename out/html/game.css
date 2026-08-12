@@ -654,6 +654,9 @@ table {
 .seat.fvp {
     fill: #d4b402;
 }
+.seat.dp {
+    fill: #CE1126;
+}
 
 /*parliament tooltip code based/from road to ithaca and dynamic_biennio_rosso_alternate_history */
 .parliament-tooltip {

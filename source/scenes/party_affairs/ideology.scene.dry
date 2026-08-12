@@ -29,7 +29,7 @@ if (Q.ideology && Q.ideology != "left") {
 go-to: changed if changed = 1
 on-departure: ideology = "left"; left_strength += 10; communist_coalition += 1; left_dissent -= 5; z_relation -= 3; dvp_relation -= 5; nationalization_support += 1; spd_relation -= 3
 
-The left of the party supports a course of class struggle, and continued struggle against the <span style="color: var(--spd_color)">SPD</span>.
+The left of the party supports a course of class struggle, and continued struggle against the SPD.
 
 @centrist
 on-arrival: {!

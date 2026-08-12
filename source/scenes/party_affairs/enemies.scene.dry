@@ -26,9 +26,9 @@ In our media and campaign materials, who should we consider as our main opponent
 # Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the KPD in the future.
 
 @far_right
-on-arrival: enemies = "right"; left_strength += 5; left_dissent -= 5; workers_dvp -= 3; workers_dnvp -= 3;
+on-arrival: enemies = "right"; left_strength += 5; left_dissent += 5; workers_dvp -= 3; workers_dnvp -= 3;
 
-Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, and they are critical of our lack of response to the <span style="color: var(--spd_color)">SPD</span>.
+Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, and they are critical of our lack of response to the SPD and the bourgeois parties.
 
 @nsdap
 view-if: nsdap_formed = 1
@@ -38,9 +38,18 @@ on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; nazi_urgency += 1; 
 
 @spd
 view-if: uspd_formed = 1
-on-arrival: enemies = "SPD"; left_strength += 5; reformist_dissent += 8; left_dissent -= 5; spd_relation -= 15; uspd_relation += 5; workers_spd -= 4;
+on-arrival: {!
+	Q.enemies = "SPD";
+	Q.left_strength += 5;
+	Q.reformist_dissent += 8;
+	Q.left_dissent -= 5;
 
-Attacking the SPD is supported by all but the reformist socialists, and wins us some measure of approval among the <span style="color: var(--uspd_color)">USPD</span>. However, If we are to reconcile with the <span style="color: var(--spd_color)">SPD</span>, this may not be the best choice.
+	Q.spd_relation -= 15;
+	if (Q.uspd_formed == 1) {Q.uspd_relation += 5}
+	Q.workers_spd -= 4;
+!}
+
+Attacking the SPD is supported by all but the reformist socialists, and wins us some measure of approval among the USPD. However, If we are to reconcile with the SPD, this may not be the best choice.
 
 @bourgeois
 on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; dvp_relation -= 5; ddp_relation -= 5; z_relation -= 5; reformist_dissent += 8; workers_z -= 3; coalition_dissent += 1
