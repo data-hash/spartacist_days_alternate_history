@@ -62,9 +62,8 @@ if (Q.bb_dissolved == 0) {_addParliamentChartParty('dp', "DP", Q.dp_pr_seats)}
 if (Q.ddp_r) {_addParliamentChartParty('fvp', Q.ddp_name, Q.ddp_pr_seats)}
 if (Q.z_r) {_addParliamentChartParty('z', "Z", Q.z_pr_seats)}
 if (Q.dvp_r) {_addParliamentChartParty('nlp', Q.dvp_name, Q.dvp_pr_seats)}
-if (Q.drp_dissolved == 0) {_addParliamentChartParty('drp', "DRP", Q.drp_seats)}
-if (Q.dnvp_r) {_addParliamentChartParty('dkp', Q.dnvp_name, Q.dnvp_seats)}
-if (Q.ansem_dissolved == 0) {_addParliamentChartParty('dsp', "DvP", Q.ansem_seats)}
+if (Q.drp_dissolved == 0) {_addParliamentChartParty('drp', "DRP", Q.drp_pr_seats)}
+if (Q.dnvp_r) {_addParliamentChartParty('dkp', Q.dnvp_name, Q.dnvp_pr_seats)}
 
 Q.prussia_parliament_diagram = data_pr
 
