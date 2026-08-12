@@ -781,6 +781,12 @@ body.dark-mode .parliament-tooltip {
   opacity: 1; 
 }
 .mytooltip .mytooltiptext img { display: block; margin: 0 auto 4px auto; max-width: 90%; height: auto; }
+.mytooltip .mytooltiptext .title { display: block; font-size: 1.5em; font-weight: bold; }
+.mytooltip .mytooltiptext .line { 
+  display: block;
+  border-top: 1px solid #000;
+  margin: 4px 0;
+}
 
 .mytooltip .mytooltiptext {
   bottom: auto;
