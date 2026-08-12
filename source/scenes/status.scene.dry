@@ -14,9 +14,7 @@ if (Q.economic_growth) {
 }
 !}
 
-SPD
-
-[? if kpd_formed = 0 and nov_revolution = 0 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus Group </span></strong>Leadership</h1> ?]
+[? if kpd_formed = 0 and nov_revolution = 0 : <h1>Spartacus Group Leadership</h1> ?]
 [? if kpd_formed = 0 and nov_revolution = 1 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus League </span></strong>Leadership</h1> ?]
 [? if kpd_formed = 1 : <h1><span style="color: var(--kpd_color)"><strong>KPD </span></strong>Leadership</h1> ?]
 <hr>

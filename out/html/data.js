@@ -98,6 +98,11 @@ const colourList = [
 	word: "NSDAP",
 	style: "color: var(--nsdap_color); font-weight: bold"
 },
+
+{
+	word: "Spartacus Group",
+	style: "color: var(--kpd_color); font-weight: bold"
+}
 ];
 
 const tooltipList = [
