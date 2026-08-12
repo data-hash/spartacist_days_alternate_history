@@ -178,6 +178,11 @@ const tooltipList = [
 },
 
 {
+	searchString: "OTHERS",
+    explanationText: " Independents </br></br> Agrarian League, Independent Conservatives, etc."
+},
+
+{
 	searchString: "FVP",
     explanationText: " Fortschrittliche Volkspartei </br></br> Progressive People's Party"
 },
