@@ -149,17 +149,17 @@ const tooltipList = [
 
 {
 	searchString: "SAPD",
-    explanationText: "<img src=img/logos/SAPD_logo.png> <h1>SAPD</h1> <hr> Socialist Workers' Party of Germany </br></br>SAPD</br></br> Sozialistische Arbeiterpartei Deutschlands"
+    explanationText: "<img src=img/logos/SAPD_logo.png> <h1>SAPD</h1> <hr> Socialist Workers' Party of Germany </br></br> Sozialistische Arbeiterpartei Deutschlands"
 },
 
 {
 	searchString: "SPD",
-    explanationText: "<img src=img/logos/SPD_logo_2.png> <h1>SPD</h1> <hr> Social Democratic Party of Germany </br></br>SPD</br></br> Sozialdemokratische Partei Deutschlands"
+    explanationText: "<img src=img/logos/SPD_logo_2.png> <h1>SPD</h1> <hr> Social Democratic Party of Germany </br></br> Sozialdemokratische Partei Deutschlands"
 },
 
 {
 	searchString: "MSPD",
-    explanationText: "<img src=img/logos/SPD_logo_2.png> <h1>MSPD</h1> <hr> Majority Social Democratic Party of Germany </br></br>MSPD</br></br> Mehrheitssozialdemokratische Partei Deutschlands"
+    explanationText: "<img src=img/logos/SPD_logo_2.png> <h1>MSPD</h1> <hr> Majority Social Democratic Party of Germany </br></br> Mehrheitssozialdemokratische Partei Deutschlands"
 },
 
 {

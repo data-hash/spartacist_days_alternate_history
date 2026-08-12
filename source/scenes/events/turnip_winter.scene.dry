@@ -13,10 +13,10 @@ on-arrival: {!
 
 The potato harvest has failed, as many lay in the fields rotting. Conscription efforts by the government has left agricultural workers in low supply. Many are starving and asking us for assistance.
 
-- @help: Give the hungry our aid.
+- @giveaid: Give the hungry our aid.
 - @no_help: Nothing we can do.
 
-@help
+@giveaid
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
