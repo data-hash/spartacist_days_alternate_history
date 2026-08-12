@@ -754,6 +754,7 @@ body.dark-mode .parliament-tooltip {
 }
 .mytooltip:hover { 
   background-color: var(--content-bg-color);
+  text-decoration: underline;
 }
 
 .mytooltip .mytooltiptext {

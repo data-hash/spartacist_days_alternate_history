@@ -199,17 +199,17 @@ const tooltipList = [
 
 {
 	searchString: "FVP",
-    explanationText: " Fortschrittliche Volkspartei </br></br> Progressive People's Party"
+    explanationText: "<img src=img/logos/fvp_logo.png> Fortschrittliche Volkspartei </br></br> Progressive People's Party"
 },
 
 {
 	searchString: "DDP",
-    explanationText: " Deutsche Demokratische Partei </br></br> German Democratic Party"
+    explanationText: "<img src=img/logos/weimar_flag.svg> Deutsche Demokratische Partei </br></br> German Democratic Party"
 },
 
 {
 	searchString: "Z",
-    explanationText: "<img src=img/logos/zentrum.png> Deutsche Zentrumspartei </br></br> German Centre Party"
+    explanationText: "<img src=img/logos/z_flag.svg> Deutsche Zentrumspartei </br></br> German Centre Party"
 },
 
 {
@@ -219,42 +219,42 @@ const tooltipList = [
 
 {
 	searchString: "NLP",
-    explanationText: " Nationalliberale Partei </br></br> National Liberal Party"
+    explanationText: "<img src=img/logos/nlp_logo.png> Nationalliberale Partei </br></br> National Liberal Party"
 },
 
 {
 	searchString: "DVP",
-    explanationText: " Deutsche Volkspartei </br></br> German People's Party"
+    explanationText: "<img src=img/logos/dvp_logo.svg> Deutsche Volkspartei </br></br> German People's Party"
 },
 
 {
 	searchString: "DRP",
-    explanationText: " Deutsche Reichspartei </br></br> German Reich Party (Run by the FKP)"
+    explanationText: "<img src=img/logos/drp_logo.png> Deutsche Reichspartei </br></br> German Reich Party (Run by the FKP)"
 },
 
 {
 	searchString: "FKP",
-    explanationText: " Freikonservative Partei </br></br> Free Conservative Party (Runs as the DRP)"
+    explanationText: "<img src=img/logos/drp_logo.png> Freikonservative Partei </br></br> Free Conservative Party (Also known as the DRP)"
 },
 
 {
 	searchString: "DKP",
-    explanationText: " Deutschkonservative Partei </br></br> German Conservative Party"
+    explanationText: "<img src=img/logos/imperial_flag.svg> Deutschkonservative Partei </br></br> German Conservative Party"
 },
 
 {
 	searchString: "DNVP",
-    explanationText: " Deutschnationale Volkspartei </br></br> German National People's Party"
+    explanationText: "<img src=img/logos/dnvp_logo.svg> Deutschnationale Volkspartei </br></br> German National People's Party"
 },
 
 {
 	searchString: "DvP",
-    explanationText: " Deutschvölkische Partei </br></br> German Völkisch Party"
+    explanationText: "<img src=img/logos/freikorps_flag.png> Deutschvölkische Partei </br></br> German Völkisch Party"
 },
 
 {
 	searchString: "DSP",
-    explanationText: " Deutschvölkische Partei </br></br> German Völkisch Party"
+    explanationText: "<img src=img/logos/freikorps_flag.png> Deutschvölkische Partei </br></br> German Völkisch Party"
 },
 
 {
@@ -264,7 +264,7 @@ const tooltipList = [
 
 {
 	searchString: "RFB",
-    explanationText: " Roter Frontkämpferbund </br></br> Red Front Fighters' League"
+    explanationText: "<img src=img/logos/rfkb_logo.png> Roter Frontkämpferbund </br></br> Red Front Fighters' League"
 },
 
 ]
