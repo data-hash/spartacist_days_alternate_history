@@ -95,6 +95,11 @@ const colourList = [
 },
 
 {
+	word: "DvP",
+	style: "color: #8B5A2B; font-weight: bold"
+},
+
+{
 	word: "DSP",
 	style: "color: #8B5A2B; font-weight: bold"
 },
@@ -224,6 +229,11 @@ const tooltipList = [
 
 {
 	searchString: "DvP",
+    explanationText: " Deutschvölkische Partei </br></br> German Völkisch Party"
+},
+
+{
+	searchString: "DSP",
     explanationText: " Deutschvölkische Partei </br></br> German Völkisch Party"
 },
 
