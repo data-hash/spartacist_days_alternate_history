@@ -25,8 +25,8 @@ if (Q.economic_growth) {
 
 Next congress: [? if next_congress_month > 0 : [+ next_congress_month : month +] [+ next_congress_year +]?][? if next_congress_month = 0 : none scheduled?]
 
-[? if uspd_formed = 0 and kpd_formed = 0 : Currently in: the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
-[? if uspd_formed = 1 and kpd_formed = 0 : Currently in: the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
+[? if uspd_formed = 0 and kpd_formed = 0 : Currently in: the SPD ?]
+[? if uspd_formed = 1 and kpd_formed = 0 : Currently in: the USPD ?]
 
 [? if russian_revolution = 0 : Bolshevik relations: [+ bolshevik_relation : relationships +]?]
 [? if russian_revolution = 1 : Soviet relations: [+ soviet_relation : relationships +]?]

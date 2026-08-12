@@ -225,7 +225,7 @@
         return '<span style="color: #008000;">Completely loyal</span>';
     }
 
-    function getStrenghtText(value) {
+    function getStrengthText(value) {
         if (value === undefined || value === null) return 'Unknown';
         if (value < 10) return '<span style="color: #FF4500;">Weak</span>';
         if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
@@ -234,7 +234,7 @@
         return '<span style="color: #008000;">Dominant</span>';
     }
 
-    function getInvertedStrenghtText(value) {
+    function getInvertedStrengthText(value) {
         if (value === undefined || value === null) return 'Unknown';
         if (value < 10) return '<span style="color: #9ACD32;">Weak</span>';
         if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
