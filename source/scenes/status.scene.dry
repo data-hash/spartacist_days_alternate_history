@@ -15,11 +15,11 @@ if (Q.economic_growth) {
 !}
 
 [? if kpd_formed = 0 and nov_revolution = 0 : <h1>Spartacus Group Leadership</h1> ?]
-[? if kpd_formed = 0 and nov_revolution = 1 : <h1><span style="color: var(--kpd_color)"><strong>Spartacus League </span></strong>Leadership</h1> ?]
-[? if kpd_formed = 1 : <h1><span style="color: var(--kpd_color)"><strong>KPD </span></strong>Leadership</h1> ?]
+[? if kpd_formed = 0 and nov_revolution = 1 : <h1>Spartacus League Leadership</h1> ?]
+[? if kpd_formed = 1 : <h1>KPD Leadership</h1> ?]
 <hr>
 
-[? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex; gap: 5px; margin-top: 5px; margin-bottom: 5px; margin-left: -3px; justify-content: center;"> <img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" style="width: 45%; border: 5px solid var(--card-border-color);"> <img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" style="width: 45%; border: 5px solid var(--card-border-color);"> </div> ?]
+[? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div class="statusPortraits"> <img src="img/portraits/karl_liebknecht_portrait.jpg" alt="Karl Liebknecht" class="statusPortraits images"> <img src="img/portraits/rosa_luxemburg_portrait.jpg" alt="Rosa Luxemburg" class="statusPortraits images"> </div> ?]
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex;justify-content: left;"> <div style="text-align: center; width: 50%;"><strong>Karl Liebknecht</strong></div> <div style="text-align: center; width: 50%;"><strong>Rosa Luxemburg</strong></div> </div> ?]
 [? if party_leader == "Karl Liebknecht & Rosa Luxemburg": <div style="display: flex;justify-content: left;"> <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Imprisoned</em></div> <div style="text-align: center; width: 50%; color: var(--unavailable-color); font-size: 0.8em;"><em>Imprisoned</em></div> </div> ?]
 
@@ -27,7 +27,6 @@ Next congress: [? if next_congress_month > 0 : [+ next_congress_month : month +]
 
 [? if uspd_formed = 0 and kpd_formed = 0 : Currently in: the <span style="color: var(--spd_color)"><strong>SPD</strong></span> ?]
 [? if uspd_formed = 1 and kpd_formed = 0 : Currently in: the <span style="color: var(--uspd_color)"><strong>USPD</strong></span> ?]
-[? if kpd_formed = 1 : Our position: we are the <span style="color: var(--kpd_color)"><strong>KPD</strong></span>?]
 
 [? if russian_revolution = 0 : Bolshevik relations: [+ bolshevik_relation : relationships +]?]
 [? if russian_revolution = 1 : Soviet relations: [+ soviet_relation : relationships +]?]
@@ -57,7 +56,7 @@ Annual dues: [+ dues +]
 
 # = Public Opinion
 
-[? if kpd_formed = 1 and kpd_merge = 1 : <h1>Internal Factions of the <span style="color: var(--kpd_color)"><strong>KPD</span></strong></h1> ?]
+[? if kpd_formed = 1 and kpd_merge = 1 : <h1>Internal Factions of the KPD</h1> ?]
 
 [? if kpd_formed = 1 and kpd_merge = 1 : <span class="tooltip-text" data-tooltip="The Left wants to follow in the footsteps of the Bolsheviks, and seize power through revolution.">Left</span> strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +] ?]
 
@@ -80,27 +79,23 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Politics
 <hr>
 
-[? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color);"><strong>KPD</strong></span> <br>Leader: [+ kpd_leader +] <br>Ideology: [+ kpd_ideology +]?]
+[? if kpd_formed = 1 : KPD <br>Leader: [+ kpd_leader +] <br>Ideology: [+ kpd_ideology +]?]
 
-[? if uspd_formed = 1 and kpd_formed = 0: <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color);"><strong>USPD</strong></span> <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +]?]
-[? if uspd_formed = 1 and kpd_formed = 1: <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color);"><strong>USPD</strong></span> <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +] <br>Relations: [+ uspd_relation : relationships +]?]
+[? if uspd_formed = 1 and kpd_formed = 0: USPD <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +]?]
+[? if uspd_formed = 1 and kpd_formed = 1: USPD <br>Leader: [+ uspd_leader +] <br>Ideology: [+ uspd_ideology +] <br>Relations: [+ uspd_relation : relationships +]?]
 
-[? if uspd_formed = 0 : <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] ?]
-[? if uspd_formed = 1 and year < 1922 : <span class="tooltip-text" data-tooltip="Majority Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>MSPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
-[? if year > 1922 : <span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span> <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
+[? if uspd_formed = 0 : SPD <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] ?]
+[? if uspd_formed = 1 : [+ spd_name +] <br>Leader: [+ spd_leader +] <br>Ideology: [+ spd_ideology +] <br>Relations: [+ spd_relation : relationships +] ?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span> <br>Leader: [+ ddp_leader +] <br>Ideology: [+ ddp_ideology +] <br>Relations: [+ ddp_relation : relationships +] ?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span> <br>Leader: [+ ddp_leader +] <br>Ideology: [+ ddp_ideology +] <br>Relations: [+ ddp_relation : relationships +] ?]
+[+ ddp_name +] <br>Leader: [+ ddp_leader +] <br>Ideology: [+ ddp_ideology +] <br>Relations: [+ ddp_relation : relationships +]
 
-{!<span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>!} <br>Leader: [+ z_leader +] <br>Ideology: [+ z_ideology +] <br>Relations: [+ z_relation : relationships +]
+Z <br>Leader: [+ z_leader +] <br>Ideology: [+ z_ideology +] <br>Relations: [+ z_relation : relationships +]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span> <br>Leader: [+ dvp_leader +] <br>Ideology: [+ dvp_ideology +] <br>Relations: [+ dvp_relation : relationships +] ?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>Leader: [+ dvp_leader +] <br>Ideology: [+ dvp_ideology +] <br>Relations: [+ dvp_relation : relationships +] ?]
+[+ dvp_name +] <br>Leader: [+ dvp_leader +] <br>Ideology: [+ dvp_ideology +] <br>Relations: [+ dvp_relation : relationships +]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span> <br>Leader: [+ dnvp_leader +] <br>Ideology: [+ dnvp_ideology +] <br>Relations: [+ dnvp_relation : relationships +] ?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span> <br>Leader: [+ dnvp_leader +] <br>Ideology: [+ dnvp_ideology +] <br>Relations: [+ dnvp_relation : relationships +] ?]
+[+ dnvp_name +] <br>Leader: [+ dnvp_leader +] <br>Ideology: [+ dnvp_ideology +] <br>Relations: [+ dnvp_relation : relationships +]
 
-[? if nsdap_formed: <span class="tooltip-text" data-tooltip="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span> <br>Leader: [+ nsdap_leader +] <br>Ideology: [+ nsdap_ideology +] <br>Relations: [+ nsdap_relation : relationships +] ?]
+[? if nsdap_formed: NSDAP <br>Leader: [+ nsdap_leader +] <br>Ideology: [+ nsdap_ideology +] <br>Relations: [+ nsdap_relation : relationships +] ?]
 
 @paramilitaries
 on-arrival: {!
@@ -162,61 +157,57 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if elections were to be held now):
 
-[? if kpd_formed = 1 : <span class="tooltip-text" data-tooltip="Communist Party of Germany" style="color: var(--kpd_color)"><strong>KPD</strong></span>: [+ kpd_votes +]%?]
+[? if kpd_formed = 1 : KPD: [+ kpd_votes +]%?]
 
-[? if uspd_formed = 1 : <span class="tooltip-text" data-tooltip="Independent Social Democratic Party of Germany" style="color: var(--uspd_color)"><strong>USPD</strong></span>: [+ uspd_votes +]%?]
+[? if uspd_formed = 1 : USPD: [+ uspd_votes +]%?]
 
-{!<span class="tooltip-text" data-tooltip="Social Democratic Party of Germany" style="color: var(--spd_color);"><strong>SPD</strong></span>!}: [+ spd_votes +]%
+[+ spd_name +]: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Centre Party" style="color: var(--z_color);"><strong>Z</strong></span>: [+ z_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="Center Party + Bavarian People's Party"><span style="color: var(--z_color);"><strong>Z</strong></span>+<span style="color: var(--bvp_color);"><strong>BVP</strong></span></span>: [+ z_votes +]%?]
+[? if nov_revolution = 0 : Z: [+ z_votes +]%?]
+[? if nov_revolution = 1 : Z + BVP: [+ z_votes +]%?]
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="Progressive People's Party" style="color: var(--ddp_color);"><strong>FVp</strong></span>: [+ ddp_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German Democratic Party" style="color: var(--ddp_color);"><strong>[+ ddp_name +]</strong></span>: [+ ddp_votes +]%?]
+[+ ddp_name +]: [+ ddp_votes +]%
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="National Liberal Party" style="color: var(--dvp_color);"><strong>NLP</strong></span>: [+ dvp_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German People's Party" style="color: var(--dvp_color);"><strong>[+ dvp_name +]</strong></span>: [+ dvp_votes +]%?]
+[+ dvp_name +]: [+ dvp_votes +]%
 
-[? if nov_revolution = 0 : <span class="tooltip-text" data-tooltip="German Conservative Party" style="color: var(--dnvp_color);"><strong>DKP</strong></span>: [+ dnvp_votes +]%?]
-[? if nov_revolution = 1 : <span class="tooltip-text" data-tooltip="German National People's Party" style="color: var(--dnvp_color);"><strong>[+ dnvp_name +]</strong></span>: [+ dnvp_votes +]%?]
+[+ dnvp_name +]: [+ dnvp_votes +]%
 
-[? if nsdap_formed: {!<span class="tooltip-text" data-tooltip="National-Socialist German Worker's Party (Nazis)" style="color: var(--nsdap_color);"><strong>NSDAP</strong></span>!}: [+ nsdap_votes +]%?]
+[? if nsdap_formed: NSDAP: [+ nsdap_votes +]%?]
 
-<span><strong>Others</strong></span>: [+ other_votes +]%
+Others: [+ other_votes +]%
 
-= Support for the [? if nov_revolution = 0 : **Imperial Government** ?][? if nov_revolution = 1 : **Republic** ?]
+= Public Opinion
 
-[? if nov_revolution = 0 : Support for the {!<span style="color:#000000"><strong>Empire</strong></span>!}: [+ pro_empire_disp +]%?]
-[? if nov_revolution = 1 : Support for the {!<span style="color:#FF0000"><strong>Republic</strong></span>!}: [+ pro_republic_disp +]%?]
+[? if nov_revolution = 0 : Support for the <b><span style="color: #000">Em<span style="color: #808080">pi<span style="color: #FF0000">re</span></b>: [+ pro_empire_disp +]%?]
+[? if nov_revolution = 1 : Support for the <b><span style="color: #000">Re</span><span style="color: #FF0000">pub</span><span style="color: #FFCC00">lic</span></b>: [+ pro_republic_disp +]%?]
 
-= Support for Socialism / Nationalism
+<span style="color: #9B0000">**Socialism**</span>: [+ socialism_disp : support +], [+ socialism_disp +]%
 
-Socialism: [+ socialism_disp : support +], [+ socialism_disp +]%
-
-Nationalism: [+ nationalism_disp : support_inverted +], [+ nationalism_disp +]%
+<span style="color: #000000">**Nationalism**</span>: [+ nationalism_disp : support_inverted +], [+ nationalism_disp +]%
 
 **Detailed results for each demographic**
 
-Workers: [? if kpd_formed = 1 : KPD: [+ workers_kpd_display +]%,?] [? if uspd_formed: USPD: [+ workers_uspd_display +]%, ?] SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, [+ ddp_name +]: [+ workers_ddp_display +]%, [+ dvp_name +]: [+ workers_dvp_display +]%; [+ dvnp_name +]: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: [? if kpd_formed = 1 : KPD: [+ workers_kpd_display +]%,?] [? if uspd_formed: USPD: [+ workers_uspd_display +]%, ?] SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, [+ ddp_name +]: [+ workers_ddp_display +]%, [+ dvp_name +]: [+ workers_dvp_display +]%; [+ dnvp_name +]: [+ workers_dnvp_display +]%,[? if nsdap_formed : NSDAP: [+ workers_nsdap_display +]%,?] Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: [? if kpd_formed = 1 : KPD: [+ new_middle_kpd_display +]%,?] [? if uspd_formed: USPD: [+ new_middle_uspd_display +]%, ?] SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, [+ ddp_name +]: [+ new_middle_ddp_display +]%, [+ dvp_name +]: [+ new_middle_dvp_display +]%; [+ dvnp_name +]: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: [? if kpd_formed = 1 : KPD: [+ new_middle_kpd_display +]%,?] [? if uspd_formed: USPD: [+ new_middle_uspd_display +]%, ?] SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, [+ ddp_name +]: [+ new_middle_ddp_display +]%, [+ dvp_name +]: [+ new_middle_dvp_display +]%; [+ dnvp_name +]: [+ new_middle_dnvp_display +]%,[? if nsdap_formed : NSDAP: [+ new_middle_nsdap_display +]%,?] Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class:  [? if kpd_formed = 1 : KPD: [+ old_middle_kpd_display +]%,?] [? if uspd_formed: USPD: [+ old_middle_uspd_display +]%, ?] SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, [+ ddp_name +]: [+ old_middle_ddp_display +]%, [+ dvp_name +]: [+ old_middle_dvp_display +]%; [+ dvnp_name +]: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class:  [? if kpd_formed = 1 : KPD: [+ old_middle_kpd_display +]%,?] [? if uspd_formed: USPD: [+ old_middle_uspd_display +]%, ?] SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, [+ ddp_name +]: [+ old_middle_ddp_display +]%, [+ dvp_name +]: [+ old_middle_dvp_display +]%; [+ dnvp_name +]: [+ old_middle_dnvp_display +]%,[? if nsdap_formed : NSDAP: NSDAP: [+ old_middle_nsdap_display +]%,?] Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: [? if kpd_formed = 1 : KPD: [+ rural_kpd_display +]%,?] [? if uspd_formed: USPD: [+ rural_uspd_display +]%, ?] SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, [+ ddp_name +]: [+ rural_ddp_display +]%, [+ dvp_name +]: [+ rural_dvp_display +]%; [+ dvnp_name +]: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: [? if kpd_formed = 1 : KPD: [+ rural_kpd_display +]%,?] [? if uspd_formed: USPD: [+ rural_uspd_display +]%, ?] SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, [+ ddp_name +]: [+ rural_ddp_display +]%, [+ dvp_name +]: [+ rural_dvp_display +]%; [+ dnvp_name +]: [+ rural_dnvp_display +]%,[? if nsdap_formed : NSDAP: [+ rural_nsdap_display +]%,?] Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed:  [? if kpd_formed = 1 : KPD: [+ unemployed_kpd_display +]%,?] [? if uspd_formed: USPD: [+ unemployed_uspd_display +]%, ?] SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, [+ ddp_name +]: [+ unemployed_ddp_display +]%, [+ dvp_name +]: [+ unemployed_dvp_display +]%; [+ dvnp_name +]: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed:  [? if kpd_formed = 1 : KPD: [+ unemployed_kpd_display +]%,?] [? if uspd_formed: USPD: [+ unemployed_uspd_display +]%, ?] SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, [+ ddp_name +]: [+ unemployed_ddp_display +]%, [+ dvp_name +]: [+ unemployed_dvp_display +]%; [+ dnvp_name +]: [+ unemployed_dnvp_display +]%,[? if nsdap_formed : NSDAP: [+ unemployed_nsdap_display +]%,?] Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics:  [? if kpd_formed = 1 : KPD: [+ catholics_kpd_display +]%,?] [? if uspd_formed: USPD: [+ catholics_uspd_display +]%, ?] SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, [+ ddp_name +]: [+ catholics_ddp_display +]%, [+ dvp_name +]: [+ catholics_dvp_display +]%; [+ dvnp_name +]: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics:  [? if kpd_formed = 1 : KPD: [+ catholics_kpd_display +]%,?] [? if uspd_formed: USPD: [+ catholics_uspd_display +]%, ?] SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, [+ ddp_name +]: [+ catholics_ddp_display +]%, [+ dvp_name +]: [+ catholics_dvp_display +]%; [+ dnvp_name +]: [+ catholics_dnvp_display +]%,[? if nsdap_formed : NSDAP: [+ catholics_nsdap_display +]%,?] Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @government
 
-[? if president == "Wilhelm II" : <h1><span style="color: #000000">Imperial </span>Government</h1>?]
+[? if president == "Wilhelm II" : <h1>Imperial Government</h1>?]
 <hr>
 
-[? if president == "Wilhelm II" : <div><img src="img/portraits/Wilhelm_II_portrait.jpg" alt="Wilhelm II" style="width: 50%; display: block; margin-top: 5px; margin: auto; margin-bottom: 5px; border: 5px solid var(--card-border-color);"></div> ?]
+# [? if president == "Wilhelm II" : <div><img src="img/portraits/Wilhelm_II_portrait.jpg" alt="Wilhelm II" style="width: 50%; display: block; margin-top: 5px; margin: auto; margin-bottom: 5px; border: 5px solid var(--card-border-color);"></div> ?]
+[? if president == "Wilhelm II" : <div class="statusPortraits"><img src="img/portraits/Wilhelm_II_portrait.jpg" alt="Wilhelm II" class="statusPortraits images"></div> ?]
 <div style="text-align: center;"><strong>[+ president +]</strong> (<span style="color: var(--president_party_color)"><strong>[+ president_party +]</strong></span>)</div>
 [? if president == "Wilhelm II" : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>Emperor</em></div>?]
 [? if nov_revolution = 1 : <div style="text-align: center; color: var(--unavailable-color); font-size: 0.8em;"><em>President</em></div>?]

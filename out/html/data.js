@@ -20,6 +20,11 @@ const colourList = [
 },
 
 {
+	word: "MSPD",
+	style: "color: var(--spd_color); font-weight: bold"
+},
+
+{
 	word: "Others",
     style: "color: #909090; font-weight: bold"
 },
@@ -102,7 +107,18 @@ const colourList = [
 {
 	word: "Spartacus Group",
 	style: "color: var(--kpd_color); font-weight: bold"
-}
+},
+
+{
+	word: "Spartacus League",
+	style: "color: var(--kpd_color); font-weight: bold"
+},
+
+{
+	word: "Imperial",
+	style: "color: #000; font-weight: bold"
+},
+
 ];
 
 const tooltipList = [
@@ -124,6 +140,11 @@ const tooltipList = [
 {
 	searchString: "SPD",
     explanationText: "<img src=img/logos/SPD_logo_2.png> Sozialdemokratische Partei Deutschlands </br></br> Social Democratic Party of Germany"
+},
+
+{
+	searchString: "MSPD",
+    explanationText: "<img src=img/logos/SPD_logo_2.png> Mehrheitssozialdemokratische Partei Deutschlands </br></br> Majority Social Democratic Party of Germany"
 },
 
 {

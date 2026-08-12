@@ -789,3 +789,17 @@ body.dark-mode .parliament-tooltip {
   margin: 0 auto;
   display: block;
 }
+
+.statusPortraits {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* margin-left: -3px; */
+  justify-content: center;
+}
+
+.statusPortraits.images {
+  width: 45%;
+  border: 5px solid var(--card-border-color)
+}

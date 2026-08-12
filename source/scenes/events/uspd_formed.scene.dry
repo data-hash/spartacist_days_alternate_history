@@ -19,6 +19,7 @@ Q.dvp_relation = 13;
 Q.dnvp_relation = 6;
 
 Q.spd_leader = "Friedrich Ebert";
+Q.spd_name = "MSPD";
 
 Q.workers_other -= 5;
 
@@ -37,6 +38,9 @@ for (var record of Q.party_support_records) {
 
 window.parliamentRemoveStrokeStyle('.seat.spd')
 window.parliamentAddStrokeStyle('.seat.uspd')
+
+Q.next_congress_month = 12
+Q.next_congress_year = 1918
 
 // for (const rule of sheet.cssRules) {
 //   if (rule.selectorText === '.seat.spd') { // match the exact selector
