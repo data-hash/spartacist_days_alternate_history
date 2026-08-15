@@ -175,12 +175,13 @@
       document.body.classList.add('dark-mode');
       window.dendryUI.saveSettings();
   };
-  
+
+  // Credits to Communist45 on the SDAAH Discord, thank you! 
   window.displayText = function (text) {
       return applyWholesome(text);
     };
 
-    //To get a value, from dynamic_biennio_rosso_alternate_history
+    //To get a value, from Communist45 on the SDAAH Discord, thank you!
     function getRelationshipText(value) {
         if (value === undefined || value === null) return '';
         if (value <= 5) return '<span style="color: #FF0000;">Hostile</span>';
@@ -412,6 +413,7 @@
 
  window.getDynamicTooltipContent = getDynamicTooltipContent;
 
+ // Credits to Communist45 on the SDAAH Discord!
  function applyWholesome(str) {
     const allWords = new Set([
         ...tooltipList.map(t => t.searchString),

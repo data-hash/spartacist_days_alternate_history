@@ -201,7 +201,7 @@ d3.parliament = function() {
             } else {
                 circles.exit().remove();
             }
-            /* Tooltip taken from dynamic_biennio_rosso_alternate_history */
+            // Tooltip by Communist45 on the SDAAH Discord, thank you! :pray:
             var tooltip = d3.select("body").select(".parliament-tooltip");
             if (tooltip.empty()) {
                 tooltip = d3.select("body")
@@ -209,7 +209,7 @@ d3.parliament = function() {
                     .attr("class", "parliament-tooltip");
             }
 
-            /*hit circles, also taken from dynamic_biennio_rosso_alternate_history */
+            // hit circles, also taken from Communist45, thank you! :pray:
             var hitCircles = container.selectAll(".seat-hit").data(seats);
             var hitCirclesEnter = hitCircles.enter().append("circle");
             hitCirclesEnter.attr("class", function(d) { return "seat-hit " + ((d.party && d.party.id) || ""); });
