@@ -752,19 +752,6 @@ body.dark-mode .parliament-tooltip {
   background-color: transparent;
   padding: 2px 1px;
 }
-
-.mytooltip::after {
-  content: "";
-  position: fixed;         /* blockified automatically */
-  anchor-name: --mytooltip-anchor;
-  width: 0;
-  height: 0;
-  left: 0;
-  top: 0;
-  transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
-  pointer-events: none;
-}
-
 .mytooltip:hover { 
   /* background-color: var(--content-bg-color); */
   text-decoration: underline;
@@ -772,7 +759,6 @@ body.dark-mode .parliament-tooltip {
 
 .mytooltip .mytooltiptext {
   position: fixed;
-  position-anchor: --mytooltip-anchor;
   z-index: 999999;
   width: 130px;
   background: var(--content-bg-color);
@@ -803,14 +789,10 @@ body.dark-mode .parliament-tooltip {
 }
 
 .mytooltip .mytooltiptext {
-  top: anchor(--mytooltip-anchor bottom);
-  left: anchor(--mytooltip-anchor right);
-  position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
-  /*
+  bottom: auto;
   top: calc(var(--mouse-y, 0px) - 20px);
   left: calc(var(--mouse-x, 0px));
   transform: translate(-50%, -100%);
-  */
 }
 
 #reichstag_st{
