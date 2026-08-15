@@ -2,6 +2,26 @@
 
 = Images (general):
 
+weimar_flag.svg: User:Mmxx, Public domain, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Flag_of_Germany_(3-2).svg
+
+z_flag.svg: YaddahOriginal PNG by Porao., Public domain, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Flag_of_Deutsche_Zentrumspartei.svg
+
+nlp_logo.svg: Dahn, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:National_Liberal_Party_(Germany)_1911_symbol.png
+
+fvp_logo.png: .mw-parser-output .ubx-floatdefault[dir="ltr"],.mw-parser-output .ubx-floatopposite[dir="rtl"],.mw-parser-output .ubx-floatleft{float:left}.mw-parser-output .ubx-floatdefault[dir="rtl"],.mw-parser-output .ubx-floatopposite[dir="ltr"],.mw-parser-output .ubx-floatright{float:right}.mw-parser-output .ubx-floatnone{float:none}Dove, CC BY-SA 2.5 <https://creativecommons.org/licenses/by-sa/2.5>, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Yellow_flag_waving.svg
+
+drp_logo.png: Kellonolo, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons , https://commons.wikimedia.org/wiki/File:Logo_of_the_German_Reich_Party.png
+
+dnvp_logo.svg: Dahn, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+dvp_logo.svg: Xavax, Public domain, via Wikimedia Commons https://commons.wikimedia.org/wiki/File:German_People%27s_Party.svg
+
+bvp_logo.jpeg: https://commons.wikimedia.org/wiki/File:Plakat_Bayerische_Volkspartei_1919.jpg / Public Domain https://commons.wikimedia.org/wiki/File:Plakat_Bayerische_Volkspartei_1919.jpg
+
+German_Empire_states_map.svg: File:German Empire blank map.svg: Milenioscuro / **derivative work Alphathon /'æɫfə.θɒn/, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
+
+imperial_flag.svg: Original: Adolf Soetbeer, Otto von Bismarck Vector:  B1mbo, Madden, Public domain, via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Flag_of_Germany_(1867%E2%80%931918).svg
+
 kpd_flag.svg: sourced from Wikipedia, original image by Jens Pattke, https://www.crwflags.com/fotw/flags/de%7Dkpd.html, https://commons.wikimedia.org/wiki/File:Flag_of_the_Communist_Party_of_Germany.svg, https://creativecommons.org/licenses/by-sa/3.0/deed.en
 R-41~commonswiki, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons
 
@@ -12,6 +32,8 @@ SPD_logo_2.png: self made edit of SPD_logo.png
 
 uspd_logo.svg: sourced from Wikipedia, orginal image by Dahn, https://commons.wikimedia.org/wiki/File:USPD_logo,_1920.svg, https://creativecommons.org/licenses/by-sa/4.0/deed.en
 Dahn, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+War_Ensign_of_Germany.svg: Fornax, overhaul by Ericmetro., Public domain, via Wikimedia Commons
 
 map.jpg, map_2.jpg: Anonymous. Meyers Blitz-Lexikon. English:  scanned by User:LA2 in September 2005, Wikimedia Commons, https://commons.wikimedia.org/wiki/File:LA2-Blitz-0083.jpg. Accessed 3 Feb. 2024. Public Domain
 

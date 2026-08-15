@@ -199,7 +199,7 @@ const tooltipList = [
 
 {
 	searchString: "FVP",
-    explanationText: "<img src=img/logos/fvp_logo.png> <span class=title>FVP</span></br> Progressive People's Party </br></br> Fortschrittliche Volkspartei"
+    explanationText: "<img src=img/logos/fvp_logo.svg> <span class=title>FVP</span></br> Progressive People's Party </br></br> Fortschrittliche Volkspartei"
 },
 
 {
