@@ -761,7 +761,7 @@ body.dark-mode .parliament-tooltip {
   height: 0;
   left: 0;
   top: 0;
-  transform: translate(var(--x, 0px), var(--y, 0px));
+  transform: translate(var(--mouse-x, 0px), var(--mouse-y, 0px));
   pointer-events: none;
 }
 
