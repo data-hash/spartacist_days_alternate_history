@@ -697,54 +697,9 @@ body.dark-mode .parliament-tooltip {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-.tooltip-text {
-    cursor: help;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    position: relative;
-}
-
-/* Credit to zlrsk */
-/* New tooltip box (reads from data-tooltip, which has replaced the title element(its simpler than autofilling)) */
-.tooltip-text::after {
-  content: attr(data-tooltip);
-  white-space: pre-line; /* \n becomes line breaks */
-  display: none;
-
-  position: absolute;
-  left: 0;
-  top: 1.8em;
-  z-index: 9999;
-
-  /* similar styling to your existing UI */
-  background-color: var(--content-bg-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-
-  font-size: 0.82em;
-  line-height: 1.25;
-
-  padding: 0.35em 0.5em;
-  border-radius: 4px;
-  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
-
-  width: max-content;
-  max-width: 300px;
-  pointer-events: none;
-}
-
-.tooltip-text:hover::after,
-.tooltip-text:focus::after {
-  display: block;
-}
-
-/* Optional: make highlight slightly different on hover */
-.tooltip-text:hover {
-  text-decoration: underline;
-}
-
 /* tooltips from originalname/Dynamic Dev, edited by Communist45, from dynamic_biennio_rosso_alternate_history*/
 .mytooltip {
+  anchor-name: --my-anchor;
   position: relative;
   cursor: help;
   text-decoration: underline;
@@ -759,6 +714,7 @@ body.dark-mode .parliament-tooltip {
 
 .mytooltip .mytooltiptext {
   position: fixed;
+  position-anchor: --my-anchor;
   z-index: 999999;
   width: 130px;
   background: var(--content-bg-color);
@@ -789,8 +745,11 @@ body.dark-mode .parliament-tooltip {
 }
 
 .mytooltip .mytooltiptext {
-  bottom: auto;
-  top: calc(var(--mouse-y, 0px) - 20px);
+  /*top: anchor(bottom);
+  left: anchor(left);*/
+  position-try-fallbacks: flip-block, flip-inline;
+  /*bottom: auto; */
+  top: calc(var(--mouse-y, 0px) - 5px);
   left: calc(var(--mouse-x, 0px));
   transform: translate(-50%, -100%);
 }

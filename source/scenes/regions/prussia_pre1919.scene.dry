@@ -5,131 +5,16 @@ new-page: true
 tags: regions
 on-arrival: {!
 
-const spd_pr_seats = Math.round(2.25*Q.prussa_seats)
-Q.spd_pr_seats = spd_pr_seats
-let spdPrPer = (Q.spd_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.spdPrPer = spdPrPer.toFixed(1)
-
-const pp_pr_seats = Math.round(2.7*Q.prussa_seats)
-Q.pp_pr_seats = pp_pr_seats
-let ppPrPer = (Q.pp_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.ppPrPer = ppPrPer.toFixed(1)
-
-const dp_pr_seats = Math.round(0.45*Q.prussa_seats)
-Q.dp_pr_seats = dp_pr_seats
-let dpPrPer = (Q.dp_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.dpPrPer = dpPrPer.toFixed(1)
-
-const ddp_pr_seats = Math.round(9.25*Q.prussa_seats)
-Q.ddp_pr_seats = ddp_pr_seats
-let ddpPrPer = (Q.ddp_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.ddpPrPer = ddpPrPer.toFixed(1)
-
-const z_pr_seats = Math.round(23.25*Q.prussa_seats)
-Q.z_pr_seats = z_pr_seats
-let zPrPer = (Q.z_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.zPrPer = zPrPer.toFixed(1)
-
-const dvp_pr_seats = Math.round(16.47*Q.prussa_seats)
-Q.dvp_pr_seats = dvp_pr_seats
-let dvpPrPer = (Q.dvp_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.dvpPrPer = dvpPrPer.toFixed(1)
-
-const drp_pr_seats = Math.round(12*Q.prussa_seats)
-Q.drp_pr_seats = drp_pr_seats
-let drpPrPer = (Q.drp_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.drpPrPer = drpPrPer.toFixed(1)
-
-const dnvp_pr_seats = Math.round(33.63*Q.prussa_seats)
-Q.dnvp_pr_seats = dnvp_pr_seats
-let dnvpPrPer = (Q.dnvp_pr_seats / (Q.prussa_seats * 100)) * 100
-Q.dnvpPrPer = dnvpPrPer.toFixed(1)
-
-Q.total_pr_seats = Q.spd_pr_seats + Q.pp_pr_seats + Q.dp_pr_seats + Q.ddp_pr_seats + Q.z_pr_seats + Q.dvp_pr_seats + Q.drp_pr_seats + Q.dnvp_pr_seats
-
-!}
-on-display: {!
-/* TODO: potentially move to a js script for ease of access and cleaner code */
-const data_pr = []
-
-function _addParliamentChartParty(id, legend, seats) {
-    if (seats && seats > 0) data_pr.push({id: id, legend: legend, name: legend, seats});
-}
-
-if (Q.spd_r) {_addParliamentChartParty('spd', "SPD", Q.spd_pr_seats)}
-if (Q.pp_dissolved == 0) {_addParliamentChartParty('pp', "PP", Q.pp_pr_seats)}
-if (Q.bb_dissolved == 0) {_addParliamentChartParty('dp', "DP", Q.dp_pr_seats)}
-if (Q.ddp_r) {_addParliamentChartParty('fvp', Q.ddp_name, Q.ddp_pr_seats)}
-if (Q.z_r) {_addParliamentChartParty('z', "Z", Q.z_pr_seats)}
-if (Q.dvp_r) {_addParliamentChartParty('nlp', Q.dvp_name, Q.dvp_pr_seats)}
-if (Q.drp_dissolved == 0) {_addParliamentChartParty('drp', "DRP", Q.drp_pr_seats)}
-if (Q.dnvp_r) {_addParliamentChartParty('dkp', Q.dnvp_name, Q.dnvp_pr_seats)}
-
-Q.prussia_parliament_diagram = data_pr
-
-if (d3 && window && Q.started) {
-    // get screen width
-    var data = Q.prussia_parliament_diagram
-    var width = 500;
-    var height = 500;
-    /*
-    var screenWidth = document.getElementById('qualities').offsetWidth;
-    if (screenWidth < width - 50) {
-        width = screenWidth - 50;
-        height = width;
-        document.getElementById("reichstag_st").style.height = screenWidth/2 + "px"; 
-    }*/
-    var landtag_pr = d3.parliament();
-    landtag_pr.width(width).height(height).innerRadiusCoef(0.4);
-    landtag_pr.enter.fromCenter(false).smallToBig(false);
-    landtag_pr.exit.toCenter(false).bigToSmall(false);
-
-    var svg = d3.select("#landtag_pr")
-        .datum(data)
-        .call(landtag_pr);
-
-    var bbox = svg.node().getBBox();
-    var padding = 10; // small buffer so seat edges aren't clipped
-
-    svg
-        .attr("viewBox",
-            `${bbox.x - padding} ${bbox.y - padding} ${bbox.width + padding * 2} ${bbox.height + padding * 2}`
-        )
-        .attr("preserveAspectRatio", "xMidYMid meet")
-        .attr("width", null)
-        .attr("height", null)
-        .style("width", "100%")
-        .style("max-width", "500px")
-        .style("height", "auto")
-        .style("display", "block");
-}
 !}
 
-<h1>Prussian House of Representatives</h1>
+= Kingdom of Prussia
+
 <hr>
 
-<div style="display: flex; justify-content: center; align-items: center; width: 100%;">{!<svg id="landtag_pr"> </svg>!} </div>
-<div style="display: flex; justify-content: center; align-items: center; height: 100%;"><span style="margin-top: -50px;"><strong><h1>443</h1></strong></span></div>
-
-{!<table style="margin: 0 auto; table-layout: auto; width: auto;">!}
-{!<tr><td>Party</td><td>Seats</td><td>Status</td></tr>!}
-
-[? if uspd_formed = 0 : {!<tr><td><div class="box" style='background-color: var(--spd_color); outline: 2px; outline-style: solid;'> </div> !} SPD: {!</td><td>!} <strong>[+ spd_pr_seats +]</strong> <strong>([+ spdPrPer +]%)</strong> {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-[? if uspd_formed = 1 : {!<tr><td><div class="box" style='background-color: var(--spd_color);'> </div> !} [+ spd_name +]: {!</td><td>!} [+ spd_pr_seats +] ([+ spdPrPer +]%) {!</td><td>!} [? if spd_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if spd_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-
-[? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #D49797;'> </div> !} PP: {!</td><td>!} [+ pp_pr_seats +] ([+ ppPrPer +]%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
-
-[? if pp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #CE1126;'> </div> !} DP: {!</td><td>!} [+ dp_pr_seats +] ([+ dpPrPer +]%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
-
-[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--ddp_color);'> </div> !} FVP: {!</td><td>!} [+ ddp_pr_seats +] ([+ ddpPrPer +]%) {!</td><td>!} [? if ddp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if ddp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-
-{!<tr><td><div class="box" style='background-color: var(--z_color);'> </div> !} Z: {!</td><td>!} [+ z_pr_seats +] ([+ zPrPer +]%) {!</td><td>!} [? if z_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if z_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!}
-
-[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dvp_color);'> </div> !} NLP: {!</td><td>!} [+ dvp_pr_seats +] ([+ dvpPrPer +]%) {!</td><td>!} [? if dvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
-
-[? if drp_dissolved = 0 : {!<tr><td><div class="box" style='background-color: #00C0ff;'> </div> !} DRP: {!</td><td>!} [+ drp_pr_seats +] ([+ drpPrPer +]%) {!</td><td>!} <span style="color: #CC0000;">Opp.</span> {!</td></tr>!} ?]
-
-[? if nov_revolution = 0 : {!<tr><td><div class="box" style='background-color: var(--dnvp_color);'> </div> !} DKP: {!</td><td>!} [+ dnvp_pr_seats +] ([+ dnvpPrPer +]%) {!</td><td>!} [? if dnvp_in_government = 0: <span style="color: #CC0000;">Opp.</span>?][? if dnvp_in_government = 1: <span style="color: #009900;">Gov.</span>?] {!</td></tr>!} ?]
+<div style="display: flex; align-items: center; gap: 20px;">
+    <img src="img/maps/PrussiaMap1918.svg" alt="Map of Prussia" style="width: 200px;">
+    Prussia text WIP
+<div>
 
 - @return: Back
 

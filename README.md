@@ -1,5 +1,7 @@
 # Spartacist Days: An Alternate History
 
+> A Mod for Social Democracy: An Alternate History
+
 ## Included Libraries
 
 [jquery v1.11.1](https://releases.jquery.com/)
