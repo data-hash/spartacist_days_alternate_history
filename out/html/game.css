@@ -699,7 +699,6 @@ body.dark-mode .parliament-tooltip {
 
 /* tooltips from originalname/Dynamic Dev, edited by Communist45, from dynamic_biennio_rosso_alternate_history*/
 .mytooltip {
-  anchor-name: --my-anchor;
   position: relative;
   cursor: help;
   text-decoration: underline;
@@ -714,17 +713,16 @@ body.dark-mode .parliament-tooltip {
 
 .mytooltip .mytooltiptext {
   position: fixed;
-  position-anchor: --my-anchor;
   z-index: 999999;
   width: 130px;
-  background: var(--content-bg-color);
+  background: #f0e7e8;
   color: var(--text-color);
   text-align: left;
   border-radius: 8px;
   padding: 12px 14px;
   opacity: 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-  border: 1px solid var(--border-color);
+  border: 2.5px solid #65000b;
   pointer-events: none;
   font-size: 14px !important;
   line-height: 1.5em !important;
@@ -737,21 +735,22 @@ body.dark-mode .parliament-tooltip {
   opacity: 1; 
 }
 .mytooltip .mytooltiptext img { display: block; margin: 0 auto 4px auto; max-width: 90%; height: auto; }
-.mytooltip .mytooltiptext .title { display: block; font-size: 1.5em; font-weight: bold; }
-.mytooltip .mytooltiptext .line { 
-  display: block;
-  border-top: 1px solid #000;
-  margin: 4px 0;
-}
 
 .mytooltip .mytooltiptext {
-  /*top: anchor(bottom);
-  left: anchor(left);*/
-  position-try-fallbacks: flip-block, flip-inline;
-  /*bottom: auto; */
-  top: calc(var(--mouse-y, 0px) - 5px);
+  top: calc(var(--mouse-y, 0px) - 10px);
   left: calc(var(--mouse-x, 0px));
   transform: translate(-50%, -100%);
+}
+
+.mytooltip .mytooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
 
 #reichstag_st{
