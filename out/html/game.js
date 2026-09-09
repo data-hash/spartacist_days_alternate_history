@@ -1,349 +1,364 @@
-(function() {
+(function () {
   var game;
   var ui;
 
-  var DateOptions = {hour: 'numeric',
-                 minute: 'numeric',
-                 second: 'numeric',
-                 year: 'numeric',
-                 month: 'short',
-                 day: 'numeric' };
+  var DateOptions = {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
 
-  var main = function(dendryUI) {
+  var main = function (dendryUI) {
     ui = dendryUI;
     game = ui.game;
 
     // Add your custom code here.
   };
 
-  var TITLE = "Spartacist Days: An Alternate History" + '_' + "data-hash";
+  var TITLE = "Spartacist Days: An Alternate History" + "_" + "data-hash";
 
   // the url is a link to game.json
   // test url: https://aucchen.github.io/social_democracy_mods/v0.1.json
-  // TODO; 
-  window.loadMod = function(url) {
-      ui.loadGame(url);
+  // TODO;
+  window.loadMod = function (url) {
+    ui.loadGame(url);
   };
 
-  window.showStats = function() {
-    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('library')) {
-        window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+  window.showStats = function () {
+    if (window.dendryUI.dendryEngine.state.sceneId.startsWith("library")) {
+      window.dendryUI.dendryEngine.goToScene("backSpecialScene");
     } else {
-        window.dendryUI.dendryEngine.goToScene('library');
+      window.dendryUI.dendryEngine.goToScene("library");
     }
   };
 
-  window.showMods = function() {
+  window.showMods = function () {
     window.hideOptions();
-    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('mod_loader')) {
-        window.dendryUI.dendryEngine.goToScene('backSpecialScene');
+    if (window.dendryUI.dendryEngine.state.sceneId.startsWith("mod_loader")) {
+      window.dendryUI.dendryEngine.goToScene("backSpecialScene");
     } else {
-        window.dendryUI.dendryEngine.goToScene('mod_loader');
-    }
-  };
-  
-  window.parliamentRemoveStrokeStyle = function(parliamentParty) {
-    const sheet = document.styleSheets[0];
-    for (const rule of sheet.cssRules) {
-         if (rule.selectorText === parliamentParty) { // match the exact selector
-        rule.style.removeProperty('stroke');
-        rule.style.removeProperty('stroke-width');
-        break; // stop once found
-        }
-    }
-  };
-  
-  window.parliamentAddStrokeStyle = function(parliamentParty) {
-    const sheet = document.styleSheets[0];
-    for (const rule of sheet.cssRules) {
-        if (rule.selectorText === parliamentParty) { // match the exact selector
-        rule.style.setProperty('stroke', 'var(--border-color)');
-        rule.style.setProperty('stroke-width', '1.5px');
-        break; // stop once found
-        }
+      window.dendryUI.dendryEngine.goToScene("mod_loader");
     }
   };
 
-  window.changeRootColor = function(variable, color) {
-        document.documentElement.style.setProperty(variable, color)
-  }
+  window.parliamentRemoveStrokeStyle = function (parliamentParty) {
+    const sheet = document.styleSheets[0];
+    for (const rule of sheet.cssRules) {
+      if (rule.selectorText === parliamentParty) {
+        // match the exact selector
+        rule.style.removeProperty("stroke");
+        rule.style.removeProperty("stroke-width");
+        break; // stop once found
+      }
+    }
+  };
+
+  window.parliamentAddStrokeStyle = function (parliamentParty) {
+    const sheet = document.styleSheets[0];
+    for (const rule of sheet.cssRules) {
+      if (rule.selectorText === parliamentParty) {
+        // match the exact selector
+        rule.style.setProperty("stroke", "var(--border-color)");
+        rule.style.setProperty("stroke-width", "1.5px");
+        break; // stop once found
+      }
+    }
+  };
+
+  window.changeRootColor = function (variable, color) {
+    document.documentElement.style.setProperty(variable, color);
+  };
 
   // TODO: update audio displays
-  window.updateAudio = function(song) {
-      var now_playing = document.getElementById('currently_playing');
-      if (song) {
-          var a = song.split('/');
-          now_playing.textContent = a[a.length-1];
-      } else {
-          var s = window.dendryUI.currentAudioURL;
-          var a = s.split('/');
-          now_playing.textContent = a[a.length-1];
-      }
+  window.updateAudio = function (song) {
+    var now_playing = document.getElementById("currently_playing");
+    if (song) {
+      var a = song.split("/");
+      now_playing.textContent = a[a.length - 1];
+    } else {
+      var s = window.dendryUI.currentAudioURL;
+      var a = s.split("/");
+      now_playing.textContent = a[a.length - 1];
+    }
   };
 
   // sets the volume
-  window.setVolume = function(volume) {
-      window.dendryUI.volume = volume/100;
-      window.dendryUI.currentAudio.volume = volume/100;
+  window.setVolume = function (volume) {
+    window.dendryUI.volume = volume / 100;
+    window.dendryUI.currentAudio.volume = volume / 100;
   };
 
   // go to the next song - this just sets the time to 9999 lol.
-  window.shuffle = function() {
-      window.dendryUI.currentAudio.currentTime = 9999;
+  window.shuffle = function () {
+    window.dendryUI.currentAudio.currentTime = 9999;
   };
 
-  window.showOptions = function() {
-      var save_element = document.getElementById('options');
-      window.populateOptions();
-      save_element.style.display = "block";
-      if (!save_element.onclick) {
-          save_element.onclick = function(evt) {
-              var target = evt.target;
-              var save_element = document.getElementById('options');
-              if (target == save_element) {
-                  window.hideOptions();
-              }
-          };
-      }
+  window.showOptions = function () {
+    var save_element = document.getElementById("options");
+    window.populateOptions();
+    save_element.style.display = "block";
+    if (!save_element.onclick) {
+      save_element.onclick = function (evt) {
+        var target = evt.target;
+        var save_element = document.getElementById("options");
+        if (target == save_element) {
+          window.hideOptions();
+        }
+      };
+    }
   };
 
-  window.hideOptions = function() {
-      var save_element = document.getElementById('options');
-      save_element.style.display = "none";
+  window.hideOptions = function () {
+    var save_element = document.getElementById("options");
+    save_element.style.display = "none";
   };
 
-  window.disableBg = function() {
-      window.dendryUI.disable_bg = true;
-      document.body.style.backgroundImage = 'none';
-      window.dendryUI.saveSettings();
+  window.disableBg = function () {
+    window.dendryUI.disable_bg = true;
+    document.body.style.backgroundImage = "none";
+    window.dendryUI.saveSettings();
   };
 
-  window.enableBg = function() {
-      window.dendryUI.disable_bg = false;
-      window.dendryUI.setBg(window.dendryUI.dendryEngine.state.bg);
-      window.dendryUI.saveSettings();
+  window.enableBg = function () {
+    window.dendryUI.disable_bg = false;
+    window.dendryUI.setBg(window.dendryUI.dendryEngine.state.bg);
+    window.dendryUI.saveSettings();
   };
 
-  window.disableAnimate = function() {
-      window.dendryUI.animate = false;
-      window.dendryUI.saveSettings();
+  window.disableAnimate = function () {
+    window.dendryUI.animate = false;
+    window.dendryUI.saveSettings();
   };
 
-  window.enableAnimate = function() {
-      window.dendryUI.animate = true;
-      window.dendryUI.saveSettings();
+  window.enableAnimate = function () {
+    window.dendryUI.animate = true;
+    window.dendryUI.saveSettings();
   };
 
-  window.disableAnimateBg = function() {
-      window.dendryUI.animate_bg = false;
-      window.dendryUI.saveSettings();
+  window.disableAnimateBg = function () {
+    window.dendryUI.animate_bg = false;
+    window.dendryUI.saveSettings();
   };
 
-  window.enableAnimateBg = function() {
-      window.dendryUI.animate_bg = true;
-      window.dendryUI.saveSettings();
+  window.enableAnimateBg = function () {
+    window.dendryUI.animate_bg = true;
+    window.dendryUI.saveSettings();
   };
 
-  window.disableAudio = function() {
-      window.dendryUI.toggle_audio(false);
-      window.dendryUI.saveSettings();
+  window.disableAudio = function () {
+    window.dendryUI.toggle_audio(false);
+    window.dendryUI.saveSettings();
   };
 
-  window.enableAudio = function() {
-      window.dendryUI.toggle_audio(true);
-      window.dendryUI.saveSettings();
+  window.enableAudio = function () {
+    window.dendryUI.toggle_audio(true);
+    window.dendryUI.saveSettings();
   };
 
-  window.enableImages = function() {
-      window.dendryUI.show_portraits = true;
-      window.dendryUI.saveSettings();
+  window.enableImages = function () {
+    window.dendryUI.show_portraits = true;
+    window.dendryUI.saveSettings();
   };
 
-  window.disableImages = function() {
-      window.dendryUI.show_portraits = false;
-      window.dendryUI.saveSettings();
+  window.disableImages = function () {
+    window.dendryUI.show_portraits = false;
+    window.dendryUI.saveSettings();
   };
 
-  window.enableLightMode = function() {
-      window.dendryUI.dark_mode = false;
-      document.body.classList.remove('dark-mode');
-      window.dendryUI.saveSettings();
+  window.enableLightMode = function () {
+    window.dendryUI.dark_mode = false;
+    document.body.classList.remove("dark-mode");
+    window.dendryUI.saveSettings();
   };
 
-  window.enableDarkMode = function() {
-      window.dendryUI.dark_mode = true;
-      document.body.classList.add('dark-mode');
-      window.dendryUI.saveSettings();
+  window.enableDarkMode = function () {
+    window.dendryUI.dark_mode = true;
+    document.body.classList.add("dark-mode");
+    window.dendryUI.saveSettings();
   };
 
-  // Credits to Communist45 on the SDAAH Discord, thank you! 
+  // Credits to Communist45 on the SDAAH Discord, thank you!
   window.displayText = function (text) {
-      return applyWholesome(text);
-    };
+    return applyWholesome(text);
+  };
 
-    //To get a value, from Communist45 on the SDAAH Discord, thank you!
-    function getRelationshipText(value) {
-        if (value === undefined || value === null) return '';
-        if (value <= 5) return '<span style="color: #FF0000;">Hostile</span>';
-        if (value <= 14.9) return '<span style="color: #FF4500;">Frigid</span>';
-        if (value <= 29.9) return '<span style="color: #FF8C00;">Cold</span>';
-        if (value <= 39.9) return '<span style="color: #FFA500;">Cool</span>';
-        if (value <= 54.9) return '<span style="color: #FFD700;">Neutral</span>';
-        if (value <= 64.9) return '<span style="color: #9ACD32;">Warm</span>';
-        if (value <= 74.9) return '<span style="color: #32CD32;">Friendly</span>';
-        return '<span style="color: #008000;">Very friendly</span>';
+  //To get a value, from Communist45 on the SDAAH Discord, thank you!
+  function getRelationshipText(value) {
+    if (value === undefined || value === null) return "";
+    if (value <= 5) return '<span style="color: #FF0000;">Hostile</span>';
+    if (value <= 14.9) return '<span style="color: #FF4500;">Frigid</span>';
+    if (value <= 29.9) return '<span style="color: #FF8C00;">Cold</span>';
+    if (value <= 39.9) return '<span style="color: #FFA500;">Cool</span>';
+    if (value <= 54.9) return '<span style="color: #FFD700;">Neutral</span>';
+    if (value <= 64.9) return '<span style="color: #9ACD32;">Warm</span>';
+    if (value <= 74.9) return '<span style="color: #32CD32;">Friendly</span>';
+    return '<span style="color: #008000;">Very friendly</span>';
+  }
+
+  function getSizeText(value) {
+    if (value === undefined || value === null) return "";
+    if (value <= 20) return '<span style="color: #6B7280;">Minimal</span>';
+    if (value <= 40) return '<span style="color: #8B6F47;">Weak</span>';
+    if (value <= 60) return '<span style="color: #556B2F;">Moderate</span>';
+    if (value <= 80) return '<span style="color: #7A0000;">Strong</span>';
+    return '<span style="color: #2B0000;">Very Strong</span>';
+  }
+
+  function getMilitancyText(value) {
+    if (value === undefined || value === null) return "Unknown";
+    if (value <= 0.05)
+      return '<span style="color: #008000;">Nonexistent</span>';
+    if (value <= 0.14) return '<span style="color: #32CD32;">Very low</span>';
+    if (value <= 0.24) return '<span style="color: #9ACD32;">Low</span>';
+    if (value <= 0.44) return '<span style="color: #FFD700;">Medium-low</span>';
+    if (value <= 0.69) return '<span style="color: #FFA500;">Medium</span>';
+    if (value <= 1) return '<span style="color: #FF4500;">High</span>';
+    return '<span style="color: #FF0000;">Very high</span>';
+  }
+
+  function getLoyaltyText(value) {
+    if (value === undefined || value === null) return "Unknown";
+    if (value <= 0.06)
+      return '<span style="color: #FF0000;">Completely disloyal</span>';
+    if (value <= 0.19)
+      return '<span style="color: #FF4500;">Very disloyal</span>';
+    if (value <= 0.31)
+      return '<span style="color: #FF8C00;">Generally disloyal</span>';
+    if (value <= 0.41)
+      return '<span style="color: #FFA500;">Mostly disloyal</span>';
+    if (value <= 0.54) return '<span style="color: #FFD700;">Divided</span>';
+    if (value <= 0.71)
+      return '<span style="color: #9ACD32;">Mostly loyal</span>';
+    if (value <= 0.95)
+      return '<span style="color: #32CD32;">Generally loyal</span>';
+    return '<span style="color: #008000;">Completely loyal</span>';
+  }
+
+  function getStrengthText(value) {
+    if (value === undefined || value === null) return "Unknown";
+    if (value < 10) return '<span style="color: #FF4500;">Weak</span>';
+    if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
+    if (value < 40) return '<span style="color: #9ACD32;">Strong</span>';
+    if (value < 60) return '<span style="color: #32CD32;">Very strong</span>';
+    return '<span style="color: #008000;">Dominant</span>';
+  }
+
+  function getInvertedStrengthText(value) {
+    if (value === undefined || value === null) return "Unknown";
+    if (value < 10) return '<span style="color: #9ACD32;">Weak</span>';
+    if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
+    if (value < 40) return '<span style="color: #FF8C00;">Strong</span>';
+    if (value < 60) return '<span style="color: #FF4500;">Very strong</span>';
+    return '<span style="color: #FF0000;">Dominant</span>';
+  }
+
+  function getDissentText(value) {
+    if (value === undefined || value === null) return "Unknown";
+    if (value < 4.999) return '<span style="color: #008000;">Very low</span>';
+    if (value < 14.999) return '<span style="color: #9ACD32;">Low</span>';
+    if (value < 30.999) return '<span style="color: #FFD700;">Medium</span>';
+    if (value < 49.999) return '<span style="color: #FF4500;">High</span>';
+    return '<span style="color: #FF0000;">Very high</span>';
+  }
+
+  //To check if extra dynamic or not
+  function getDynamicTooltipContent(searchString, baseTooltip) {
+    var Q =
+      window.dendryUI &&
+      window.dendryUI.dendryEngine &&
+      window.dendryUI.dendryEngine.state
+        ? window.dendryUI.dendryEngine.state.qualities
+        : null;
+
+    if (!Q) return baseTooltip.explanationText;
+
+    if (searchString === "SPD" && Q.spd_relation !== undefined) {
+      var relationText = getRelationshipText(Q.spd_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
     }
 
-    function getSizeText(value) {
-        if (value === undefined || value === null) return '';
-        if (value <= 20) return '<span style="color: #6B7280;">Minimal</span>';
-        if (value <= 40) return '<span style="color: #8B6F47;">Weak</span>';
-        if (value <= 60) return '<span style="color: #556B2F;">Moderate</span>';
-        if (value <= 80) return '<span style="color: #7A0000;">Strong</span>';
-        return '<span style="color: #2B0000;">Very Strong</span>';
+    if (searchString === "KPD") {
+      return baseTooltip.explanationText;
     }
 
-    function getMilitancyText(value) {
-        if (value === undefined || value === null) return 'Unknown';
-        if (value <= 0.05) return '<span style="color: #008000;">Nonexistent</span>';
-        if (value <= 0.14) return '<span style="color: #32CD32;">Very low</span>';
-        if (value <= 0.24) return '<span style="color: #9ACD32;">Low</span>';
-        if (value <= 0.44) return '<span style="color: #FFD700;">Medium-low</span>';
-        if (value <= 0.69) return '<span style="color: #FFA500;">Medium</span>';
-        if (value <= 1) return '<span style="color: #FF4500;">High</span>';
-        return '<span style="color: #FF0000;">Very high</span>';
+    if (searchString === "DHP") {
+      return baseTooltip.explanationText;
     }
 
-    function getLoyaltyText(value) {
-        if (value === undefined || value === null) return 'Unknown';
-        if (value <= 0.06) return '<span style="color: #FF0000;">Completely disloyal</span>';
-        if (value <= 0.19) return '<span style="color: #FF4500;">Very disloyal</span>';
-        if (value <= 0.31) return '<span style="color: #FF8C00;">Generally disloyal</span>';
-        if (value <= 0.41) return '<span style="color: #FFA500;">Mostly disloyal</span>';
-        if (value <= 0.54) return '<span style="color: #FFD700;">Divided</span>';
-        if (value <= 0.71) return '<span style="color: #9ACD32;">Mostly loyal</span>';
-        if (value <= 0.95) return '<span style="color: #32CD32;">Generally loyal</span>';
-        return '<span style="color: #008000;">Completely loyal</span>';
+    if (searchString === "BB") {
+      return baseTooltip.explanationText;
     }
 
-    function getStrengthText(value) {
-        if (value === undefined || value === null) return 'Unknown';
-        if (value < 10) return '<span style="color: #FF4500;">Weak</span>';
-        if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
-        if (value < 40) return '<span style="color: #9ACD32;">Strong</span>';
-        if (value < 60) return '<span style="color: #32CD32;">Very strong</span>';
-        return '<span style="color: #008000;">Dominant</span>';
+    if (searchString === "Others") {
+      return baseTooltip.explanationText;
     }
 
-    function getInvertedStrengthText(value) {
-        if (value === undefined || value === null) return 'Unknown';
-        if (value < 10) return '<span style="color: #9ACD32;">Weak</span>';
-        if (value < 25) return '<span style="color: #FFD700;">Moderate</span>';
-        if (value < 40) return '<span style="color: #FF8C00;">Strong</span>';
-        if (value < 60) return '<span style="color: #FF4500;">Very strong</span>';
-        return '<span style="color: #FF0000;">Dominant</span>';
+    if (searchString === "PP") {
+      return baseTooltip.explanationText;
     }
 
-    function getDissentText(value) {
-        if (value === undefined || value === null) return 'Unknown';
-        if (value < 4.999) return '<span style="color: #008000;">Very low</span>';
-        if (value < 14.999) return '<span style="color: #9ACD32;">Low</span>';
-        if (value < 30.999) return '<span style="color: #FFD700;">Medium</span>';
-        if (value < 49.999) return '<span style="color: #FF4500;">High</span>';
-        return '<span style="color: #FF0000;">Very high</span>';
+    if (searchString === "BVP") {
+      return baseTooltip.explanationText;
     }
 
-    //To check if extra dynamic or not
-    function getDynamicTooltipContent(searchString, baseTooltip) {
-        var Q = window.dendryUI && window.dendryUI.dendryEngine && window.dendryUI.dendryEngine.state ? 
-                window.dendryUI.dendryEngine.state.qualities : null;
+    if (searchString === "DRP") {
+      return baseTooltip.explanationText;
+    }
 
-        if (!Q) return baseTooltip.explanationText;
+    if (searchString === "USPD" && Q.uspd_relation !== undefined) {
+      var relationText = getRelationshipText(Q.uspd_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-       if (searchString === 'SPD' && Q.spd_relation !== undefined) {
-            var relationText = getRelationshipText(Q.spd_relation) 
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
+    if (searchString === "SAPD" && Q.sapd_relation !== undefined) {
+      var relationText = getRelationshipText(Q.sapd_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'KPD' ) {
-            return baseTooltip.explanationText 
-        }
-      
-        if (searchString === 'DHP' ) {
-            return baseTooltip.explanationText 
-        }
-            
-        if (searchString === 'BB' ) {
-            return baseTooltip.explanationText 
-        }
+    if (searchString === "FVP" && Q.ddp_relation !== undefined) {
+      var relationText = getRelationshipText(Q.ddp_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'Others') {
-            return baseTooltip.explanationText
-        }
+    if (searchString === "DDP" && Q.ddp_relation !== undefined) {
+      var relationText = getRelationshipText(Q.ddp_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'PP') {
-            return baseTooltip.explanationText
-        }
-                  
-        if (searchString === 'BVP' ) {
-            return baseTooltip.explanationText 
-        }
-                  
-        if (searchString === 'DRP' ) {
-            return baseTooltip.explanationText 
-        }
+    if (searchString === "Z" && Q.z_relation !== undefined) {
+      var relationText = getRelationshipText(Q.z_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === "USPD" && Q.uspd_relation !== undefined) {
-            var relationText = getRelationshipText(Q.uspd_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
+    if (searchString === "NLP" && Q.dvp_relation !== undefined) {
+      var relationText = getRelationshipText(Q.dvp_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'SAPD' && Q.sapd_relation !== undefined) {
-            var relationText = getRelationshipText(Q.sapd_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
-      
-        if (searchString === 'FVP' && Q.ddp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.ddp_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
+    if (searchString === "DVP" && Q.dvp_relation !== undefined) {
+      var relationText = getRelationshipText(Q.dvp_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'DDP' && Q.ddp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.ddp_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
+    if (searchString === "DKP" && Q.dnvp_relation !== undefined) {
+      var relationText = getRelationshipText(Q.dnvp_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'Z' && Q.z_relation !== undefined) {
-            var relationText = getRelationshipText(Q.z_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
+    if (searchString === "DNVP" && Q.dnvp_relation !== undefined) {
+      var relationText = getRelationshipText(Q.dnvp_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'NLP' && Q.dvp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dvp_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
+    if (searchString === "NSDAP" && Q.nsdap_relation !== undefined) {
+      var relationText = getRelationshipText(Q.nsdap_relation);
+      return baseTooltip.explanationText + "<br>Relation: " + relationText;
+    }
 
-        if (searchString === 'DVP' && Q.dvp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dvp_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
-
-        if (searchString === 'DKP' && Q.dnvp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dnvp_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
-
-        if (searchString === 'DNVP' && Q.dnvp_relation !== undefined) {
-            var relationText = getRelationshipText(Q.dnvp_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
-
-        if (searchString === 'NSDAP' && Q.nsdap_relation !== undefined) {
-            var relationText = getRelationshipText(Q.nsdap_relation);
-            return baseTooltip.explanationText + '<br>Relation: ' + relationText;
-        }
-
-        /* if (searchString === 'Red Guard' && Q.rg_strength !== undefined) {
+    /* if (searchString === 'Red Guard' && Q.rg_strength !== undefined) {
             var strength = getSizeText(Q.rg_strength);
             var militancy = getMilitancyText(Q.rg_militancy);
             return baseTooltip.explanationText + '<br>Strength: ' + strength + '<br>Militarization: ' + militancy;
@@ -408,138 +423,145 @@
         } */
 
     return baseTooltip.explanationText;
+  }
 
-    }
+  window.getDynamicTooltipContent = getDynamicTooltipContent;
 
- window.getDynamicTooltipContent = getDynamicTooltipContent;
-
- // Credits to Communist45 on the SDAAH Discord!
- function applyWholesome(str) {
+  // Credits to Communist45 on the SDAAH Discord!
+  function applyWholesome(str) {
     const allWords = new Set([
-        ...tooltipList.map(t => t.searchString),
-        ...colourList.map(c => c.word)
+      ...tooltipList.map((t) => t.searchString),
+      ...colourList.map((c) => c.word),
     ]);
 
     // Escape special regex characters in the words
-    const escapedWords = [...allWords].map(word => 
-        word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const escapedWords = [...allWords].map((word) =>
+      word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
     );
 
     //fix for longer words not showing up if they contained smaller entry words inside of them
     escapedWords.sort((a, b) => b.length - a.length);
 
-    const regex = new RegExp(`\\b(${escapedWords.join('|')})\\b`, 'g');
+    const regex = new RegExp(`\\b(${escapedWords.join("|")})\\b`, "g");
 
-        return str.replace(/(<(?:span|strong)[^>]*>.*?<\/(?:span|strong)>|<[^>]+>|[^<]+)/g, (segment) => {
-            if (segment.startsWith('<')) return segment;
+    return str.replace(
+      /(<(?:span|strong)[^>]*>.*?<\/(?:span|strong)>|<[^>]+>|[^<]+)/g,
+      (segment) => {
+        if (segment.startsWith("<")) return segment;
 
-            return segment.replace(regex, (match) => {
-                const tooltip = tooltipList.find(t => t.searchString === match);
-                const colour = colourList.find(c => c.word === match);
+        return segment.replace(regex, (match) => {
+          const tooltip = tooltipList.find((t) => t.searchString === match);
+          const colour = colourList.find((c) => c.word === match);
 
-                let style = colour ? colour.style : '';
-                let innerText = match;
+          let style = colour?.style || "";
+          let tooltipColor = tooltip?.tooltipColor || "#000";
+          let innerText = match;
 
-                if (colour && colour.img) {
-                    innerText = `<img src="${colour.img}" class="p_icon" alt="">${innerText}`;
-                }
+          if (colour && colour.img) {
+            innerText = `<img src="${colour.img}" class="p_icon" alt="">${innerText}`;
+          }
 
-                if (tooltip) {
-                    var tooltipContent = getDynamicTooltipContent(match, tooltip);
-                    return `<span class='mytooltip' style='${style}'>${innerText}<span class='mytooltiptext'>${tooltipContent}</span></span>`;
-                } else if (colour) {
-                    return `<span style='${style}'>${innerText}</span>`;
-                }
+          if (tooltip) {
+            var tooltipContent = getDynamicTooltipContent(match, tooltip);
+            return `<span class='mytooltip' style='${style}'>${innerText}<span style="border-bottom-color: ${tooltipColor}; --arrow_color: ${tooltipColor}" class='mytooltiptext'>${tooltipContent}</span></span>`;
+          } else if (colour) {
+            return `<span style='${style}'>${innerText}</span>`;
+          }
 
-                return match;
-            });
+          return match;
         });
+      },
+    );
   }
 
   // populates the checkboxes in the options view
-  window.populateOptions = function() {
+  window.populateOptions = function () {
     var disable_bg = window.dendryUI.disable_bg;
     var animate = window.dendryUI.animate;
     var disable_audio = window.dendryUI.disable_audio;
     var show_portraits = window.dendryUI.show_portraits;
     if (disable_bg) {
-        $('#backgrounds_no')[0].checked = true;
+      $("#backgrounds_no")[0].checked = true;
     } else {
-        $('#backgrounds_yes')[0].checked = true;
+      $("#backgrounds_yes")[0].checked = true;
     }
     if (animate) {
-        $('#animate_yes')[0].checked = true;
+      $("#animate_yes")[0].checked = true;
     } else {
-        $('#animate_no')[0].checked = true;
+      $("#animate_no")[0].checked = true;
     }
     if (disable_audio) {
-        $('#audio_no')[0].checked = true;
+      $("#audio_no")[0].checked = true;
     } else {
-        $('#audio_yes')[0].checked = true;
+      $("#audio_yes")[0].checked = true;
     }
     if (show_portraits) {
-        $('#images_yes')[0].checked = true;
+      $("#images_yes")[0].checked = true;
     } else {
-        $('#images_no')[0].checked = true;
+      $("#images_no")[0].checked = true;
     }
     if (window.dendryUI.dark_mode) {
-        $('#dark_mode')[0].checked = true;
+      $("#dark_mode")[0].checked = true;
     } else {
-        $('#light_mode')[0].checked = true;
+      $("#light_mode")[0].checked = true;
     }
   };
 
-  
-//   // This function allows you to modify the text before it's displayed.
-//   // E.g. wrapping chat-like messages in spans.
-//   window.displayText = function(text) {
-//       return text;
-//   };
+  //   // This function allows you to modify the text before it's displayed.
+  //   // E.g. wrapping chat-like messages in spans.
+  //   window.displayText = function(text) {
+  //       return text;
+  //   };
 
   // This function allows you to do something in response to signals.
-  window.handleSignal = function(signal, event, scene_id) {
-  };
-  
+  window.handleSignal = function (signal, event, scene_id) {};
+
   // This function runs on a new page. Right now, this auto-saves.
-  window.onNewPage = function() {
+  window.onNewPage = function () {
     var scene = window.dendryUI.dendryEngine.state.sceneId;
-    if (scene != 'root' && !window.justLoaded) {
-        window.dendryUI.autosave();
+    if (scene != "root" && !window.justLoaded) {
+      window.dendryUI.autosave();
     }
     if (window.justLoaded) {
-        window.justLoaded = false;
+      window.justLoaded = false;
     }
   };
 
   // TODO: have some code for tabbed sidebar browsing.
-  window.updateSidebar = function() {
-      $('#qualities').empty();
-      var statusScene = dendryUI.game.scenes["status"];
-      var scene = dendryUI.game.scenes[window.statusTab];
-      dendryUI.dendryEngine._runActions(statusScene.onArrival);
-      dendryUI.dendryEngine._runActions(scene.onArrival);
-      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
-      dendryUI.dendryEngine._runActions(scene.onDisplay);
+  window.updateSidebar = function () {
+    $("#qualities").empty();
+    var statusScene = dendryUI.game.scenes["status"];
+    var scene = dendryUI.game.scenes[window.statusTab];
+    dendryUI.dendryEngine._runActions(statusScene.onArrival);
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(
+      scene.content,
+      true,
+    );
+    $("#qualities").append(dendryUI.contentToHTML.convert(displayContent));
+    dendryUI.dendryEngine._runActions(scene.onDisplay);
   };
 
-  window.changeTab = function(newTab, tabId) {
-      if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
-          window.alert('Polls are not available in historical mode.');
-          return;
-      }
-      var tabButton = document.getElementById(tabId);
-      var tabButtons = document.getElementsByClassName('tab_button');
-      for (i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].className = tabButtons[i].className.replace(' active', '');
-      }
-      tabButton.className += ' active';
-      window.statusTab = newTab;
-      window.updateSidebar();
+  window.changeTab = function (newTab, tabId) {
+    if (
+      tabId == "poll_tab" &&
+      dendryUI.dendryEngine.state.qualities.historical_mode
+    ) {
+      window.alert("Polls are not available in historical mode.");
+      return;
+    }
+    var tabButton = document.getElementById(tabId);
+    var tabButtons = document.getElementsByClassName("tab_button");
+    for (i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+    }
+    tabButton.className += " active";
+    window.statusTab = newTab;
+    window.updateSidebar();
   };
 
-  window.onDisplayContent = function() {
-      window.updateSidebar();
+  window.onDisplayContent = function () {
+    window.updateSidebar();
   };
 
   /*
@@ -550,76 +572,87 @@
    * max and min - numbers
    * colors - if true/1, will use some color scheme - green to yellow to red for high to low
    * */
-  window.generateBar = function(quality, qualityName, max, min, colors) {
-      var bar = document.createElement('div');
-      bar.className = 'bar';
-      var value = document.createElement('div');
-      value.className = 'barValue';
-      var width = (quality - min)/(max - min);
-      if (width > 1) {
-          width = 1;
-      } else if (width < 0) {
-          width = 0;
-      }
-      value.style.width = Math.round(width*100) + '%';
-      if (colors) {
-          value.style.backgroundColor = window.probToColor(width*100);
-      }
-      bar.textContent = qualityName + ': ' + quality;
-      if (colors) {
-          bar.textContent += '/' + max;
-      }
-      bar.appendChild(value);
-      return bar;
+  window.generateBar = function (quality, qualityName, max, min, colors) {
+    var bar = document.createElement("div");
+    bar.className = "bar";
+    var value = document.createElement("div");
+    value.className = "barValue";
+    var width = (quality - min) / (max - min);
+    if (width > 1) {
+      width = 1;
+    } else if (width < 0) {
+      width = 0;
+    }
+    value.style.width = Math.round(width * 100) + "%";
+    if (colors) {
+      value.style.backgroundColor = window.probToColor(width * 100);
+    }
+    bar.textContent = qualityName + ": " + quality;
+    if (colors) {
+      bar.textContent += "/" + max;
+    }
+    bar.appendChild(value);
+    return bar;
   };
-
 
   window.justLoaded = true;
   window.statusTab = "status";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
-  window.increaseFontSize = function() {
-        window.dendryUI.font_size += 0.1;
-        var fs = window.dendryUI.font_size;
-        var sidebar_fs = fs - 0.1;
-        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
-        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
-        //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
-        window.dendryUI.saveSettings();
+  window.increaseFontSize = function () {
+    window.dendryUI.font_size += 0.1;
+    var fs = window.dendryUI.font_size;
+    var sidebar_fs = fs - 0.1;
+    document
+      .getElementById("content")
+      .setAttribute("style", "font-size: " + fs + "em;");
+    document
+      .getElementById("stats_sidebar")
+      .setAttribute("style", "font-size: " + sidebar_fs + "em;");
+    //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
+    window.dendryUI.saveSettings();
   };
 
-  window.decreaseFontSize = function() {
-        window.dendryUI.font_size -= 0.1;
-        var fs = window.dendryUI.font_size;
-        var sidebar_fs = fs - 0.1;
-        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
-        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
-        //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
-        window.dendryUI.saveSettings();
+  window.decreaseFontSize = function () {
+    window.dendryUI.font_size -= 0.1;
+    var fs = window.dendryUI.font_size;
+    var sidebar_fs = fs - 0.1;
+    document
+      .getElementById("content")
+      .setAttribute("style", "font-size: " + fs + "em;");
+    document
+      .getElementById("stats_sidebar")
+      .setAttribute("style", "font-size: " + sidebar_fs + "em;");
+    //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
+    window.dendryUI.saveSettings();
   };
 
-
-  window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: false});
+  window.onload = function () {
+    window.dendryUI.loadSettings({ show_portraits: false });
     if (window.dendryUI.dark_mode) {
-        document.body.classList.add('dark-mode');
+      document.body.classList.add("dark-mode");
     }
     if (window.dendryUI.font_size != 1.1) {
-        var fs = window.dendryUI.font_size;
-        var sidebar_fs = fs - 0.1;
-        document.getElementById("content").setAttribute("style", "font-size: " + fs + "em;");
-        document.getElementById("stats_sidebar").setAttribute("style", "font-size: " + sidebar_fs + "em;");
+      var fs = window.dendryUI.font_size;
+      var sidebar_fs = fs - 0.1;
+      document
+        .getElementById("content")
+        .setAttribute("style", "font-size: " + fs + "em;");
+      document
+        .getElementById("stats_sidebar")
+        .setAttribute("style", "font-size: " + sidebar_fs + "em;");
     }
     //document.getElementById('font_size_value').textContent = window.dendryUI.font_size + "em";
-    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    window.pinnedCardsDescription =
+      "Advisor cards - actions are only usable once per 6 months.";
   };
 
   // Credit to Communist45
-  document.addEventListener('mousemove', e => {
-    document.querySelectorAll('.mytooltip').forEach(el => {
-        el.style.setProperty('--mouse-x', e.clientX + 'px');
-        el.style.setProperty('--mouse-y', e.clientY + 'px');
+  document.addEventListener("mousemove", (e) => {
+    document.querySelectorAll(".mytooltip").forEach((el) => {
+      el.style.setProperty("--mouse-x", e.clientX + "px");
+      el.style.setProperty("--mouse-y", e.clientY + "px");
     });
-}); 
-}());
+  });
+})();
