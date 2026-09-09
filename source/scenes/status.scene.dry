@@ -405,7 +405,7 @@ if (d3 && window && Q.started) {
 <div style="position: absolute; bottom: 0; left: 0; width: 100%;"><b><h1>[+ total_seats +]</h1></b></div>
 </div>
 
-{!<table id="statusTable1" style="margin: 0 auto; table-layout: auto; width: 100%;">!}
+{!<table id="statusTable1" style="margin: 0 auto; table-layout: fixed; width: 100%;">!}
 
 {!<thead>!}
 {!<tr><th scope="col">Party</th><th scope="col">Seats</th><th scope="col">Status</th></tr>!}
